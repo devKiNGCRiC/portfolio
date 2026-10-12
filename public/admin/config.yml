@@ -1,0 +1,436 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+#
+# Admin panel for Raj Roy (KiNG)'s portfolio. Open /admin on the site.
+# Every "Save" commits the change to GitHub; the host then rebuilds the site.
+# Locally (npm run dev → http://localhost:5173/admin/), choose "Work with Local Repository".
+
+backend:
+  name: github
+  repo: devKiNGCRiC/portfolio # must match your GitHub repo name
+  branch: main
+
+logo_url: /favicon.svg
+
+# uploads (photos, portrait, screenshots)
+media_folder: /public/photos
+public_folder: /photos
+
+collections:
+  # ------------------------------------------------------------------
+  - name: site
+    label: Site & About me
+    icon: person
+    editor: { preview: false }
+    files:
+      - name: site
+        label: Profile, hero, about, contact
+        file: src/content/site.json
+        fields:
+          - name: profile
+            label: Profile
+            widget: object
+            fields:
+              - { name: name, label: Real name, widget: string, hint: Used for titles and the boarding pass }
+              - { name: nickname, label: Nickname / brand, widget: string, hint: Shown in the logo, footer and by the guide }
+              - { name: role, label: Role, widget: string }
+              - { name: from, label: From, widget: string }
+              - { name: grewUp, label: Grew up in, widget: string }
+              - { name: basedIn, label: Based in, widget: string }
+              - { name: timezone, label: Time zone (for the clock), widget: string, hint: 'e.g. Asia/Kolkata' }
+              - { name: currently, label: Currently doing, widget: string, hint: Shown in the contact section }
+
+          - name: links
+            label: Links & resume
+            widget: object
+            fields:
+              - { name: email, label: Email, widget: string, required: false, hint: Leave empty to show "coming soon" }
+              - { name: linkedin, label: LinkedIn URL, widget: string, required: false }
+              - { name: github, label: GitHub URL, widget: string }
+              - { name: githubUser, label: GitHub username, widget: string, hint: Used for the live repo board }
+              - { name: instagram, label: Instagram URL, widget: string }
+              - { name: instagramHandle, label: Instagram handle, widget: string }
+              - name: resume
+                label: Resume (PDF)
+                widget: file
+                required: false
+                media_folder: /public/files
+                public_folder: /files
+
+          - name: hero
+            label: Hero (top of the page)
+            widget: object
+            fields:
+              - { name: status, label: Status pill, widget: string }
+              - { name: intro, label: Intro, widget: text, hint: 'Use **bold** for emphasis' }
+              - name: facts
+                label: Quick facts
+                label_singular: Fact
+                widget: list
+                hint: The live GitHub repo count is always added after these
+                fields:
+                  - { name: big, label: Big text, widget: string }
+                  - { name: small, label: Small text, widget: string }
+
+          - name: ticker
+            label: Ticker (scrolling strip)
+            label_singular: Item
+            widget: list
+            field: { name: item, label: Item, widget: string }
+
+          - name: about
+            label: About me
+            widget: object
+            fields:
+              - { name: portrait, label: Portrait (boarding pass photo), widget: image, required: false }
+              - { name: lead, label: Lead line, widget: string, hint: 'Use ==text== for the yellow highlight' }
+              - name: paragraphs
+                label: Story paragraphs
+                label_singular: Paragraph
+                widget: list
+                field: { name: paragraph, label: Paragraph, widget: text, hint: 'Use **bold** for emphasis' }
+              - { name: signoff, label: Handwritten sign-off, widget: string, required: false }
+              - name: pass
+                label: Boarding pass fields
+                label_singular: Field
+                widget: list
+                hint: '"Passenger" (your name) is added automatically'
+                fields:
+                  - { name: label, label: Label, widget: string }
+                  - { name: value, label: Value, widget: string }
+
+          - name: sections
+            label: Section headings
+            widget: object
+            fields:
+              - name: about
+                label: About
+                widget: object
+                fields:
+                  - { name: title, label: Title, widget: string }
+                  - { name: note, label: Handwritten note, widget: string, required: false }
+                  - { name: intro, label: Intro, widget: text, required: false }
+              - name: projects
+                label: Projects
+                widget: object
+                fields:
+                  - { name: title, label: Title, widget: string }
+                  - { name: note, label: Handwritten note, widget: string, required: false }
+                  - { name: intro, label: Intro, widget: text, required: false }
+              - name: skills
+                label: Skills
+                widget: object
+                fields:
+                  - { name: title, label: Title, widget: string }
+                  - { name: note, label: Handwritten note, widget: string, required: false }
+                  - { name: intro, label: Intro, widget: text, required: false }
+              - name: journey
+                label: Journey
+                widget: object
+                fields:
+                  - { name: title, label: Title, widget: string }
+                  - { name: note, label: Handwritten note, widget: string, required: false }
+                  - { name: intro, label: Intro, widget: text, required: false }
+              - name: github
+                label: GitHub
+                widget: object
+                fields:
+                  - { name: title, label: Title, widget: string }
+                  - { name: note, label: Handwritten note, widget: string, required: false }
+                  - { name: intro, label: Intro, widget: text, required: false }
+              - name: trips
+                label: Trips
+                widget: object
+                fields:
+                  - { name: title, label: Title, widget: string }
+                  - { name: note, label: Handwritten note, widget: string, required: false }
+                  - { name: intro, label: Intro, widget: text, required: false }
+
+          - name: contact
+            label: Contact
+            widget: object
+            fields:
+              - { name: title, label: Title, widget: string }
+              - { name: text, label: Text, widget: text }
+
+          - name: openSourceGoals
+            label: Open-source checklist
+            label_singular: Goal
+            widget: list
+            fields:
+              - { name: text, label: Goal, widget: string }
+              - { name: done, label: Done?, widget: boolean, default: false }
+              - { name: link, label: Link (issue / PR), widget: string, required: false }
+
+  # ------------------------------------------------------------------
+  - name: work
+    label: Projects
+    icon: work
+    editor: { preview: false }
+    files:
+      - name: projects
+        label: Projects & workbench
+        file: src/content/projects.json
+        fields:
+          - name: projects
+            label: Main projects
+            label_singular: Project
+            widget: list
+            summary: '{{name}} ({{status}})'
+            fields:
+              - { name: id, label: ID, widget: string, hint: 'Short and unique, e.g. safarnama. safarnama, wanderlink and portfolio have custom art.' }
+              - { name: name, label: Real name, widget: string, hint: Used for titles and the boarding pass }
+              - { name: nickname, label: Nickname / brand, widget: string, hint: Shown in the logo, footer and by the guide }
+              - { name: tagline, label: Tagline, widget: string }
+              - { name: status, label: Status, widget: select, options: [Completed, In progress, Experimental, Concept] }
+              - { name: featured, label: Big featured card?, widget: boolean, default: false }
+              - { name: year, label: Year, widget: string }
+              - { name: image, label: Screenshot (replaces the illustration), widget: image, required: false }
+              - { name: summary, label: Summary, widget: text }
+              - name: award
+                label: Award
+                widget: object
+                required: false
+                fields:
+                  - { name: title, label: Title, widget: string }
+                  - { name: detail, label: Detail, widget: string }
+                  - { name: date, label: Date, widget: string }
+              - name: story
+                label: Story (shown in "Read the story")
+                widget: object
+                fields:
+                  - { name: problem, label: The problem, widget: text }
+                  - { name: idea, label: The idea, widget: text }
+                  - { name: solution, label: What I built, widget: text }
+                  - { name: learned, label: What I learned, widget: text }
+              - name: features
+                label: Features
+                label_singular: Feature
+                widget: list
+                required: false
+                field: { name: feature, label: Feature, widget: string }
+              - name: tech
+                label: Tech stack
+                label_singular: Tech
+                widget: list
+                field: { name: tech, label: Tech, widget: string }
+              - name: evolution
+                label: Next stops (future versions)
+                label_singular: Next stop
+                widget: list
+                required: false
+                fields:
+                  - { name: name, label: Real name, widget: string, hint: Used for titles and the boarding pass }
+              - { name: nickname, label: Nickname / brand, widget: string, hint: Shown in the logo, footer and by the guide }
+                  - { name: note, label: Note, widget: string }
+                  - { name: status, label: Status, widget: select, options: [Completed, In progress, Experimental, Concept] }
+              - { name: repo, label: GitHub repo URL, widget: string, required: false }
+              - { name: live, label: Live demo URL, widget: string, required: false }
+
+          - name: workbench
+            label: Workbench (smaller projects)
+            label_singular: Small project
+            widget: list
+            summary: '{{name}}'
+            fields:
+              - { name: name, label: Repo name, widget: string, hint: Must match the GitHub repo name }
+              - { name: note, label: One-liner, widget: string }
+              - { name: tech, label: Tech, widget: string }
+              - { name: group, label: Group, widget: select, options: [Travel & culture, Web & apps, AI & data, Mobile] }
+              - { name: repo, label: Repo URL (only if different), widget: string, required: false }
+              - { name: live, label: Live demo URL, widget: string, required: false }
+
+  # ------------------------------------------------------------------
+  - name: skills
+    label: Skills
+    icon: luggage
+    editor: { preview: false }
+    files:
+      - name: skills
+        label: Suitcases
+        file: src/content/skills.json
+        fields:
+          - name: levels
+            label: Suitcases (levels)
+            label_singular: Suitcase
+            widget: list
+            allow_add: false
+            allow_remove: false
+            allow_reorder: false
+            fields:
+              - { name: id, label: Level ID (don't change), widget: string }
+              - { name: label, label: Suitcase name, widget: string }
+              - { name: note, label: Note, widget: string }
+          - name: groups
+            label: Skill groups
+            label_singular: Group
+            widget: list
+            summary: '{{pouch}}'
+            fields:
+              - { name: pouch, label: Group name, widget: string }
+              - name: items
+                label: Skills
+                label_singular: Skill
+                widget: list
+                summary: '{{name}} ({{level}})'
+                fields:
+                  - { name: name, label: Skill, widget: string }
+                  - name: level
+                    label: Which suitcase?
+                    widget: select
+                    options:
+                      - { label: Checked in (comfortable), value: comfortable }
+                      - { label: Carry-on (learning), value: learning }
+                      - { label: Wishlist (exploring), value: exploring }
+
+  # ------------------------------------------------------------------
+  - name: journey
+    label: Journey
+    icon: badge
+    editor: { preview: false }
+    files:
+      - name: journey
+        label: Timeline & education
+        file: src/content/journey.json
+        fields:
+          - name: timeline
+            label: Passport stamps (in order)
+            label_singular: Stamp
+            widget: list
+            summary: '{{year}}: {{title}}'
+            fields:
+              - { name: year, label: Year, widget: string }
+              - { name: title, label: Title, widget: string }
+              - { name: stamp, label: Word on the stamp, widget: string, hint: Keep it short }
+              - { name: ink, label: Ink colour, widget: select, options: [blue, red, green, purple] }
+              - { name: body, label: Text, widget: text }
+              - { name: branch, label: Side branch (e.g. gap year), widget: boolean, default: false }
+              - { name: highlight, label: Highlight (e.g. award), widget: boolean, default: false }
+              - { name: head, label: This is "now", widget: boolean, default: false }
+          - name: education
+            label: Education
+            label_singular: Degree
+            widget: list
+            summary: '{{degree}}, {{school}}'
+            fields:
+              - { name: degree, label: Degree, widget: string }
+              - { name: full, label: Full name, widget: string }
+              - { name: school, label: University, widget: string }
+              - { name: campus, label: Campus / place, widget: string }
+              - { name: status, label: Status, widget: select, options: [Current, Completed] }
+              - { name: note, label: Note (e.g. CGPA), widget: string, required: false }
+
+  # ------------------------------------------------------------------
+  - name: travel
+    label: Trips & photos
+    icon: flight
+    editor: { preview: false }
+    files:
+      - name: travel
+        label: Trips, postcards & photo wall
+        file: src/content/travel.json
+        fields:
+          - name: interests
+            label: Interest stickers
+            label_singular: Interest
+            widget: list
+            field: { name: interest, label: Interest, widget: string }
+          - name: valleyRoute
+            label: Postcard trail (Valley of Flowers route, in order)
+            label_singular: Stop
+            widget: list
+            summary: '{{name}} ({{alt}} m)'
+            fields:
+              - { name: name, label: Place, widget: string }
+              - { name: about, label: One-liner, widget: string }
+              - { name: alt, label: Altitude (m), widget: number, value_type: int }
+              - { name: lat, label: Latitude, widget: number, value_type: float }
+              - { name: lon, label: Longitude, widget: number, value_type: float }
+              - name: scene
+                label: Illustration
+                widget: select
+                required: false
+                options: [city, river, temple, village, trail, flowers, lake, hills, sea]
+          - name: tripToProduct
+            label: How a trip became a product
+            label_singular: Step
+            widget: list
+            fields:
+              - { name: step, label: Step, widget: string }
+              - { name: text, label: Text, widget: text }
+          - name: places
+            label: Photo wall (polaroids)
+            label_singular: Photo
+            widget: list
+            summary: '{{name}}'
+            fields:
+              - { name: name, label: Place, widget: string }
+              - { name: region, label: Region / caption, widget: string }
+              - { name: lat, label: Latitude text, widget: string, hint: 'e.g. 30.72°N' }
+              - { name: lon, label: Longitude text, widget: string, hint: 'e.g. 79.61°E' }
+              - { name: src, label: Photo, widget: image, required: false, hint: Without a photo, an illustration is shown }
+              - name: scene
+                label: Illustration
+                widget: select
+                required: false
+                options: [city, river, temple, village, trail, flowers, lake, hills, sea]
+
+  # ------------------------------------------------------------------
+  - name: guide
+    label: Guide & map
+    icon: map
+    editor: { preview: false }
+    files:
+      - name: guide
+        label: Clay-KiNG guide (stops & speech)
+        file: src/content/guide.json
+        fields:
+          - name: stops
+            label: Stops (in scroll order)
+            label_singular: Stop
+            widget: list
+            allow_add: false
+            allow_remove: false
+            summary: '{{label}}: {{say}}'
+            fields:
+              - { name: id, label: Section, widget: select, options: [top, about, projects, skills, journey, github, trips, contact] }
+              - { name: label, label: Label in the road nav, widget: string }
+              - name: icon
+                label: Icon
+                widget: select
+                options: [home, pin, work, bag, stamp, github, plane, chat, camera, terminal]
+              - name: pose
+                label: KiNG's pose here
+                widget: select
+                options: [idle, wave, type, camera, suitcase, passport, cheer]
+              - { name: say, label: Speech bubble, widget: string }
+              - { name: dock, label: Show in the road nav, widget: boolean, default: true }
+      - name: map
+        label: India map pins
+        file: src/content/map.json
+        fields:
+          - name: pins
+            label: Pins (each jumps to a section)
+            label_singular: Pin
+            widget: list
+            summary: '{{label}}: {{place}}'
+            fields:
+              - { name: id, label: Jumps to section, widget: select, options: [about, projects, skills, journey, github, trips, contact] }
+              - { name: label, label: Label, widget: string }
+              - { name: place, label: Place, widget: string }
+              - { name: lat, label: Latitude, widget: number, value_type: float }
+              - { name: lon, label: Longitude, widget: number, value_type: float }
+              - { name: color, label: Colour (hex), widget: string, hint: 'e.g. #ff9933' }
+              - name: labelAt
+                label: Label nudge (x, y, z)
+                widget: list
+                required: false
+                hint: Only needed when two labels overlap
+                field: { name: n, label: Value, widget: number, value_type: float }
+          - name: dots
+            label: Small dots (other places I've been)
+            label_singular: Dot
+            widget: list
+            fields:
+              - { name: name, label: Place, widget: string }
+              - { name: lat, label: Latitude, widget: number, value_type: float }
+              - { name: lon, label: Longitude, widget: number, value_type: float }
