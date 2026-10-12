@@ -1,0 +1,265 @@
+/* ---------- open passport ---------- */
+.passport {
+  display: grid;
+  border: 3px solid var(--ink);
+  border-radius: var(--r-lg);
+  box-shadow: var(--pop-lg);
+  background:
+    repeating-linear-gradient(0deg, transparent 0 27px, rgba(91, 182, 255, 0.12) 27px 28px),
+    #fbfdf6;
+  overflow: hidden;
+  counter-reset: stop;
+}
+
+@media (min-width: 900px) {
+  .passport {
+    grid-template-columns: 1fr 1fr;
+  }
+  .passport__page + .passport__page {
+    border-left: 3px solid var(--ink);
+    box-shadow: inset 18px 0 24px -20px rgba(23, 23, 26, 0.35);
+  }
+}
+
+@media (max-width: 899px) {
+  .passport__page + .passport__page {
+    border-top: 3px dashed var(--ink);
+  }
+}
+
+.passport__page {
+  display: grid;
+  gap: 2rem;
+  padding: clamp(1.4rem, 3vw, 2.4rem);
+}
+
+.entry {
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  gap: 1.1rem;
+  align-items: center;
+  counter-increment: stop;
+}
+
+.entry__text h3 {
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
+}
+
+.entry__year {
+  font-weight: 800;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+.entry__year::before {
+  content: counter(stop, decimal-leading-zero) '  ';
+  white-space: pre;
+  color: var(--red-deep);
+}
+
+.entry__text > p:last-child {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+/* ---------- stamps ---------- */
+.ink--blue {
+  --ink-c: #2a5bd7;
+}
+
+.ink--red {
+  --ink-c: #d92a1d;
+}
+
+.ink--green {
+  --ink-c: #16894a;
+}
+
+.ink--purple {
+  --ink-c: #7a3fd1;
+}
+
+.pstamp {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  width: 108px;
+  height: 108px;
+  padding: 0.5rem;
+  color: var(--ink-c);
+  border: 4px double var(--ink-c);
+  text-align: center;
+  text-transform: uppercase;
+  rotate: var(--tilt);
+  /* worn-ink texture */
+  mask-image: radial-gradient(circle at 30% 20%, #000 60%, rgba(0, 0, 0, 0.75) 61%, #000 75%);
+}
+
+.pstamp--round {
+  border-radius: 50%;
+}
+
+.pstamp--rect {
+  height: 84px;
+  border-radius: 10px;
+}
+
+.pstamp--oval {
+  height: 88px;
+  border-radius: 50%;
+}
+
+.pstamp__word {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+}
+
+.pstamp__year {
+  margin-top: 0.25rem;
+  font-weight: 800;
+  font-size: 0.72rem;
+}
+
+/* the "thunk" when a stamp comes into view */
+.entry.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.entry.reveal .pstamp {
+  opacity: 0;
+  transform: scale(1.7);
+  transition:
+    opacity 0.25s ease-out,
+    transform 0.45s var(--bounce);
+}
+
+.entry.reveal.is-in .pstamp {
+  opacity: 1;
+  transform: none;
+}
+
+.entry--now .pstamp {
+  animation: breathe 2.2s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  50% {
+    scale: 1.06;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .entry.reveal .pstamp {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- visas (education) ---------- */
+.visas {
+  margin-top: clamp(2.5rem, 2rem + 3vw, 4rem);
+}
+
+.visas__title {
+  font-size: var(--step-2);
+  margin-bottom: 1.2rem;
+}
+
+.visas__list {
+  display: grid;
+  gap: 1.4rem;
+}
+
+@media (min-width: 800px) {
+  .visas__list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.visa {
+  display: grid;
+  gap: 0.6rem;
+  padding: 1.4rem 1.4rem 1rem;
+  border: 3px solid var(--ink);
+  border-radius: var(--r-lg);
+  box-shadow: var(--pop);
+  background: var(--green-soft);
+  overflow: hidden;
+}
+
+.visa--current {
+  background: var(--saffron);
+}
+
+.visa__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.visa__degree {
+  font-size: var(--step-3);
+}
+
+.visa__full {
+  font-weight: 800;
+}
+
+.visa__fields {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.visa__fields div {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  gap: 0.6rem;
+  font-size: 0.92rem;
+}
+
+.visa__fields dt {
+  font-weight: 800;
+  opacity: 0.7;
+}
+
+.visa__fields dd {
+  font-weight: 600;
+}
+
+.visa__mrz {
+  margin: 0.4rem -1.4rem -1rem;
+  padding: 0.55rem 1.4rem;
+  border-top: 2px dashed var(--ink);
+  background: rgba(255, 255, 255, 0.55);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+@media (max-width: 420px) {
+  .entry {
+    grid-template-columns: 88px 1fr;
+  }
+  .pstamp {
+    width: 86px;
+    height: 86px;
+  }
+  .pstamp--rect,
+  .pstamp--oval {
+    height: 70px;
+  }
+  .pstamp__word {
+    font-size: 0.68rem;
+    letter-spacing: 0;
+  }
+}

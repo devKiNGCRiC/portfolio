@@ -1,0 +1,438 @@
+.hero {
+  padding-top: clamp(5.5rem, 4rem + 5vw, 8rem);
+  padding-bottom: clamp(2.5rem, 2rem + 3vw, 4rem);
+  /* soft saffron → white → green wash behind the hero */
+  background:
+    radial-gradient(60% 50% at 0% 0%, rgba(255, 153, 51, 0.18), transparent 70%),
+    radial-gradient(50% 50% at 100% 100%, rgba(45, 190, 79, 0.16), transparent 70%);
+}
+
+.hero__grid {
+  display: grid;
+  gap: clamp(2rem, 1rem + 3vw, 3.5rem);
+  align-items: center;
+}
+
+@media (min-width: 1000px) {
+  .hero__grid {
+    grid-template-columns: 1fr 1.1fr;
+  }
+}
+
+.hero__copy {
+  display: grid;
+  justify-items: start;
+  gap: 1.5rem;
+}
+
+.hero__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.4rem 0.9rem;
+  border: 2px solid var(--ink);
+  border-radius: var(--r-pill);
+  background: var(--white);
+  font-weight: 700;
+  font-size: 0.9rem;
+  animation: pop-in 0.7s var(--bounce) both;
+}
+
+.hero__live {
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--green-bright);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  50% {
+    transform: scale(1.35);
+  }
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+  }
+}
+
+.hero__title {
+  font-size: clamp(2.4rem, 1rem + 4vw, 4.4rem);
+  line-height: 1.1;
+  animation: pop-in 0.9s 0.08s var(--bounce) both;
+}
+
+.hero__pill {
+  position: relative;
+  display: inline-block;
+  padding: 0 0.28em 0.04em;
+  border: 3px solid var(--ink);
+  border-radius: 0.35em;
+  box-shadow: 5px 5px 0 var(--ink);
+  line-height: 1.05;
+}
+
+/* the tech word: navy screen, neon cyan text */
+.hero__pill--code {
+  background: var(--navy);
+  color: var(--cyan);
+  text-shadow: 0 0 18px rgba(0, 229, 255, 0.7);
+  rotate: -3deg;
+}
+
+.hero__lt {
+  color: var(--saffron);
+  font-size: 0.6em;
+  vertical-align: 0.25em;
+  text-shadow: none;
+}
+
+/* the travel word */
+.hero__pill--trip {
+  background: var(--saffron);
+  rotate: 2deg;
+  margin-top: 0.15em;
+}
+
+.hero__plane {
+  position: absolute;
+  top: -0.55em;
+  right: -0.5em;
+  width: 0.55em;
+  height: 0.55em;
+  padding: 0.08em;
+  border: 2.5px solid var(--ink);
+  border-radius: 50%;
+  background: var(--white);
+  rotate: -12deg;
+  animation: wiggle 3s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+  50% {
+    transform: translate(4px, -4px) rotate(10deg);
+  }
+}
+
+.hero__intro {
+  max-width: 44ch;
+  font-size: var(--step-1);
+  line-height: 1.5;
+  color: var(--ink-soft);
+  animation: pop-in 0.9s 0.18s var(--bounce) both;
+}
+
+.hero__intro strong {
+  color: var(--ink);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  animation: pop-in 0.9s 0.26s var(--bounce) both;
+}
+
+.hero__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  animation: pop-in 0.9s 0.34s var(--bounce) both;
+}
+
+.hero__facts li {
+  display: grid;
+  padding: 0.55rem 0.9rem;
+  border: 2px solid var(--ink);
+  border-radius: var(--r-md);
+  background: var(--white);
+  line-height: 1.25;
+}
+
+.hero__facts li:nth-child(odd) {
+  background: var(--saffron-soft);
+}
+
+.hero__facts li:nth-child(even) {
+  background: var(--green-soft);
+}
+
+.hero__facts li.hero__fact--repo {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.hero__facts li.hero__fact--repo span {
+  color: var(--cyan);
+}
+
+.hero__facts b {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+}
+
+.hero__facts span {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- the 3D map stage ---------- */
+.stage {
+  position: relative;
+  aspect-ratio: 1 / 0.92;
+  max-height: 660px;
+  width: 100%;
+  border: 3px solid var(--ink);
+  border-radius: 36px;
+  box-shadow: var(--pop-lg);
+  background:
+    radial-gradient(circle at 50% 115%, rgba(255, 153, 51, 0.35), transparent 55%),
+    linear-gradient(180deg, #8fd3ff 0%, #bfe6ff 50%, #eaf7ff 100%);
+  overflow: hidden;
+  animation: pop-in 1s 0.15s var(--bounce) both;
+}
+
+.stage__sun {
+  position: absolute;
+  top: 7%;
+  right: 9%;
+  width: 12%;
+  aspect-ratio: 1;
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+  background: var(--yellow);
+  box-shadow: 0 0 0 10px rgba(255, 196, 0, 0.25);
+}
+
+.stage__canvas {
+  position: absolute;
+  inset: 0;
+}
+
+.stage__canvas canvas {
+  cursor: grab;
+}
+
+.stage__canvas canvas:active {
+  cursor: grabbing;
+}
+
+.stage__title {
+  position: absolute;
+  top: 4.5%;
+  left: 4.5%;
+  rotate: -3deg;
+  font-size: 0.8rem;
+  pointer-events: none;
+}
+
+.stage__greet {
+  position: absolute;
+  left: 30%;
+  top: 38%;
+  padding: 0.5rem 0.85rem;
+  border: var(--stroke);
+  border-radius: 16px 16px 16px 4px;
+  background: var(--white);
+  box-shadow: 3px 3px 0 var(--ink);
+  font-weight: 800;
+  font-size: 0.9rem;
+  pointer-events: none;
+  animation: greet 2.4s var(--bounce) forwards;
+}
+
+@keyframes greet {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(10px);
+  }
+  15%,
+  85% {
+    opacity: 1;
+    transform: none;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+.stage__note {
+  position: absolute;
+  right: 5%;
+  bottom: 4%;
+  max-width: 12em;
+  text-align: right;
+  font-size: clamp(1.1rem, 0.95rem + 0.6vw, 1.45rem);
+  color: var(--ink);
+  rotate: -3deg;
+  pointer-events: none;
+}
+
+.stage__legend {
+  position: absolute;
+  left: 4.5%;
+  bottom: 4%;
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.45rem 0.7rem;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  font-size: 0.72rem;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.stage__legend span {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.dash {
+  display: inline-block;
+  width: 22px;
+  border-top: 3px dashed;
+}
+
+.dash--saffron {
+  border-color: var(--saffron);
+}
+
+.dash--red {
+  border-color: var(--red);
+}
+
+/* ---------- pin labels (rendered by drei <Html> inside the canvas) ---------- */
+.mappin {
+  display: grid;
+  justify-items: start;
+  padding: 0.3rem 0.6rem 0.35rem;
+  border: 2.5px solid var(--ink);
+  border-left: 8px solid var(--pin);
+  border-radius: 10px;
+  background: var(--white);
+  box-shadow: 3px 3px 0 var(--ink);
+  white-space: nowrap;
+  text-align: left;
+  line-height: 1.15;
+  transition:
+    transform 0.2s var(--bounce),
+    background 0.2s;
+}
+
+.mappin b {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+}
+
+.mappin span {
+  font-size: 0.64rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.mappin:hover,
+.mappin.is-hover {
+  transform: translateY(-3px) scale(1.06);
+  background: var(--yellow-soft);
+}
+
+.map-fallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 0.8rem;
+}
+
+.map-fallback .hand {
+  font-size: 1.5rem;
+}
+
+.map-fallback ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+@media (max-width: 560px) {
+  .stage {
+    border-radius: 28px;
+  }
+  .stage__legend,
+  .stage__note {
+    display: none;
+  }
+  .stage__title {
+    top: auto;
+    bottom: 4%;
+  }
+  .mappin span {
+    display: none;
+  }
+}
+
+/* phones & tablets: bring the map up, right under the headline */
+@media (max-width: 999px) {
+  .hero__grid {
+    gap: 1.4rem;
+  }
+  .hero__copy {
+    display: contents;
+  }
+  .hero__status {
+    order: 1;
+    justify-self: start;
+  }
+  .hero__title {
+    order: 2;
+  }
+  .stage {
+    order: 3;
+    aspect-ratio: 1 / 0.95;
+    max-height: 560px;
+  }
+  .hero__intro {
+    order: 4;
+  }
+  .hero__actions {
+    order: 5;
+  }
+  .hero__facts {
+    order: 6;
+  }
+}
+
+/* DOM pin labels; the 3D scene sets their transform every frame */
+.stage__pins {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.stage__pins .mappin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: auto;
+  opacity: 0;
+  transition:
+    opacity 0.4s,
+    background 0.2s;
+}
+
+.stage__pins .mappin[data-placed='true'] {
+  opacity: 1;
+}
+
+.stage__pins .mappin:hover,
+.stage__pins .mappin.is-hover {
+  background: var(--yellow-soft);
+}

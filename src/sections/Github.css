@@ -1,0 +1,354 @@
+.gh__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.6rem;
+  align-items: start;
+}
+
+@media (min-width: 1000px) {
+  .gh__grid {
+    grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+  }
+}
+
+/* ---------- departures board ---------- */
+.board {
+  padding: 1.2rem;
+  border: 3px solid var(--ink);
+  border-radius: var(--r-lg);
+  background: #202027;
+  box-shadow: var(--pop-lg);
+  color: var(--saffron);
+  font-family: var(--font-mono);
+  min-width: 0;
+}
+
+.board__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.3rem 0.4rem 1rem;
+}
+
+.board__title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--white);
+  font-size: var(--step-1);
+}
+
+.board__user {
+  font-size: 0.8rem;
+  color: #b9b9c6;
+}
+
+.board__cols,
+.board__row {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr) 6.5rem 6rem;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.board__cols {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #b9b9c6;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.board__rows {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.board__row {
+  min-height: 56px;
+  padding: 0.55rem 0.8rem;
+  border-radius: 10px;
+  background: #121216;
+  font-size: 0.85rem;
+  transition:
+    background 0.2s,
+    transform 0.2s var(--bounce);
+}
+
+.board__rows li {
+  animation: flip-in 0.6s calc(var(--i) * 0.08s) var(--bounce) both;
+}
+
+@keyframes flip-in {
+  from {
+    opacity: 0;
+    transform: perspective(600px) rotateX(-80deg);
+  }
+}
+
+a.board__row:hover {
+  background: #2e2e38;
+  transform: translateX(4px);
+}
+
+.board__time {
+  color: #d7d7e0;
+}
+
+.board__dest {
+  display: grid;
+  min-width: 0;
+  color: var(--saffron);
+  font-weight: 700;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.board__dest small {
+  font-family: var(--font-body);
+  font-weight: 500;
+  text-transform: none;
+  color: #b9b9c6;
+  font-size: 0.78rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.board__gate {
+  color: var(--white);
+  font-size: 0.78rem;
+}
+
+.board__status {
+  justify-self: start;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.board__status--go {
+  background: var(--green-bright);
+  color: var(--ink);
+  animation: blink 1.6s steps(2) infinite;
+}
+
+.board__status--ok {
+  background: var(--saffron);
+  color: var(--ink);
+}
+
+.board__status--done {
+  background: #3a3a45;
+  color: #d7d7e0;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.55;
+  }
+}
+
+.board__row--skeleton {
+  background: linear-gradient(90deg, #121216 25%, #2a2a33 50%, #121216 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.3s infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.board__empty {
+  display: grid;
+  justify-items: start;
+  gap: 1rem;
+  padding: 1rem;
+  color: var(--white);
+  font-family: var(--font-body);
+}
+
+@media (max-width: 640px) {
+  .board__cols {
+    display: none;
+  }
+  .board__row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      'dest status'
+      'time gate';
+    gap: 0.25rem 0.8rem;
+  }
+  .board__dest {
+    grid-area: dest;
+  }
+  .board__status {
+    grid-area: status;
+    justify-self: end;
+  }
+  .board__time {
+    grid-area: time;
+    font-size: 0.75rem;
+  }
+  .board__gate {
+    grid-area: gate;
+    justify-self: end;
+  }
+}
+
+/* ---------- side cards ---------- */
+.gh__side {
+  display: grid;
+  gap: 1.6rem;
+  min-width: 0;
+}
+
+.ghcard {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1.2rem;
+  border: 3px solid var(--ink);
+  border-radius: var(--r-lg);
+  background: var(--white);
+  box-shadow: var(--pop);
+  min-width: 0;
+}
+
+.ghcard__avatar {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+  background: var(--sky);
+  rotate: -4deg;
+}
+
+.ghcard__handle {
+  font-size: 0.95rem;
+  overflow-wrap: anywhere;
+}
+
+.ghcard__count {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-weight: 700;
+}
+
+.ghcard__chart {
+  grid-column: 1 / -1;
+  padding: 0.6rem;
+  border: 2px solid var(--ink);
+  border-radius: var(--r-md);
+  overflow-x: auto;
+}
+
+.ghcard__chart img {
+  min-width: 480px;
+  width: 100%;
+  height: auto;
+}
+
+.checklist {
+  padding: 1.4rem;
+  border: 3px solid var(--ink);
+  border-radius: var(--r-lg);
+  background: var(--saffron);
+  box-shadow: var(--pop);
+  rotate: 0.8deg;
+}
+
+.checklist h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.checklist > p {
+  font-size: 0.92rem;
+  margin-bottom: 0.9rem;
+}
+
+.checklist li {
+  display: flex;
+  gap: 0.7rem;
+  padding: 0.55rem 0;
+  border-top: 2px dashed rgba(23, 23, 26, 0.3);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.checklist a {
+  text-decoration: underline;
+}
+
+.checklist__box {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border: 2.5px solid var(--ink);
+  border-radius: 6px;
+  background: var(--white);
+  position: relative;
+}
+
+.is-done .checklist__box {
+  background: var(--green-bright);
+}
+
+.is-done .checklist__box::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 6px;
+  height: 11px;
+  border: solid var(--ink);
+  border-width: 0 2.5px 2.5px 0;
+  rotate: 45deg;
+}
+
+.is-done > span:last-child {
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
+.checklist__foot {
+  margin-top: 0.6rem;
+  font-size: 1.4rem;
+}
+
+/* the tech stop: navy with a faint neon grid */
+.gh {
+  background:
+    linear-gradient(rgba(0, 229, 255, 0.07) 1px, transparent 1px) 0 0 / 34px 34px,
+    linear-gradient(90deg, rgba(0, 229, 255, 0.07) 1px, transparent 1px) 0 0 / 34px 34px,
+    var(--navy);
+  color: var(--white);
+  border-block: 3px solid var(--ink);
+}
+
+.gh .shead__intro {
+  color: #c9d2ff;
+}
+
+.gh .shead__note {
+  color: var(--cyan);
+}
+
+.gh .board {
+  box-shadow: 8px 8px 0 var(--cyan);
+}
+
+.gh .ghcard,
+.gh .checklist {
+  color: var(--ink);
+}

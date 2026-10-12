@@ -1,0 +1,137 @@
+.bags {
+  display: grid;
+  gap: 2.5rem 1.6rem;
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .bags {
+    grid-template-columns: 1.25fr 1fr 0.9fr;
+    align-items: end;
+  }
+}
+
+.bag {
+  position: relative;
+  padding-top: 26px;
+}
+
+/* handle */
+.bag__handle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 90px;
+  height: 34px;
+  translate: -50% 0;
+  border: 3px solid var(--ink);
+  border-bottom: 0;
+  border-radius: 18px 18px 0 0;
+}
+
+.bag__body {
+  position: relative;
+  display: grid;
+  gap: 1.1rem;
+  padding: 1.5rem 1.3rem 1.6rem;
+  border: 3px solid var(--ink);
+  border-radius: var(--r-lg);
+  box-shadow: var(--pop-lg);
+  /* suitcase ribs */
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0 calc(33.3% - 2px),
+    rgba(23, 23, 26, 0.12) calc(33.3% - 2px) 33.3%
+  );
+  transition: transform 0.35s var(--bounce);
+}
+
+.bag:hover .bag__body {
+  transform: rotate(-1deg) translateY(-4px);
+}
+
+.bag--comfortable .bag__body {
+  background-color: var(--saffron);
+}
+
+.bag--learning .bag__body {
+  background-color: var(--sky);
+}
+
+.bag--exploring .bag__body {
+  background-color: var(--white);
+  border-style: dashed;
+}
+
+.bag__label {
+  justify-self: start;
+  padding: 0.6rem 0.9rem;
+  border: 2.5px solid var(--ink);
+  border-radius: var(--r-md);
+  background: var(--white);
+  box-shadow: 3px 3px 0 var(--ink);
+  rotate: -2deg;
+}
+
+.bag__label h3 {
+  font-size: 1.15rem;
+}
+
+.bag__label p {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+.bag__group h4 {
+  margin-bottom: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.bag__stickers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.bag__stickers li {
+  padding: 0.3rem 0.75rem;
+  border: 2px solid var(--ink);
+  border-radius: var(--r-pill);
+  background: var(--white);
+  font-weight: 700;
+  font-size: 0.9rem;
+  rotate: var(--r);
+  transition:
+    rotate 0.25s var(--bounce),
+    transform 0.25s var(--bounce);
+}
+
+.bag__stickers li:hover {
+  rotate: 0deg;
+  transform: scale(1.08);
+}
+
+.bag--learning .bag__stickers li {
+  background: #e3f1ff;
+}
+
+.bag--exploring .bag__stickers li {
+  border-style: dashed;
+}
+
+.bag__wheels {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  margin-top: -2px;
+}
+
+.bag__wheels i {
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+  background: var(--ink-soft);
+  margin-top: 4px;
+}
