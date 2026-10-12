@@ -1,0 +1,139 @@
+{
+  "profile": {
+    "name": "Raj Roy",
+    "nickname": "KiNG",
+    "role": "MCA student & developer",
+    "from": "Northeast India",
+    "grewUp": "Arunachal Pradesh",
+    "basedIn": "Chennai",
+    "timezone": "Asia/Kolkata",
+    "currently": "Learning in public: open source, React Native & ML basics"
+  },
+  "links": {
+    "github": "https://github.com/devKiNGCRiC",
+    "githubUser": "devKiNGCRiC",
+    "instagram": "https://www.instagram.com/safarnama_of_king/",
+    "instagramHandle": "@safarnama_of_king",
+    "linkedin": "",
+    "email": "",
+    "resume": "/resume.pdf"
+  },
+  "hero": {
+    "status": "MCA student at SRM, from Northeast India",
+    "intro": "Hey, I’m **Raj Roy**, a.k.a. **KiNG** online. I make web and mobile apps, poke at AI, and travel solo with a camera. Most of my ideas start somewhere on the road. Hop in, I’ll be your guide.",
+    "facts": [
+      {
+        "big": "Special Jury Award",
+        "small": "for Safarnama, 2025"
+      },
+      {
+        "big": "4,632 m",
+        "small": "highest I’ve hiked, solo"
+      }
+    ]
+  },
+  "ticker": [
+    "Safarnama won the Special Jury Award",
+    "MCA @ SRM",
+    "from Northeast India",
+    "solo to 4,632 m",
+    "learning React Native",
+    "first open-source PR loading…",
+    "always carrying a camera"
+  ],
+  "about": {
+    "portrait": "",
+    "lead": "Most of my projects start with a problem I ran into ==on the road==.",
+    "paragraphs": [
+      "I’m from **Northeast India** and grew up in **Arunachal Pradesh**, surrounded by hills, rivers and a lot of quiet. That’s where two habits started: wanting to see what’s past the next ridge, and wanting to know how things actually work.",
+      "I did my **BCA at Assam Don Bosco University** and moved to Chennai for my **MCA at SRM**. Somewhere in between I noticed my two favourite things weren’t separate at all.",
+      "I travel solo a lot. And on the road I keep running into small problems: scattered info, no easy way to meet other travellers, nothing nudging people to travel responsibly. Those problems turn into my projects. **Safarnama** started exactly like that."
+    ],
+    "signoff": "Not an expert at everything. Just a student who likes building useful things.",
+    "pass": [
+      {
+        "label": "Class",
+        "value": "Student, still learning"
+      },
+      {
+        "label": "Via",
+        "value": "Assam (BCA, Assam Don Bosco Univ.)"
+      },
+      {
+        "label": "Now at",
+        "value": "SRM University, KTR campus"
+      },
+      {
+        "label": "Carry-on",
+        "value": "Laptop + camera"
+      },
+      {
+        "label": "Seat",
+        "value": "Window, always"
+      }
+    ]
+  },
+  "sections": {
+    "about": {
+      "title": "Hi, I’m Raj",
+      "note": "(a.k.a. KiNG: quiet person, loud curiosity)",
+      "intro": ""
+    },
+    "projects": {
+      "title": "Stuff I've built",
+      "note": "(and am still building)",
+      "intro": "Every project has an honest status. Tap one to read the story behind it: the problem, the idea, and what I learned."
+    },
+    "skills": {
+      "title": "What's in my bag",
+      "note": "(honest packing list)",
+      "intro": "Some tools I know well, some I'm still breaking in, and some are on the wishlist. I'd rather be clear about which is which."
+    },
+    "journey": {
+      "title": "Passport so far",
+      "note": "(every stamp is real)",
+      "intro": "From Northeast India to Chennai. One delay, one award, lots of learning. Here's the route in order."
+    },
+    "github": {
+      "title": "Learning in public",
+      "note": "(live from GitHub)",
+      "intro": "Exploring open source one issue, pull request and code review at a time. This board shows what I pushed most recently."
+    },
+    "trips": {
+      "title": "Off the grid",
+      "note": "(my favourite part)",
+      "intro": "When I'm not coding I'm usually somewhere with bad network: solo trips, long walks, a camera and too many photos of the same mountain."
+    }
+  },
+  "contact": {
+    "title": "Got an idea worth building? Or a trail worth walking?",
+    "text": "I’m open to internships, collaborations, open-source pointers, or just a good chat about tech and travel. I reply slower than a chat app and faster than a letter."
+  },
+  "openSourceGoals": [
+    {
+      "text": "Put my own projects on GitHub",
+      "done": true,
+      "link": ""
+    },
+    {
+      "text": "Find a \"good first issue\" in a project I actually use",
+      "done": false,
+      "link": ""
+    },
+    {
+      "text": "Open my first pull request to someone else’s repo",
+      "done": false,
+      "link": ""
+    },
+    {
+      "text": "Get it reviewed, fix things, get it merged",
+      "done": false,
+      "link": ""
+    },
+    {
+      "text": "Help the next beginner do the same",
+      "done": false,
+      "link": ""
+    }
+  ]
+}

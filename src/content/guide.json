@@ -1,0 +1,62 @@
+{
+  "stops": [
+    {
+      "id": "top",
+      "label": "Home",
+      "icon": "home",
+      "pose": "wave",
+      "say": "Namaste! I’m KiNG. Hop in, I’ll drive you around."
+    },
+    {
+      "id": "about",
+      "label": "About",
+      "icon": "pin",
+      "pose": "wave",
+      "say": "Arunachal → Chennai, with a laptop and a camera. That’s me.",
+      "dock": false
+    },
+    {
+      "id": "projects",
+      "label": "Work",
+      "icon": "work",
+      "pose": "type",
+      "say": "Safarnama won an award. Tap “Read the story”!"
+    },
+    {
+      "id": "skills",
+      "label": "Skills",
+      "icon": "bag",
+      "pose": "suitcase",
+      "say": "Here’s my bag. Some of it is still brand new."
+    },
+    {
+      "id": "journey",
+      "label": "Journey",
+      "icon": "stamp",
+      "pose": "passport",
+      "say": "Every stamp here is real. Even the delay."
+    },
+    {
+      "id": "github",
+      "label": "GitHub",
+      "icon": "github",
+      "pose": "type",
+      "say": "Fresh commits, pulled live from GitHub.",
+      "dock": false
+    },
+    {
+      "id": "trips",
+      "label": "Trips",
+      "icon": "plane",
+      "pose": "camera",
+      "say": "My favourite stop! Valley of Flowers, 4,632 m."
+    },
+    {
+      "id": "contact",
+      "label": "Say hi",
+      "icon": "chat",
+      "pose": "cheer",
+      "say": "Last stop. Want to build something together?"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "pins": [
+    {
+      "id": "about",
+      "label": "About me",
+      "place": "Arunachal, where I grew up",
+      "lon": 93.6,
+      "lat": 27.9,
+      "color": "#ff9933",
+      "labelAt": [
+        0.2,
+        1.25,
+        -0.2
+      ]
+    },
+    {
+      "id": "journey",
+      "label": "Journey",
+      "place": "Assam, BCA",
+      "lon": 91.7,
+      "lat": 26.1,
+      "color": "#1f9e4a",
+      "labelAt": [
+        0.55,
+        0.5,
+        0.55
+      ]
+    },
+    {
+      "id": "trips",
+      "label": "Trips",
+      "place": "Uttarakhand, Valley of Flowers",
+      "lon": 79.6,
+      "lat": 30.7,
+      "color": "#e53935"
+    },
+    {
+      "id": "projects",
+      "label": "Work",
+      "place": "Chennai, MCA & building",
+      "lon": 80.3,
+      "lat": 13.1,
+      "color": "#00b8d4"
+    }
+  ],
+  "dots": [
+    {
+      "name": "Delhi",
+      "lon": 77.2,
+      "lat": 28.6
+    },
+    {
+      "name": "Kodaikanal",
+      "lon": 77.5,
+      "lat": 10.2
+    },
+    {
+      "name": "Kanyakumari",
+      "lon": 77.5,
+      "lat": 8.3
+    },
+    {
+      "name": "Rishikesh",
+      "lon": 78.3,
+      "lat": 30.1
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "valleyRoute": [
+    {
+      "name": "Delhi",
+      "about": "Start line. The plains, before the climb.",
+      "alt": 216,
+      "lat": 28.61,
+      "lon": 77.21
+    },
+    {
+      "name": "Rishikesh",
+      "about": "Where the Ganga leaves the mountains. The gateway north.",
+      "alt": 372,
+      "lat": 30.09,
+      "lon": 78.27
+    },
+    {
+      "name": "Badrinath",
+      "about": "Temple town high in the Garhwal Himalaya.",
+      "alt": 3300,
+      "lat": 30.74,
+      "lon": 79.49
+    },
+    {
+      "name": "Mana Village",
+      "about": "Known as the first village of India, near the Tibet border.",
+      "alt": 3200,
+      "lat": 30.77,
+      "lon": 79.5
+    },
+    {
+      "name": "Govindghat",
+      "about": "Trailhead. From here, it’s on foot.",
+      "alt": 1828,
+      "lat": 30.62,
+      "lon": 79.56
+    },
+    {
+      "name": "Ghanghariya",
+      "about": "Last stop before both the Valley and Hemkund.",
+      "alt": 3049,
+      "lat": 30.7,
+      "lon": 79.6
+    },
+    {
+      "name": "Valley of Flowers",
+      "about": "A national park and UNESCO World Heritage Site.",
+      "alt": 3658,
+      "lat": 30.72,
+      "lon": 79.61
+    },
+    {
+      "name": "Hemkund Sahib",
+      "about": "Highest point of the trip, beside a glacial lake.",
+      "alt": 4632,
+      "lat": 30.7,
+      "lon": 79.62
+    }
+  ],
+  "tripToProduct": [
+    {
+      "step": "The trip",
+      "text": "Travelling solo through Uttarakhand to the Valley of Flowers."
+    },
+    {
+      "step": "The problem",
+      "text": "Planning meant jumping between blogs, reels and forums, and almost none of it talked about travelling responsibly."
+    },
+    {
+      "step": "The idea",
+      "text": "One place for travellers: guides, eco-tourism, community and practical tools."
+    },
+    {
+      "step": "The product",
+      "text": "Safarnama, which went on to win the Special Jury Award."
+    }
+  ],
+  "places": [
+    {
+      "name": "Valley of Flowers",
+      "region": "Uttarakhand",
+      "lat": "30.72°N",
+      "lon": "79.61°E",
+      "src": ""
+    },
+    {
+      "name": "Hemkund Sahib",
+      "region": "Uttarakhand",
+      "lat": "30.70°N",
+      "lon": "79.62°E",
+      "src": ""
+    },
+    {
+      "name": "Mana Village",
+      "region": "Uttarakhand",
+      "lat": "30.77°N",
+      "lon": "79.50°E",
+      "src": ""
+    },
+    {
+      "name": "Rishikesh",
+      "region": "Uttarakhand",
+      "lat": "30.09°N",
+      "lon": "78.27°E",
+      "src": ""
+    },
+    {
+      "name": "Arunachal Pradesh",
+      "region": "Home, sort of",
+      "lat": "27.10°N",
+      "lon": "93.62°E",
+      "src": ""
+    },
+    {
+      "name": "Northeast India",
+      "region": "Where it started",
+      "lat": "26.14°N",
+      "lon": "91.74°E",
+      "src": ""
+    },
+    {
+      "name": "Kodaikanal",
+      "region": "Tamil Nadu",
+      "lat": "10.23°N",
+      "lon": "77.49°E",
+      "src": ""
+    },
+    {
+      "name": "Kanyakumari",
+      "region": "Tamil Nadu",
+      "lat": "8.08°N",
+      "lon": "77.54°E",
+      "src": ""
+    }
+  ],
+  "interests": [
+    "Solo travel",
+    "Photography",
+    "Videography",
+    "Trekking",
+    "Nature",
+    "Travel stories"
+  ]
+}

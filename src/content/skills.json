@@ -1,0 +1,195 @@
+{
+  "levels": [
+    {
+      "id": "comfortable",
+      "label": "Checked in",
+      "note": "packed & tested on real projects"
+    },
+    {
+      "id": "learning",
+      "label": "Carry-on",
+      "note": "using it now, still breaking it in"
+    },
+    {
+      "id": "exploring",
+      "label": "Wishlist",
+      "note": "curious, reading the reviews"
+    }
+  ],
+  "groups": [
+    {
+      "pouch": "Languages",
+      "items": [
+        {
+          "name": "JavaScript",
+          "level": "comfortable"
+        },
+        {
+          "name": "Python",
+          "level": "comfortable"
+        },
+        {
+          "name": "Java",
+          "level": "comfortable"
+        },
+        {
+          "name": "C++",
+          "level": "learning"
+        }
+      ]
+    },
+    {
+      "pouch": "Web & frontend",
+      "items": [
+        {
+          "name": "HTML",
+          "level": "comfortable"
+        },
+        {
+          "name": "CSS",
+          "level": "comfortable"
+        },
+        {
+          "name": "React",
+          "level": "comfortable"
+        },
+        {
+          "name": "React Router",
+          "level": "comfortable"
+        },
+        {
+          "name": "Vite",
+          "level": "comfortable"
+        },
+        {
+          "name": "Responsive design",
+          "level": "comfortable"
+        },
+        {
+          "name": "Redux Toolkit",
+          "level": "learning"
+        },
+        {
+          "name": "Sass",
+          "level": "learning"
+        },
+        {
+          "name": "Mantine UI",
+          "level": "learning"
+        }
+      ]
+    },
+    {
+      "pouch": "Backend",
+      "items": [
+        {
+          "name": "Node.js",
+          "level": "comfortable"
+        },
+        {
+          "name": "Express.js",
+          "level": "comfortable"
+        },
+        {
+          "name": "MongoDB",
+          "level": "comfortable"
+        },
+        {
+          "name": "Mongoose",
+          "level": "comfortable"
+        },
+        {
+          "name": "REST APIs",
+          "level": "comfortable"
+        },
+        {
+          "name": "JWT",
+          "level": "learning"
+        },
+        {
+          "name": "bcrypt",
+          "level": "learning"
+        },
+        {
+          "name": "Nodemailer",
+          "level": "learning"
+        }
+      ]
+    },
+    {
+      "pouch": "Mobile",
+      "items": [
+        {
+          "name": "React Native",
+          "level": "learning"
+        },
+        {
+          "name": "Expo",
+          "level": "learning"
+        },
+        {
+          "name": "Android development",
+          "level": "exploring"
+        }
+      ]
+    },
+    {
+      "pouch": "AI, ML & data",
+      "items": [
+        {
+          "name": "Data analytics",
+          "level": "learning"
+        },
+        {
+          "name": "Data visualization",
+          "level": "learning"
+        },
+        {
+          "name": "Machine learning",
+          "level": "exploring"
+        },
+        {
+          "name": "AI-powered apps",
+          "level": "exploring"
+        }
+      ]
+    },
+    {
+      "pouch": "Tools",
+      "items": [
+        {
+          "name": "Git",
+          "level": "comfortable"
+        },
+        {
+          "name": "GitHub",
+          "level": "comfortable"
+        },
+        {
+          "name": "VS Code",
+          "level": "comfortable"
+        },
+        {
+          "name": "Thunder Client",
+          "level": "comfortable"
+        },
+        {
+          "name": "Vercel",
+          "level": "comfortable"
+        },
+        {
+          "name": "Netlify",
+          "level": "comfortable"
+        },
+        {
+          "name": "Render",
+          "level": "learning"
+        },
+        {
+          "name": "Android Studio",
+          "level": "exploring"
+        }
+      ]
+    }
+  ]
+}
