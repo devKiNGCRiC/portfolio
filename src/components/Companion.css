@@ -1,0 +1,176 @@
+.guide {
+  position: fixed;
+  z-index: 45;
+  right: max(0.75rem, env(safe-area-inset-right));
+  bottom: 5.6rem; /* above the road dock */
+  display: grid;
+  justify-items: end;
+  gap: 0.6rem;
+  pointer-events: none;
+  transform: translateY(140%) rotate(6deg);
+  opacity: 0;
+  transition:
+    transform 0.7s var(--bounce),
+    opacity 0.3s;
+}
+
+.guide.is-visible {
+  transform: none;
+  opacity: 1;
+}
+
+.guide > * {
+  pointer-events: auto;
+}
+
+@media (min-width: 1100px) {
+  .guide {
+    bottom: 1.25rem;
+  }
+}
+
+/* speech bubble */
+.guide__bubble {
+  position: relative;
+  max-width: min(250px, 70vw);
+  padding: 0.7rem 0.95rem;
+  border: var(--stroke);
+  border-radius: 18px 18px 4px 18px;
+  background: var(--white);
+  box-shadow: 4px 4px 0 var(--ink);
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 1.35;
+  transform-origin: bottom right;
+  transform: scale(0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    transform 0.35s var(--bounce),
+    opacity 0.2s,
+    visibility 0.35s;
+}
+
+.guide__bubble.is-open {
+  transform: none;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* the little stage the 3D guide lives on */
+.guide__stage {
+  position: relative;
+  width: 250px;
+  border: 3px solid var(--ink);
+  border-radius: 24px;
+  box-shadow: var(--pop);
+  background: linear-gradient(180deg, #9fdbff 0%, var(--sky) 55%, #fff4e6 100%);
+  overflow: hidden;
+}
+
+.guide__canvas {
+  height: 170px;
+}
+
+.guide__canvas canvas {
+  cursor: pointer;
+}
+
+.guide__close {
+  position: absolute;
+  z-index: 1;
+  top: 0.45rem;
+  right: 0.45rem;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--white);
+}
+
+.guide__next {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  min-height: 46px;
+  padding: 0.5rem 0.9rem;
+  border-top: 3px solid var(--ink);
+  background: var(--saffron);
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-align: left;
+  transition: background 0.2s;
+}
+
+.guide__next span {
+  font-size: 0.72rem;
+}
+
+.guide__next b {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+}
+
+.guide__next b::after {
+  content: ' \25B8';
+}
+
+.guide__next:hover {
+  background: var(--yellow);
+}
+
+/* collapsed state */
+.guide-fab {
+  position: fixed;
+  z-index: 45;
+  right: 0.9rem;
+  bottom: 5.8rem;
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border: var(--stroke);
+  border-radius: 50%;
+  background: var(--saffron);
+  box-shadow: var(--pop);
+  transform: scale(0);
+  transition: transform 0.4s var(--bounce);
+}
+
+.guide-fab.is-visible {
+  transform: none;
+}
+
+@media (min-width: 1100px) {
+  .guide-fab {
+    bottom: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .guide__stage {
+    width: 150px;
+    border-radius: 18px;
+  }
+  .guide__canvas {
+    height: 104px;
+  }
+  .guide__next {
+    min-height: 40px;
+    padding: 0.35rem 0.6rem;
+  }
+  .guide__next span {
+    display: none;
+  }
+  .guide__next b {
+    font-size: 0.72rem;
+  }
+  .guide__bubble {
+    font-size: 0.82rem;
+    max-width: 200px;
+  }
+}
