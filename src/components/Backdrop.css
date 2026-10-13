@@ -1,0 +1,213 @@
+/* live values are written to <html> by Backdrop.jsx; these are the starting defaults */
+:root {
+  --bd-top: #ffd2ad;
+  --bd-bottom: #fff3e3;
+  --bd-night: 0;
+  --bd-p: 0;
+  --bd-scroll: 0px;
+  --bd-sun-x: 30vw;
+  --bd-sun-y: 100vh;
+  --bd-ink: rgba(20, 20, 20, 0.16); /* doodles + contour lines: dark by day, light by night */
+}
+
+/* sits behind all page content; #root is the stacking context (see base.css) */
+.backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* ---------- fixed sky layer ---------- */
+.backdrop__sky {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--bd-top) 0%, var(--bd-bottom) 100%);
+}
+
+/* the sun: a soft glowing disc that arcs across the screen */
+.backdrop__sun {
+  position: absolute;
+  left: var(--bd-sun-x);
+  top: var(--bd-sun-y);
+  width: clamp(160px, 26vmin, 320px);
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    #fffbe8 0%,
+    #ffe48a 18%,
+    rgba(255, 196, 0, 0.75) 28%,
+    rgba(255, 153, 51, 0.35) 45%,
+    rgba(255, 153, 51, 0) 70%
+  );
+  opacity: calc(1 - var(--bd-night));
+}
+
+.backdrop__moon {
+  position: absolute;
+  top: 12vh;
+  right: 14vw;
+  width: clamp(60px, 9vmin, 110px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  box-shadow:
+    inset -18px -6px 0 0 #fff6d6,
+    0 0 60px 10px rgba(255, 246, 214, 0.25);
+  rotate: -20deg;
+  opacity: var(--bd-night);
+  transform: translateY(calc((1 - var(--bd-night)) * 60px));
+}
+
+.backdrop__stars {
+  position: absolute;
+  inset: 0;
+  opacity: var(--bd-night);
+}
+
+.backdrop__stars i {
+  position: absolute;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+  animation: twinkle 3.2s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  50% {
+    opacity: 0.25;
+    transform: scale(0.6);
+  }
+}
+
+/* drifting colour glows: India saffron + green, tech cyan, travel coral */
+.glow {
+  position: absolute;
+  width: 70vmax;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  opacity: calc(0.75 - var(--bd-night) * 0.45);
+  will-change: transform;
+}
+
+.glow--saffron {
+  top: -30vmax;
+  left: -25vmax;
+  background: radial-gradient(circle, rgba(255, 153, 51, 0.38), rgba(255, 153, 51, 0) 62%);
+  animation: drift-a 34s ease-in-out infinite alternate;
+}
+
+.glow--green {
+  bottom: -35vmax;
+  right: -28vmax;
+  background: radial-gradient(circle, rgba(45, 190, 79, 0.28), rgba(45, 190, 79, 0) 62%);
+  animation: drift-b 40s ease-in-out infinite alternate;
+}
+
+.glow--cyan {
+  top: 10vh;
+  right: -35vmax;
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.22), rgba(0, 229, 255, 0) 60%);
+  animation: drift-c 46s ease-in-out infinite alternate;
+}
+
+.glow--coral {
+  bottom: -30vmax;
+  left: -20vmax;
+  background: radial-gradient(circle, rgba(255, 111, 97, 0.26), rgba(255, 111, 97, 0) 60%);
+  animation: drift-b 38s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes drift-a {
+  to {
+    transform: translate(18vw, 14vh) scale(1.15);
+  }
+}
+
+@keyframes drift-b {
+  to {
+    transform: translate(-16vw, -12vh) scale(1.1);
+  }
+}
+
+@keyframes drift-c {
+  to {
+    transform: translate(-22vw, 20vh) scale(0.9);
+  }
+}
+
+/* trekking-map contour lines, drifting slowly with scroll */
+.backdrop__topo {
+  position: absolute;
+  left: 0;
+  top: -5vh;
+  width: 100%;
+  height: 150vh;
+  transform: translateY(calc(var(--bd-p) * -45vh));
+}
+
+.backdrop__topo path {
+  fill: none;
+  stroke: var(--bd-ink);
+  stroke-width: 1.4;
+  opacity: 0.75;
+}
+
+/* fine film grain, so the gradients feel printed rather than flat */
+.backdrop__grain {
+  position: absolute;
+  inset: -50%;
+  opacity: 0.09;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- page-length doodle layer ---------- */
+.backdrop__doodles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.doodle {
+  position: absolute;
+  transform: translateY(calc(var(--bd-scroll) * var(--depth) * -1)) rotate(var(--rot));
+  will-change: transform;
+}
+
+.doodle svg {
+  width: 100%;
+  height: 100%;
+  animation: bob-doodle 7s ease-in-out infinite;
+  animation-delay: inherit;
+}
+
+@keyframes bob-doodle {
+  50% {
+    transform: translateY(-14px) rotate(4deg);
+  }
+}
+
+@media (max-width: 720px) {
+  /* fewer, smaller doodles on phones */
+  .doodle:nth-child(3n) {
+    display: none;
+  }
+  .doodle {
+    scale: 0.75;
+  }
+}
+
+/* reduced motion: keep the sky changing (it follows scroll), stop everything that moves on its own */
+.backdrop.is-still .glow,
+.backdrop.is-still .doodle svg,
+.backdrop.is-still .backdrop__stars i {
+  animation: none;
+}
+
+.backdrop.is-still .doodle {
+  transform: rotate(var(--rot));
+}
