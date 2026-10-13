@@ -1,7 +1,3 @@
-.trips {
-  background: linear-gradient(180deg, transparent, var(--sky) 12%, var(--sky) 88%, transparent);
-}
-
 .trips__tags {
   display: flex;
   flex-wrap: wrap;

@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect, useState } from 'react'
 import Nav from './components/Nav'
+import Backdrop from './components/Backdrop'
 import Companion from './components/Companion'
 import { stops } from './data/stops'
 import { site } from './data/profile'
@@ -52,6 +53,7 @@ export default function App() {
 
   return (
     <>
+      <Backdrop />
       <a className="skip-link" href="#main">
         Skip to content
       </a>

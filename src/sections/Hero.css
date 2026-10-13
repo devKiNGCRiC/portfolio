@@ -1,10 +1,6 @@
 .hero {
   padding-top: clamp(5.5rem, 4rem + 5vw, 8rem);
   padding-bottom: clamp(2.5rem, 2rem + 3vw, 4rem);
-  /* soft saffron → white → green wash behind the hero */
-  background:
-    radial-gradient(60% 50% at 0% 0%, rgba(255, 153, 51, 0.18), transparent 70%),
-    radial-gradient(50% 50% at 100% 100%, rgba(45, 190, 79, 0.16), transparent 70%);
 }
 
 .hero__grid {
