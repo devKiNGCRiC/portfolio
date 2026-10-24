@@ -10,7 +10,15 @@ import { projects, workbench } from '../data/projects'
 import { links, site } from '../data/profile'
 import './Projects.css'
 
-const THEMES = { safarnama: 'sun', wanderlink: 'sky', portfolio: 'peach' }
+// card colour per project id; anything else is white
+const THEMES = {
+  safarnama: 'saffron',
+  wanderlens: 'sky',
+  tripwise: 'coral',
+  pinchpop: 'green',
+  algovisualizer: 'yellow',
+  wanderlink: 'sky',
+}
 
 function ProjectCard({ project, onOpen }) {
   const reveal = useReveal({ threshold: 0.1 })

@@ -79,7 +79,138 @@ function PortfolioArt() {
   )
 }
 
-const art = { safarnama: SafarnamaArt, wanderlink: WanderLinkArt, portfolio: PortfolioArt }
+// Wanderlens: a map with photo-spot pins and a polaroid
+function WanderlensArt() {
+  return (
+    <>
+      <div className="art__layer" style={{ '--d': 0.02 }}>
+        <svg viewBox="0 0 600 360" preserveAspectRatio="xMidYMid slice">
+          <rect width="600" height="360" fill="#d3f5da" />
+          <path d="M-10 250 C 120 200, 200 290, 330 230 S 520 180, 620 220" fill="none" stroke="#3fa9f5" strokeWidth="18" strokeLinecap="round" />
+          <path d="M60 60 C 140 120, 200 40, 300 110 S 460 60, 560 120" fill="none" stroke="#17171a" strokeWidth="2.5" strokeDasharray="6 9" />
+          {[
+            [120, 150, '#ff9933'],
+            [300, 110, '#e53935'],
+            [470, 175, '#00b8d4'],
+          ].map(([x, y, c]) => (
+            <g key={x} transform={`translate(${x} ${y})`}>
+              <path d="M0 0 C -22 -26, -22 -52, 0 -56 C 22 -52, 22 -26, 0 0 Z" fill={c} {...stroke} />
+              <circle cx="0" cy="-36" r="8" fill="#fff" {...stroke} />
+            </g>
+          ))}
+        </svg>
+      </div>
+      <div className="art__layer art__polaroid" style={{ '--d': 0.13 }}>
+        <span className="mini-polaroid">
+          <i />
+          <b>golden hour</b>
+        </span>
+      </div>
+    </>
+  )
+}
+
+// TripWise: day-by-day itinerary cards
+function TripWiseArt() {
+  return (
+    <>
+      <div className="art__layer" style={{ '--d': 0.02 }}>
+        <svg viewBox="0 0 600 360" preserveAspectRatio="xMidYMid slice">
+          <rect width="600" height="360" fill="#ffe0db" />
+          <path d="M0 290 L110 170 L190 240 L300 120 L410 230 L500 160 L600 250 V360 H0Z" fill="#8a97ad" {...stroke} />
+          <path d="M270 154 L300 120 L330 154 Z" fill="#fff" {...stroke} />
+          <circle cx="500" cy="80" r="34" fill="#ffc400" {...stroke} />
+        </svg>
+      </div>
+      <div className="art__layer art__days" style={{ '--d': 0.12 }}>
+        {['Day 1', 'Day 2', 'Day 3'].map((d, i) => (
+          <span key={d} className="day-card" style={{ '--r': `${(i - 1) * 5}deg` }}>
+            <b>{d}</b>
+            <i />
+            <i />
+          </span>
+        ))}
+      </div>
+    </>
+  )
+}
+
+// PinchPop: two hands framing a shot
+function PinchPopArt() {
+  return (
+    <>
+      <div className="art__layer" style={{ '--d': 0.02 }}>
+        <svg viewBox="0 0 600 360" preserveAspectRatio="xMidYMid slice">
+          <rect width="600" height="360" fill="#d3f5da" />
+          {[0, 1, 2].map((r) =>
+            [0, 1, 2].map((c) => (
+              <rect
+                key={`${r}${c}`}
+                x={220 + c * 56}
+                y={100 + r * 56}
+                width="52"
+                height="52"
+                rx="6"
+                fill={['#ff9933', '#bfe6ff', '#ffc400', '#2dbe4f', '#ff6f61', '#bfe6ff', '#fff', '#ffc400', '#ff9933'][r * 3 + c]}
+                {...stroke}
+              />
+            )),
+          )}
+        </svg>
+      </div>
+      <div className="art__layer" style={{ '--d': 0.14 }}>
+        <svg viewBox="0 0 600 360" preserveAspectRatio="xMidYMid slice">
+          {/* finger "frame" corners */}
+          <path d="M170 150 V70 H250" fill="none" stroke="#e53935" strokeWidth="12" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M430 210 V290 H350" fill="none" stroke="#e53935" strokeWidth="12" strokeLinecap="round" strokeLinejoin="round" />
+          <circle cx="250" cy="70" r="14" fill="#c68642" {...stroke} />
+          <circle cx="350" cy="290" r="14" fill="#c68642" {...stroke} />
+        </svg>
+      </div>
+    </>
+  )
+}
+
+// AlgoVisualizer Pro: sorting bars mid-swap
+function AlgoArt() {
+  const bars = [140, 60, 200, 100, 240, 80, 170, 120]
+  return (
+    <>
+      <div className="art__layer" style={{ '--d': 0.02 }}>
+        <svg viewBox="0 0 600 360" preserveAspectRatio="xMidYMid slice">
+          <rect width="600" height="360" fill="#fff1b8" />
+          {bars.map((h, i) => (
+            <rect
+              key={i}
+              x={90 + i * 54}
+              y={310 - h}
+              width="40"
+              height={h}
+              rx="6"
+              fill={i === 2 || i === 3 ? '#e53935' : i < 2 ? '#2dbe4f' : '#0b1a6e'}
+              {...stroke}
+            />
+          ))}
+          <path d="M215 80 C 235 50, 285 50, 305 80" fill="none" stroke="#17171a" strokeWidth="3" />
+          <path d="M296 70 L305 80 L292 84" fill="none" stroke="#17171a" strokeWidth="3" strokeLinejoin="round" />
+        </svg>
+      </div>
+      <div className="art__layer art__pin" style={{ '--d': 0.12 }}>
+        <span className="sticker">swap!</span>
+      </div>
+    </>
+  )
+}
+
+const art = {
+  safarnama: SafarnamaArt,
+  wanderlink: WanderLinkArt,
+  portfolio: PortfolioArt,
+  wanderlens: WanderlensArt,
+  tripwise: TripWiseArt,
+  pinchpop: PinchPopArt,
+  algovisualizer: AlgoArt,
+}
 
 export default function ProjectArt({ project }) {
   if (project.image) {

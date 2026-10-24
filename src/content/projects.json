@@ -2,8 +2,8 @@
   "projects": [
     {
       "id": "safarnama",
-      "name": "Safarnama",
-      "tagline": "Eco-tourism & traveller hub",
+      "name": "SafarNama",
+      "tagline": "Eco-tourism platform + traveller community",
       "status": "Completed",
       "featured": true,
       "year": "2025",
@@ -12,190 +12,178 @@
         "detail": "₹10,000 scholarship from the AEC Class 88′ Foundation",
         "date": "8 Feb 2025"
       },
-      "summary": "A travel platform built around responsible tourism, local discovery and a community of travellers. It started with my own solo trips and slowly grew into a much bigger product idea.",
+      "summary": "SafarNama (\"travelogue\" in Hindi) is a full-stack platform for exploring India responsibly: find eco-friendly destinations, plan a trip day by day, and share it with SafarGram, a built-in traveller community. A team project; I worked on both the frontend and the backend.",
       "story": {
-        "problem": "Travel information is scattered across blogs, reels and random forums, and very little of it nudges people to travel responsibly.",
-        "idea": "One traveller-first place that mixes discovery, eco-tourism and community, so planning a trip and caring about the place happen together.",
-        "solution": "A single platform with guides, itineraries, a community forum, local food and events, safety tips, a carbon footprint calculator, an AI chatbot and an admin panel.",
-        "learned": "Full-stack development end to end, thinking like a product person, UI/UX decisions, working in a team, and building around a real problem instead of a tutorial."
+        "problem": "Travel information is scattered across blogs, reels and random forums, and very little of it nudges people to travel responsibly or to look beyond the usual tourist spots.",
+        "idea": "One traveller-first place that mixes discovery, eco-tourism and community, so planning a trip and caring about the place happen together. It grew out of my own solo trips.",
+        "solution": "A MERN app with a real-time layer: eco-friendly destinations on an interactive map with weather, permits and best-time-to-visit; a rule-based itinerary planner that builds a day-by-day route; SafarGram with posts, 24-hour stories, chat and live notifications over Socket.IO; a community forum, events and eco-guides; and an admin area for moderation.",
+        "learned": "Building a large full-stack app with a team, real-time features with Socket.IO, security basics (hashed passwords, rate limiting, account lockout), testing an API against an in-memory database, and product thinking around a real problem."
       },
       "features": [
-        "Travel guides",
-        "Eco-tourism info",
-        "Itineraries",
+        "Eco-friendly destinations",
+        "Interactive map (Leaflet)",
+        "Weather & best time to visit",
+        "Day-by-day itinerary planner",
+        "SafarGram posts & hashtags",
+        "24-hour stories",
+        "One-to-one & group chat",
+        "Live notifications",
         "Community forum",
-        "Stays & accommodation",
-        "Local cuisine",
-        "Events",
-        "Volunteer opportunities",
-        "Safety tips",
-        "Photo galleries",
-        "Gear recommendations",
-        "AI chatbot",
-        "Admin panel",
-        "Eco challenges",
-        "Carbon footprint calculator",
-        "Traveller profiles",
-        "Travel history",
-        "Map",
-        "Feedback",
-        "Booking concepts"
+        "Eco-tourism events",
+        "Eco-guides",
+        "Travel blogs",
+        "Photo gallery",
+        "Carbon calculator",
+        "Bucket list",
+        "Reporting & moderation",
+        "Admin dashboard",
+        "Password reset by email",
+        "Rate-limited, locked-down auth",
+        "API tests (Supertest)"
       ],
-      "tech": [
-        "MongoDB",
-        "Express",
-        "React",
-        "Node.js"
-      ],
+      "tech": ["React", "Redux Toolkit", "SCSS", "Leaflet", "Node.js", "Express", "MongoDB", "Socket.IO", "JWT", "Cloudinary", "Nodemailer"],
       "evolution": [
-        {
-          "name": "Safarnama, powered by TripWise",
-          "note": "AI itinerary generation",
-          "status": "Concept"
-        },
-        {
-          "name": "SafarGram",
-          "note": "social layer for travellers",
-          "status": "Concept"
-        }
+        { "name": "SafarGram", "note": "the Instagram-style traveller community, now built into SafarNama", "status": "Completed" },
+        { "name": "TripWise", "note": "AI itinerary planning, now growing as its own project", "status": "In progress" }
       ],
       "repo": "https://github.com/devKiNGCRiC/SafarNama",
       "live": ""
     },
     {
-      "id": "wanderlink",
-      "name": "WanderLink",
-      "tagline": "Conversations between travellers",
-      "status": "In progress",
-      "featured": false,
-      "year": "2025",
-      "summary": "A chat and community app for travellers. The idea is simple: the best travel tips come from people who were just there.",
-      "story": {
-        "problem": "On the road, the most useful information comes from other travellers, but there is no easy way to find and talk to them.",
-        "idea": "A messaging app where travellers can meet around places and trips, from one-to-one chats to open communities.",
-        "solution": "Planned: one-to-one and group chat, communities, public conversations and chat requests, plus the everyday controls (pin, mute, archive, favourites, block, clear) and media sharing.",
-        "learned": "Designing real-time features and data models before writing code, and scoping. Not every feature has to exist on day one."
-      },
-      "features": [
-        "One-to-one chat",
-        "Group chat",
-        "Communities",
-        "Public conversations",
-        "Chat requests",
-        "Archive",
-        "Mute & pin",
-        "Favourites",
-        "Block",
-        "Clear & delete chat",
-        "Media sharing"
-      ],
-      "tech": [
-        "React Native",
-        "Expo",
-        "Node.js",
-        "MongoDB"
-      ],
-      "repo": "",
-      "live": ""
-    },
-    {
-      "id": "portfolio",
-      "name": "This website",
-      "tagline": "Half terminal, half trail",
+      "id": "wanderlens",
+      "name": "Wanderlens",
+      "tagline": "MCA capstone: photo spots by travellers, for travellers",
       "status": "In progress",
       "featured": false,
       "year": "2026",
-      "summary": "The site you are on. A hand-drawn 3D terrain on canvas, a live GitHub feed, and a hidden terminal. Built without a UI kit.",
+      "summary": "A social discovery app for travellers and photographers. Real people post geo-tagged photo spots with tips, and you can meet others heading to the same place. Community comes first; AI only helps.",
       "story": {
-        "problem": "Most portfolio templates could belong to anyone.",
-        "idea": "Show the two things I actually do, building and travelling, in one visual language.",
-        "solution": "React + Vite, a custom canvas terrain with no 3D library, plain CSS design tokens, and the GitHub public API.",
-        "learned": "Performance budgets, accessibility, and how much restraint good design takes."
+        "problem": "Most travel apps put an AI concierge at the centre and treat the people as an afterthought. Photographers end up trading spot tips in DMs and group chats.",
+        "idea": "A crowdsourced photo-spot map where nothing is AI-generated, a connection layer to meet travellers by destination and dates, and lightweight AI that only works with the community's real spots.",
+        "solution": "A React Native app with a spot feed and map, multi-photo geo-tagged posts with camera settings, mutual connections, trip matching, real-time chat, a geo-tag camera with photo styles, and an AI photo-trail planner.",
+        "learned": "Geo data with PostGIS, real-time features with Supabase, privacy by design (photos are re-encoded without hidden GPS data), and why place names need to come from the person, not the phone's geocoder, especially in Arunachal."
       },
-      "features": [],
-      "tech": [
-        "React",
-        "Vite",
-        "Canvas",
-        "CSS"
+      "features": [
+        "Spot feed: For you, Nearby, Most liked",
+        "Golden-hour countdown",
+        "Map with clustered spots",
+        "1–10 photos per spot",
+        "Camera settings per photo",
+        "Geo-tag camera",
+        "Photo styles (Polaroid, Film, Noir…)",
+        "Mutual connections",
+        "Trip matching",
+        "Real-time chat",
+        "AI photo-trail planner",
+        "AI caption suggestions"
       ],
+      "tech": ["React Native", "Expo", "TypeScript", "Supabase", "PostGIS", "MapLibre", "Gemini / Groq"],
+      "repo": "https://github.com/devKiNGCRiC/wanderlens",
+      "live": ""
+    },
+    {
+      "id": "tripwise",
+      "name": "TripWise",
+      "tagline": "Plan less. Wander more.",
+      "status": "In progress",
+      "featured": false,
+      "year": "2026",
+      "summary": "An AI-powered travel planner. Tell it where, when, your budget and your vibe, and it builds a day-by-day itinerary with costs, local tips and a packing list, all running on free tiers.",
+      "story": {
+        "problem": "Planning a trip in India means a dozen tabs, and generic AI plans ignore budget, season and how you actually like to travel.",
+        "idea": "Grow SafarNama's itinerary idea into its own product: real AI plans shaped by budget, crew and vibe, wrapped in a design that feels like India's many landscapes.",
+        "solution": "A React + TypeScript site over an Express API: a planner wizard, AI itineraries that appear day by day (Gemini with Groq as fallback, every answer validated), PDF and share links, a travel passport with trip stamps, and friends.",
+        "learned": "Working with LLM APIs reliably (fallbacks, validation, caching, daily limits), designing around free-tier limits, and building a big visual system: seven living Indian landscapes drawn in the browser."
+      },
+      "features": [
+        "AI day-by-day itineraries",
+        "Costs, tips & packing list",
+        "Regenerate a single day",
+        "PDF download & share link",
+        "Plan cache for similar trips",
+        "\"Seven Worlds\" living landscapes",
+        "Day & night themes",
+        "Travel passport & trip stamps",
+        "Friends & privacy controls",
+        "Secure sessions"
+      ],
+      "tech": ["React 19", "TypeScript", "Tailwind CSS", "TanStack Query", "Node.js", "Express", "MongoDB", "Gemini", "Groq"],
+      "repo": "https://github.com/devKiNGCRiC/tripwise",
+      "live": ""
+    },
+    {
+      "id": "pinchpop",
+      "name": "PinchPop",
+      "tagline": "A photobooth you control with your hands",
+      "status": "In progress",
+      "featured": false,
+      "year": "2026",
+      "summary": "A gesture-controlled photobooth game. Frame a shot with your fingers, pinch to capture, solve your own photo as a 3×3 puzzle, and keep it as a polaroid. The web version is live; it's growing into a web + mobile platform.",
+      "story": {
+        "problem": "Photobooths are all buttons and touchscreens. Taking the photo is the least fun part.",
+        "idea": "Make the camera itself the game controller: hand gestures to frame, capture and play.",
+        "solution": "Real-time hand tracking in the browser with MediaPipe: frame with index fingers, pinch to capture, drag puzzle pieces with a pinch, then the solved puzzle shatters into a polaroid you can save.",
+        "learned": "Computer vision on the web, turning noisy hand landmarks into reliable gestures, Canvas rendering, and Web Audio for feedback."
+      },
+      "features": ["Hand-tracked framing", "Pinch to capture", "3-second countdown", "3×3 photo puzzle", "Gesture drag & drop", "Shatter effect", "Polaroid memory"],
+      "tech": ["React", "TypeScript", "Vite", "MediaPipe", "Canvas", "Web Audio", "Tailwind CSS"],
+      "repo": "https://github.com/devKiNGCRiC/PinchPop",
+      "live": "https://pinchpop.vercel.app"
+    },
+    {
+      "id": "algovisualizer",
+      "name": "AlgoVisualizer Pro",
+      "tagline": "Watch sorting algorithms think",
+      "status": "Completed",
+      "featured": false,
+      "year": "2025",
+      "summary": "An interactive DSA learning tool: step-by-step animations of five sorting algorithms with live comparison, swap and timing stats, plus a side-by-side mode that scores algorithms on real performance.",
+      "story": {
+        "problem": "Big-O tables are easy to memorise and hard to feel. Watching an algorithm work makes it click.",
+        "idea": "Animate the algorithms and measure them live, so theory and real numbers sit side by side.",
+        "solution": "Bubble, Selection, Insertion, Merge and Quick Sort with speed control and custom input, live counters, and a comparison mode with theoretical and actual-results views.",
+        "learned": "Modelling algorithms as animation steps, state management with Zustand, and smooth motion with Framer Motion."
+      },
+      "features": ["5 sorting algorithms", "Step-by-step animation", "Comparisons, swaps & timing", "Custom input & speed control", "Theory vs actual comparison", "Performance scoring"],
+      "tech": ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion", "Zustand"],
+      "repo": "https://github.com/devKiNGCRiC/dsa-interactive-visualizer",
+      "live": "https://algovisualizer-pro.vercel.app"
+    },
+    {
+      "id": "wanderlink",
+      "name": "WanderLink",
+      "tagline": "Messaging and trip planning for explorers",
+      "status": "In progress",
+      "featured": false,
+      "year": "2025",
+      "summary": "A traveller-focused Android app that combines messaging, trip planning and social networking. The best travel tips come from people who were just there. (Private repo for now.)",
+      "story": {
+        "problem": "On the road, the most useful information comes from other travellers, but there is no easy way to find and talk to them.",
+        "idea": "An app where travellers can meet around places and trips, from one-to-one chats to open communities, and plan trips together.",
+        "solution": "A native Android app with traveller messaging (one-to-one, groups, communities, chat requests), trip planning and a social feed for discovering and sharing travel spots.",
+        "learned": "Native Android with Java and XML layouts, and designing chat features and data models before writing code."
+      },
+      "features": ["One-to-one chat", "Group chat", "Communities", "Chat requests", "Trip planning", "Share travel spots", "Pin, mute, archive & block"],
+      "tech": ["Android", "Java", "XML"],
       "repo": "",
       "live": ""
     }
   ],
   "workbench": [
-    {
-      "name": "wanderlens",
-      "note": "Hyper-local, community-verified photo spots for travellers and photographers",
-      "tech": "TypeScript",
-      "group": "Travel & culture"
-    },
-    {
-      "name": "katha-heritage-platform",
-      "note": "A platform for preserving and sharing Indian heritage, history and stories",
-      "tech": "JavaScript",
-      "group": "Travel & culture"
-    },
-    {
-      "name": "EcoVibes-Static-Website",
-      "note": "An early static site about eco-tourism and sustainable travel",
-      "tech": "HTML & CSS",
-      "group": "Travel & culture"
-    },
-    {
-      "name": "blinktalk",
-      "note": "Real-time chat with private messages, group rooms and anonymous chat",
-      "tech": "JavaScript",
-      "group": "Web & apps"
-    },
-    {
-      "name": "DevBlog",
-      "note": "A full-stack blogging platform for developers",
-      "tech": "MERN",
-      "group": "Web & apps"
-    },
-    {
-      "name": "dsa-interactive-visualizer",
-      "note": "Interactive data structures and algorithms visualizer",
-      "tech": "React, TypeScript",
-      "group": "Web & apps",
-      "live": "https://algovisualizer-pro.vercel.app"
-    },
-    {
-      "name": "PinchPop",
-      "note": "A gesture-controlled photobooth game. Frame with your hands, pinch to capture",
-      "tech": "TypeScript",
-      "group": "Web & apps"
-    },
-    {
-      "name": "UniAthleteIQ",
-      "note": "Cross-sport injury prediction using machine learning",
-      "tech": "Python, Jupyter",
-      "group": "AI & data"
-    },
-    {
-      "name": "moodmind",
-      "note": "An AI-powered mood-tracking journal",
-      "tech": "JavaScript",
-      "group": "AI & data"
-    },
-    {
-      "name": "MindShield",
-      "note": "A cross-platform app that fights phone addiction with financial stakes",
-      "tech": "Dart",
-      "group": "Mobile"
-    },
-    {
-      "name": "rupeemate",
-      "note": "Track expenses, split bills, manage money",
-      "tech": "TypeScript",
-      "group": "Web & apps"
-    },
-    {
-      "name": "bmi-calculator",
-      "note": "A small React Native BMI calculator",
-      "tech": "React Native",
-      "group": "Mobile"
-    }
+    { "name": "katha-heritage-platform", "note": "KATHA: a platform for Indian heritage, history, mythology and folk tales", "tech": "MERN + React Native", "group": "Travel & culture" },
+    { "name": "EcoVibes-Static-Website", "note": "An early responsive site about eco-tourism and sustainable travel", "tech": "HTML & CSS", "group": "Travel & culture" },
+    { "name": "blinktalk", "note": "Real-time chat: read receipts, group rooms, anonymous stranger chat, 5 themes", "tech": "React, Socket.IO, MongoDB", "group": "Web & apps" },
+    { "name": "DevBlog", "note": "Medium-style blogging platform with JWT auth, built during the EDXcellence virtual internship", "tech": "MERN", "group": "Web & apps" },
+    { "name": "rupeemate", "note": "Track expenses, split bills, manage money (in progress)", "tech": "TypeScript", "group": "Web & apps" },
+    { "name": "votewise-election-assistant", "note": "VoteWise: a PWA to learn how elections work, built for PromptWars Virtual", "tech": "Next.js, Tailwind", "group": "Web & apps" },
+    { "name": "expense-tracker", "note": "Expense tracker with hand-written search and multi-level sorting", "tech": "HTML, CSS, JavaScript", "group": "Web & apps", "live": "https://devKiNGCRiC.github.io/expense-tracker" },
+    { "name": "portfolio", "note": "This site: a 3D road trip through India with a clay guide", "tech": "React, three.js", "group": "Web & apps" },
+    { "name": "UniAthleteIQ", "note": "Cross-sport injury-risk prediction on 87,865 records, with SHAP explanations", "tech": "Python, XGBoost", "group": "AI & data" },
+    { "name": "moodmind", "note": "MoodMind: an AI journal that reads your mood and suggests what might help", "tech": "React, Gemini API", "group": "AI & data" },
+    { "name": "MindShield", "note": "Beat phone addiction by putting a little money on staying focused", "tech": "Flutter, Firebase", "group": "Mobile" },
+    { "name": "bmi-calculator", "note": "A polished BMI app with custom SVG gauges and history", "tech": "React Native, Expo", "group": "Mobile" },
+    { "name": "DSA-in-CPP-by-KiNG", "note": "C++ and DSA, from basics to advanced", "tech": "C++", "group": "Practice & DSA" },
+    { "name": "java-practice-dsa", "note": "Java practice programs and DSA exercises", "tech": "Java", "group": "Practice & DSA" },
+    { "name": "Python-journey", "note": "My Python learning log: exercises, mini-projects and notes", "tech": "Python", "group": "Practice & DSA" }
   ]
 }
