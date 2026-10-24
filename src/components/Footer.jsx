@@ -5,6 +5,7 @@ export default function Footer() {
     ['GitHub', links.github],
     ['Instagram', links.instagram],
     ['LinkedIn', links.linkedin],
+    ['X', links.x],
     ['Email', links.email && `mailto:${links.email}`],
   ].filter(([, href]) => href)
 

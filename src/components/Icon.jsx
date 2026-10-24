@@ -10,6 +10,7 @@ const paths = {
       <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" />
     </>
   ),
+  x: <path d="M4 4h4.5L20 20h-4.5zM19.5 4l-6.6 7.4M4.5 20l6.6-7.4" />,
   linkedin: (
     <>
       <rect x="3" y="3" width="18" height="18" rx="3" />

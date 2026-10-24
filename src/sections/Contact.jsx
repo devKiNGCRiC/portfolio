@@ -11,6 +11,7 @@ const rows = [
   { key: 'github', label: 'GitHub', icon: 'github', href: links.github, value: `@${links.githubUser}` },
   { key: 'linkedin', label: 'LinkedIn', icon: 'linkedin', href: links.linkedin, value: links.linkedin && 'Connect' },
   { key: 'instagram', label: 'Instagram', icon: 'instagram', href: links.instagram, value: links.instagramHandle },
+  { key: 'x', label: 'X', icon: 'x', href: links.x, value: links.xHandle },
 ]
 
 export default function Contact() {

@@ -49,6 +49,8 @@ collections:
               - { name: githubUser, label: GitHub username, widget: string, hint: Used for the live repo board }
               - { name: instagram, label: Instagram URL, widget: string }
               - { name: instagramHandle, label: Instagram handle, widget: string }
+              - { name: x, label: X (Twitter) URL, widget: string, required: false }
+              - { name: xHandle, label: X handle, widget: string, required: false }
               - name: resume
                 label: Resume (PDF)
                 widget: file
@@ -178,8 +180,7 @@ collections:
             summary: '{{name}} ({{status}})'
             fields:
               - { name: id, label: ID, widget: string, hint: 'Short and unique, e.g. safarnama. safarnama, wanderlink and portfolio have custom art.' }
-              - { name: name, label: Real name, widget: string, hint: Used for titles and the boarding pass }
-              - { name: nickname, label: Nickname / brand, widget: string, hint: Shown in the logo, footer and by the guide }
+              - { name: name, label: Name, widget: string }
               - { name: tagline, label: Tagline, widget: string }
               - { name: status, label: Status, widget: select, options: [Completed, In progress, Experimental, Concept] }
               - { name: featured, label: Big featured card?, widget: boolean, default: false }
@@ -219,8 +220,7 @@ collections:
                 widget: list
                 required: false
                 fields:
-                  - { name: name, label: Real name, widget: string, hint: Used for titles and the boarding pass }
-              - { name: nickname, label: Nickname / brand, widget: string, hint: Shown in the logo, footer and by the guide }
+                  - { name: name, label: Name, widget: string }
                   - { name: note, label: Note, widget: string }
                   - { name: status, label: Status, widget: select, options: [Completed, In progress, Experimental, Concept] }
               - { name: repo, label: GitHub repo URL, widget: string, required: false }
@@ -235,7 +235,7 @@ collections:
               - { name: name, label: Repo name, widget: string, hint: Must match the GitHub repo name }
               - { name: note, label: One-liner, widget: string }
               - { name: tech, label: Tech, widget: string }
-              - { name: group, label: Group, widget: select, options: [Travel & culture, Web & apps, AI & data, Mobile] }
+              - { name: group, label: Group, widget: select, options: [Travel & culture, Web & apps, AI & data, Mobile, Practice & DSA] }
               - { name: repo, label: Repo URL (only if different), widget: string, required: false }
               - { name: live, label: Live demo URL, widget: string, required: false }
 
