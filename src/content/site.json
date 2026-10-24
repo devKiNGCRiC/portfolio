@@ -7,24 +7,26 @@
     "grewUp": "Arunachal Pradesh",
     "basedIn": "Chennai",
     "timezone": "Asia/Kolkata",
-    "currently": "Learning in public: open source, React Native & ML basics"
+    "currently": "Building Wanderlens (my MCA capstone) and TripWise, practising DSA daily, learning Next.js & system design"
   },
   "links": {
     "github": "https://github.com/devKiNGCRiC",
     "githubUser": "devKiNGCRiC",
     "instagram": "https://www.instagram.com/safarnama_of_king/",
     "instagramHandle": "@safarnama_of_king",
-    "linkedin": "",
-    "email": "",
-    "resume": "/resume.pdf"
+    "linkedin": "https://www.linkedin.com/in/raj-roy-kc2806/",
+    "email": "kingcric28@gmail.com",
+    "resume": "/resume.pdf",
+    "x": "https://x.com/KiNGCRiC28",
+    "xHandle": "@KiNGCRiC28"
   },
   "hero": {
-    "status": "MCA student at SRM, from Northeast India",
-    "intro": "Hey, I’m **Raj Roy**, a.k.a. **KiNG** online. I make web and mobile apps, poke at AI, and travel solo with a camera. Most of my ideas start somewhere on the road. Hop in, I’ll be your guide.",
+    "status": "MCA student at SRM IST, Chennai (2025–27)",
+    "intro": "Hey, I’m **Raj Roy**, a.k.a. **KiNG** online. I build full-stack web apps (MERN), mobile apps (React Native & Android) and applied ML projects, and I travel solo with a camera. Most of my ideas start somewhere on the road. Hop in, I’ll be your guide.",
     "facts": [
       {
         "big": "Special Jury Award",
-        "small": "for Safarnama, 2025"
+        "small": "for SafarNama, 2025"
       },
       {
         "big": "4,632 m",
@@ -33,23 +35,26 @@
     ]
   },
   "ticker": [
-    "Safarnama won the Special Jury Award",
-    "MCA @ SRM",
+    "SafarNama won the Special Jury Award",
+    "MCA @ SRM IST",
+    "building Wanderlens, my MCA capstone",
+    "TripWise: AI trip planner in progress",
+    "first open-source PR merged",
+    "practising DSA daily",
+    "learning Next.js & system design",
     "from Northeast India",
-    "solo to 4,632 m",
-    "learning React Native",
-    "first open-source PR loading…",
-    "always carrying a camera"
+    "consistency beats intensity"
   ],
   "about": {
     "portrait": "",
     "lead": "Most of my projects start with a problem I ran into ==on the road==.",
     "paragraphs": [
       "I’m from **Northeast India** and grew up in **Arunachal Pradesh**, surrounded by hills, rivers and a lot of quiet. That’s where two habits started: wanting to see what’s past the next ridge, and wanting to know how things actually work.",
-      "I did my **BCA at Assam Don Bosco University** and moved to Chennai for my **MCA at SRM**. Somewhere in between I noticed my two favourite things weren’t separate at all.",
-      "I travel solo a lot. And on the road I keep running into small problems: scattered info, no easy way to meet other travellers, nothing nudging people to travel responsibly. Those problems turn into my projects. **Safarnama** started exactly like that."
+      "I did my **BCA at Assam Don Bosco University** and moved to Chennai for my **MCA at SRM Institute of Science and Technology** (2025–27). Somewhere in between I noticed my two favourite things weren’t separate at all.",
+      "I travel solo a lot, and on the road I keep running into small problems: scattered info, no easy way to meet other travellers, nothing nudging people to travel responsibly. Those problems turn into my projects. **SafarNama**, built with my team, started exactly like that, and **Wanderlens** and **TripWise** are where it’s heading now.",
+      "These days I’m building my MCA capstone, practising DSA every day and getting ready for placements. I’m still learning, and I like it that way."
     ],
-    "signoff": "Not an expert at everything. Just a student who likes building useful things.",
+    "signoff": "Consistency beats intensity.",
     "pass": [
       {
         "label": "Class",
@@ -61,7 +66,7 @@
       },
       {
         "label": "Now at",
-        "value": "SRM University, KTR campus"
+        "value": "SRM IST, KTR campus (MCA 2025–27)"
       },
       {
         "label": "Carry-on",
@@ -82,7 +87,7 @@
     "projects": {
       "title": "Stuff I've built",
       "note": "(and am still building)",
-      "intro": "Every project has an honest status. Tap one to read the story behind it: the problem, the idea, and what I learned."
+      "intro": "Every project has an honest status. Tap one to read the story behind it: the problem, the idea, what I built and what I learned."
     },
     "skills": {
       "title": "What's in my bag",
@@ -97,7 +102,7 @@
     "github": {
       "title": "Learning in public",
       "note": "(live from GitHub)",
-      "intro": "Exploring open source one issue, pull request and code review at a time. This board shows what I pushed most recently."
+      "intro": "Exploring open source one issue, pull request and code review at a time. This board shows what I pushed most recently, live from GitHub."
     },
     "trips": {
       "title": "Off the grid",
@@ -107,13 +112,23 @@
   },
   "contact": {
     "title": "Got an idea worth building? Or a trail worth walking?",
-    "text": "I’m open to internships, collaborations, open-source pointers, or just a good chat about tech and travel. I reply slower than a chat app and faster than a letter."
+    "text": "I’m open to **internships and full-time roles (2027 batch)**, collaborations, open-source pointers, or just a good chat about tech and travel. LinkedIn is the fastest way to reach me."
   },
   "openSourceGoals": [
     {
       "text": "Put my own projects on GitHub",
       "done": true,
-      "link": ""
+      "link": "https://github.com/devKiNGCRiC?tab=repositories"
+    },
+    {
+      "text": "Open my first pull request to an open-source repo",
+      "done": true,
+      "link": "https://github.com/firstcontributions/first-contributions/pull/114986"
+    },
+    {
+      "text": "Get it reviewed and merged",
+      "done": true,
+      "link": "https://github.com/firstcontributions/first-contributions/pull/114986"
     },
     {
       "text": "Find a \"good first issue\" in a project I actually use",
@@ -121,12 +136,7 @@
       "link": ""
     },
     {
-      "text": "Open my first pull request to someone else’s repo",
-      "done": false,
-      "link": ""
-    },
-    {
-      "text": "Get it reviewed, fix things, get it merged",
+      "text": "Ship a real fix or feature to someone else’s project",
       "done": false,
       "link": ""
     },

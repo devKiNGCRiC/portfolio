@@ -25,15 +25,19 @@
           "level": "comfortable"
         },
         {
-          "name": "Python",
-          "level": "comfortable"
-        },
-        {
           "name": "Java",
           "level": "comfortable"
         },
         {
+          "name": "Python",
+          "level": "comfortable"
+        },
+        {
           "name": "C++",
+          "level": "comfortable"
+        },
+        {
+          "name": "TypeScript",
           "level": "learning"
         }
       ]
@@ -70,17 +74,25 @@
           "level": "learning"
         },
         {
-          "name": "Sass",
+          "name": "Tailwind CSS",
           "level": "learning"
         },
         {
-          "name": "Mantine UI",
+          "name": "Sass / SCSS",
           "level": "learning"
+        },
+        {
+          "name": "TanStack Query",
+          "level": "learning"
+        },
+        {
+          "name": "Next.js",
+          "level": "exploring"
         }
       ]
     },
     {
-      "pouch": "Backend",
+      "pouch": "Backend & data",
       "items": [
         {
           "name": "Node.js",
@@ -103,16 +115,24 @@
           "level": "comfortable"
         },
         {
-          "name": "JWT",
+          "name": "JWT auth",
+          "level": "comfortable"
+        },
+        {
+          "name": "Socket.IO",
           "level": "learning"
         },
         {
-          "name": "bcrypt",
+          "name": "Supabase & PostgreSQL",
           "level": "learning"
         },
         {
           "name": "Nodemailer",
           "level": "learning"
+        },
+        {
+          "name": "System design",
+          "level": "exploring"
         }
       ]
     },
@@ -128,7 +148,11 @@
           "level": "learning"
         },
         {
-          "name": "Android development",
+          "name": "Android (Java, XML)",
+          "level": "learning"
+        },
+        {
+          "name": "Flutter",
           "level": "exploring"
         }
       ]
@@ -137,19 +161,19 @@
       "pouch": "AI, ML & data",
       "items": [
         {
+          "name": "Machine learning (scikit-learn, XGBoost)",
+          "level": "learning"
+        },
+        {
+          "name": "Gemini & Groq APIs",
+          "level": "learning"
+        },
+        {
           "name": "Data analytics",
           "level": "learning"
         },
         {
-          "name": "Data visualization",
-          "level": "learning"
-        },
-        {
-          "name": "Machine learning",
-          "level": "exploring"
-        },
-        {
-          "name": "AI-powered apps",
+          "name": "Computer vision (MediaPipe)",
           "level": "exploring"
         }
       ]
@@ -170,24 +194,37 @@
           "level": "comfortable"
         },
         {
-          "name": "Thunder Client",
-          "level": "comfortable"
-        },
-        {
           "name": "Vercel",
           "level": "comfortable"
         },
         {
-          "name": "Netlify",
+          "name": "Thunder Client",
           "level": "comfortable"
+        },
+        {
+          "name": "Android Studio",
+          "level": "learning"
+        },
+        {
+          "name": "Netlify",
+          "level": "learning"
         },
         {
           "name": "Render",
           "level": "learning"
         },
         {
-          "name": "Android Studio",
-          "level": "exploring"
+          "name": "Cloudinary",
+          "level": "learning"
+        }
+      ]
+    },
+    {
+      "pouch": "Practice",
+      "items": [
+        {
+          "name": "DSA in C++ & Java (daily)",
+          "level": "learning"
         }
       ]
     }

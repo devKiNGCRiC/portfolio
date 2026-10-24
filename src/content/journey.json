@@ -38,18 +38,43 @@
       "highlight": true
     },
     {
-      "year": "2025–26",
+      "year": "2025",
       "title": "Moved to Chennai for MCA",
       "stamp": "MCA",
       "ink": "blue",
-      "body": "SRM University, Kattankulathur. A long way from home, and a good one."
+      "body": "SRM Institute of Science and Technology, Kattankulathur (2025–27). A long way from home, and a good one.",
+      "branch": false,
+      "highlight": false,
+      "head": false
+    },
+    {
+      "year": "2026",
+      "title": "Virtual internship at EDXcellence",
+      "stamp": "Intern",
+      "ink": "purple",
+      "body": "Built DevBlog, a full-stack MERN blogging platform with JWT auth, likes, bookmarks and nested comments.",
+      "branch": false,
+      "highlight": false,
+      "head": false
+    },
+    {
+      "year": "Apr 2026",
+      "title": "First open-source PR merged",
+      "stamp": "Merged",
+      "ink": "green",
+      "body": "My first pull request to an open-source project (firstcontributions) got merged. Small step, real one.",
+      "branch": false,
+      "highlight": true,
+      "head": false
     },
     {
       "year": "Now",
-      "title": "Exploring, building, learning",
+      "title": "Building, practising, preparing",
       "stamp": "Boarding",
-      "ink": "green",
-      "body": "Software development, AI, mobile apps, open source and building small products.",
+      "ink": "red",
+      "body": "Building Wanderlens (my MCA capstone) and TripWise, practising DSA daily, and preparing for placements.",
+      "branch": false,
+      "highlight": false,
       "head": true
     }
   ],
@@ -57,9 +82,10 @@
     {
       "degree": "MCA",
       "full": "Master of Computer Applications",
-      "school": "SRM University",
-      "campus": "Kattankulathur (KTR) campus, Chennai",
-      "status": "Current"
+      "school": "SRM Institute of Science and Technology",
+      "campus": "Kattankulathur (KTR), Chennai",
+      "status": "Current",
+      "note": "2025 – 2027"
     },
     {
       "degree": "BCA",
