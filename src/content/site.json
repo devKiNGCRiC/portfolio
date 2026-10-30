@@ -10,15 +10,15 @@
     "currently": "Building Wanderlens (my MCA capstone) and TripWise, practising DSA daily, learning Next.js & system design"
   },
   "links": {
+    "email": "kingcric28@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/raj-roy-kc2806/",
     "github": "https://github.com/devKiNGCRiC",
     "githubUser": "devKiNGCRiC",
-    "instagram": "https://www.instagram.com/safarnama_of_king/",
-    "instagramHandle": "@safarnama_of_king",
-    "linkedin": "https://www.linkedin.com/in/raj-roy-kc2806/",
-    "email": "kingcric28@gmail.com",
-    "resume": "/resume.pdf",
+    "instagram": "https://www.instagram.com/kingcric_28/",
+    "instagramHandle": "@kingcric_28",
     "x": "https://x.com/KiNGCRiC28",
-    "xHandle": "@KiNGCRiC28"
+    "xHandle": "@KiNGCRiC28",
+    "resume": "/files/Raj_Roy_Resume.pdf"
   },
   "hero": {
     "status": "MCA student at SRM IST, Chennai (2025–27)",
@@ -46,7 +46,7 @@
     "consistency beats intensity"
   ],
   "about": {
-    "portrait": "",
+    "portrait": "/photos/Me.jpeg",
     "lead": "Most of my projects start with a problem I ran into ==on the road==.",
     "paragraphs": [
       "I’m from **Northeast India** and grew up in **Arunachal Pradesh**, surrounded by hills, rivers and a lot of quiet. That’s where two habits started: wanting to see what’s past the next ridge, and wanting to know how things actually work.",

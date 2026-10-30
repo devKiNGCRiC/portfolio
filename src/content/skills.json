@@ -34,7 +34,7 @@
         },
         {
           "name": "C++",
-          "level": "comfortable"
+          "level": "exploring"
         },
         {
           "name": "TypeScript",
@@ -59,7 +59,7 @@
         },
         {
           "name": "React Router",
-          "level": "comfortable"
+          "level": "learning"
         },
         {
           "name": "Vite",
@@ -67,7 +67,7 @@
         },
         {
           "name": "Responsive design",
-          "level": "comfortable"
+          "level": "learning"
         },
         {
           "name": "Redux Toolkit",
@@ -83,7 +83,7 @@
         },
         {
           "name": "TanStack Query",
-          "level": "learning"
+          "level": "exploring"
         },
         {
           "name": "Next.js",
@@ -112,11 +112,11 @@
         },
         {
           "name": "REST APIs",
-          "level": "comfortable"
+          "level": "learning"
         },
         {
           "name": "JWT auth",
-          "level": "comfortable"
+          "level": "learning"
         },
         {
           "name": "Socket.IO",
@@ -199,7 +199,7 @@
         },
         {
           "name": "Thunder Client",
-          "level": "comfortable"
+          "level": "learning"
         },
         {
           "name": "Android Studio",
@@ -207,11 +207,11 @@
         },
         {
           "name": "Netlify",
-          "level": "learning"
+          "level": "exploring"
         },
         {
           "name": "Render",
-          "level": "learning"
+          "level": "exploring"
         },
         {
           "name": "Cloudinary",
