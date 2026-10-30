@@ -47,8 +47,10 @@ collections:
               - { name: linkedin, label: LinkedIn URL, widget: string, required: false }
               - { name: github, label: GitHub URL, widget: string }
               - { name: githubUser, label: GitHub username, widget: string, hint: Used for the live repo board }
-              - { name: instagram, label: Instagram URL, widget: string }
-              - { name: instagramHandle, label: Instagram handle, widget: string }
+              - { name: instagram, label: Instagram URL (developer), widget: string, hint: Shown in contact and the footer }
+              - { name: instagramHandle, label: Instagram handle (developer), widget: string }
+              - { name: travelInstagram, label: Travel Instagram URL, widget: string, required: false, hint: Shown under the trips; falls back to the developer one }
+              - { name: travelInstagramHandle, label: Travel Instagram handle, widget: string, required: false }
               - { name: x, label: X (Twitter) URL, widget: string, required: false }
               - { name: xHandle, label: X handle, widget: string, required: false }
               - name: resume

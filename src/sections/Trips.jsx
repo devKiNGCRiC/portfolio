@@ -185,10 +185,10 @@ function Polaroids() {
           </li>
         ))}
       </ul>
-      <a className="insta" href={links.instagram} target="_blank" rel="noreferrer">
+      <a className="insta" href={links.travelInstagram || links.instagram} target="_blank" rel="noreferrer">
         <Icon name="instagram" size={26} />
         <span>
-          <b className="display">{links.instagramHandle}</b>
+          <b className="display">{links.travelInstagramHandle || links.instagramHandle}</b>
           <small>the real photos &amp; travel stories live here</small>
         </span>
       </a>
