@@ -10,16 +10,9 @@ import { projects, workbench } from '../data/projects'
 import { links, site } from '../data/profile'
 import './Projects.css'
 
-// card colour per project id; anything else is white
-const THEMES = {
-  safarnama: 'saffron',
-  wanderlens: 'sky',
-  tripwise: 'coral',
-  pinchpop: 'green',
-  algovisualizer: 'yellow',
-  wanderlink: 'sky',
-  devblog: 'white',
-}
+// projects with their own card skin (see "card skins" in Projects.css);
+// anything added later from /admin gets the plain white card
+const SKINS = new Set(['wanderlens', 'pinchpop', 'algovisualizer', 'devblog', 'tripwise', 'safarnama', 'wanderlink'])
 
 // On desktop the regular cards sit three to a row. When the last row would
 // be short, its cards grow (two left) or centre (one left) so there's no gap.
@@ -36,7 +29,7 @@ function cardSize(project) {
 function ProjectCard({ project, size, onOpen }) {
   const reveal = useReveal({ threshold: 0.1 })
   const tilt = useTilt(6)
-  const theme = THEMES[project.id] ?? 'white'
+  const skin = SKINS.has(project.id) ? `skin--${project.id}` : ''
   // a phone screenshot: the art shrinks to fit the phone and the text gets the room
   const [tall, setTall] = useState(false)
 
@@ -45,7 +38,7 @@ function ProjectCard({ project, size, onOpen }) {
       <article
         onPointerMove={tilt.onPointerMove}
         onPointerLeave={tilt.onPointerLeave}
-        className={`pcard pcard--${theme} ${tall ? 'pcard--phone' : ''}`}
+        className={`pcard ${skin} ${tall ? 'pcard--phone' : ''}`}
         aria-labelledby={`p-${project.id}`}
       >
         <div className="pcard__art" aria-hidden="true">

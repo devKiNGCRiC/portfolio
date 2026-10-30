@@ -38,43 +38,35 @@
 }
 
 /* ---------- project card ---------- */
+/* every card reads these; the skins at the end of this file override them */
 .pcard {
+  --c-bg: var(--white);
+  --c-text: var(--ink);
+  --c-muted: var(--ink-soft);
+  --c-accent: var(--saffron);
+  --c-title: var(--ink);
+  --c-title-font: var(--font-display);
+  --c-chip-bg: var(--white);
+  --c-chip-text: var(--ink);
+  --c-chip-line: var(--ink);
+  --c-chip-radius: var(--r-pill);
+  --c-pop: var(--ink); /* button shadow */
+  --c-cta-pop: var(--red);
+
+  position: relative;
   display: flex;
   flex-direction: column;
   border: 3px solid var(--ink);
   border-radius: var(--r-lg);
   box-shadow: var(--pop-lg);
-  background: var(--white);
+  background: var(--c-bg);
+  color: var(--c-text);
   overflow: hidden;
   transform-style: preserve-3d;
   transition:
     transform 0.4s var(--ease-out),
     box-shadow 0.3s;
   will-change: transform;
-}
-
-.pcard--saffron {
-  background: var(--saffron);
-}
-
-.pcard--sky {
-  background: var(--sky);
-}
-
-.pcard--coral {
-  background: var(--coral-soft);
-}
-
-.pcard--green {
-  background: var(--green-soft);
-}
-
-.pcard--yellow {
-  background: var(--yellow-soft);
-}
-
-.pcard--white {
-  background: var(--white);
 }
 
 .pcard__art {
@@ -332,6 +324,8 @@
 }
 
 .pcard__body {
+  position: relative;
+  isolation: isolate; /* keeps each skin's decoration behind the text */
   display: grid;
   gap: 0.8rem;
   align-content: start;
@@ -351,7 +345,9 @@
 }
 
 .pcard__title {
+  font-family: var(--c-title-font);
   font-size: var(--step-3);
+  color: var(--c-title);
 }
 
 .pcard__tagline {
@@ -360,9 +356,43 @@
 }
 
 .pcard__summary {
-  color: var(--ink);
-  opacity: 0.8;
+  color: var(--c-muted);
   max-width: 56ch;
+}
+
+/* chips and buttons pick up the skin */
+.pcard .chip {
+  border-color: var(--c-chip-line);
+  border-radius: var(--c-chip-radius);
+  background: var(--c-chip-bg);
+  color: var(--c-chip-text);
+}
+
+/* white pills stay ink on every skin, even the dark ones */
+.pcard .btn,
+.pcard .status {
+  color: var(--ink);
+}
+
+.pcard .btn {
+  box-shadow: 4px 4px 0 var(--c-pop);
+}
+
+.pcard .btn:hover {
+  box-shadow: 6px 6px 0 var(--c-pop);
+}
+
+.pcard .btn--ink {
+  color: var(--white);
+  box-shadow: 4px 4px 0 var(--c-cta-pop);
+}
+
+.pcard .btn--ink:hover {
+  box-shadow: 6px 6px 0 var(--c-cta-pop);
+}
+
+.pcard .btn:active {
+  box-shadow: 0 0 0 transparent;
 }
 
 /* the featured banner lists a few highlights (desktop only, where there's room) */
@@ -391,7 +421,7 @@
     height: 0.7rem;
     border: 2px solid var(--ink);
     border-radius: 50%;
-    background: var(--saffron);
+    background: var(--c-accent);
     translate: 0 0.1rem;
   }
 }
@@ -860,4 +890,281 @@
   .bento__cell--big .pcard__title {
     font-size: clamp(2.2rem, 0.6rem + 2.4vw, 3rem);
   }
+}
+
+/* ---------- card skins: each card borrows the look of the project it holds ---------- */
+
+/* Wanderlens: the app's golden-hour sky, serif italic, polaroid chips */
+.skin--wanderlens {
+  --c-bg: linear-gradient(165deg, #b8704d 0%, #6e4566 38%, #2c2747 70%, #181a2c 100%);
+  --c-text: #f5eee3;
+  --c-muted: #ddd0e2;
+  --c-accent: #e2a65a;
+  --c-title: #fbf4ea;
+  --c-title-font: var(--font-serif);
+  --c-chip-bg: #f4efe4;
+  --c-chip-radius: 4px;
+  --c-pop: #e2a65a;
+  --c-cta-pop: #e2a65a;
+}
+
+.skin--wanderlens .pcard__title {
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.skin--wanderlens .chip:nth-child(odd) {
+  rotate: -2deg;
+}
+
+.skin--wanderlens .chip:nth-child(even) {
+  rotate: 1.5deg;
+}
+
+.skin--wanderlens .btn--ink {
+  background: #f4efe4;
+  color: var(--ink);
+}
+
+/* the app's sun, setting in the corner behind the text */
+.skin--wanderlens .pcard__body::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  bottom: -90px;
+  right: -60px;
+  width: 210px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, #e8b067 0 55%, rgba(232, 176, 103, 0.25) 56% 70%, transparent 71%);
+}
+
+/* around a phone, the scenery turns into the same dusk */
+.skin--wanderlens.pcard--phone .pcard__art {
+  background: linear-gradient(165deg, #9d5f47, #3a2d52 60%, #181a2c);
+}
+
+.skin--wanderlens.pcard--phone .art__phones ~ .art__layer {
+  display: none;
+}
+
+/* PinchPop: the app's royal blue, chunky orange title, puzzle-tile chips */
+.skin--pinchpop {
+  --c-bg: #2836a8;
+  --c-text: #ffffff;
+  --c-muted: #d3d8fb;
+  --c-accent: #ff9f3a;
+  --c-title: #ff9f3a;
+  --c-chip-bg: #fde8c4;
+  --c-chip-radius: 7px;
+  --c-pop: #ff9f3a;
+  --c-cta-pop: #5ad16a;
+}
+
+.skin--pinchpop .pcard__title {
+  font-weight: 900;
+  text-shadow: 3px 3px 0 var(--ink);
+}
+
+.skin--pinchpop .pcard__tagline {
+  color: #7fe08a;
+}
+
+.skin--pinchpop .btn--ink {
+  background: #ff9f3a;
+  color: var(--ink);
+}
+
+/* a faint 3x3 puzzle in the corner */
+.skin--pinchpop .pcard__body::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  right: -24px;
+  bottom: -24px;
+  width: 168px;
+  aspect-ratio: 1;
+  rotate: 10deg;
+  border: 3px solid rgba(255, 255, 255, 0.16);
+  border-radius: 12px;
+  background:
+    linear-gradient(90deg, transparent 32%, rgba(255, 255, 255, 0.16) 32% 34%, transparent 34% 65%, rgba(255, 255, 255, 0.16) 65% 67%, transparent 67%),
+    linear-gradient(transparent 32%, rgba(255, 255, 255, 0.16) 32% 34%, transparent 34% 65%, rgba(255, 255, 255, 0.16) 65% 67%, transparent 67%);
+}
+
+/* AlgoVisualizer: graph paper, monospace, a cursor after the title */
+.skin--algovisualizer {
+  --c-bg:
+    linear-gradient(#e2e9fb 1px, transparent 1px) 0 0 / 22px 22px,
+    linear-gradient(90deg, #e2e9fb 1px, transparent 1px) 0 0 / 22px 22px,
+    #fbfcff;
+  --c-muted: #3f4660;
+  --c-accent: #2f6fed;
+  --c-title-font: var(--font-mono);
+  --c-chip-bg: #eaf0ff;
+  --c-chip-text: #1d3f9e;
+  --c-chip-line: #2f6fed;
+  --c-chip-radius: 4px;
+  --c-pop: #2f6fed;
+  --c-cta-pop: #2f6fed;
+}
+
+.skin--algovisualizer .pcard__title {
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.skin--algovisualizer .pcard__title::after {
+  content: '';
+  display: inline-block;
+  width: 0.5em;
+  height: 0.1em;
+  margin-left: 0.12em;
+  background: #2f6fed;
+}
+
+.skin--algovisualizer .pcard__tagline,
+.skin--algovisualizer .chip {
+  font-family: var(--font-mono);
+}
+
+.skin--algovisualizer .pcard__tagline {
+  color: #2f6fed;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* DevBlog: a clean article page, serif headline, drop cap, #tags, reading progress */
+.skin--devblog {
+  --c-muted: #3d3d44;
+  --c-accent: #6d4aff;
+  --c-title-font: var(--font-serif);
+  --c-chip-bg: #f1edff;
+  --c-chip-text: #4f2fd8;
+  --c-chip-line: transparent;
+  --c-chip-radius: 6px;
+  --c-pop: #6d4aff;
+  --c-cta-pop: #6d4aff;
+}
+
+.skin--devblog .pcard__title {
+  font-weight: 750;
+  letter-spacing: -0.02em;
+}
+
+.skin--devblog .pcard__tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  color: #55555e;
+}
+
+.skin--devblog .pcard__summary::first-letter {
+  float: left;
+  margin: 0.08em 0.1em 0 0;
+  font-family: var(--font-serif);
+  font-size: 3.1em;
+  font-weight: 700;
+  line-height: 0.8;
+  color: #6d4aff;
+}
+
+.skin--devblog .chip::before {
+  content: '#';
+  opacity: 0.6;
+}
+
+.skin--devblog .pcard__body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 62%;
+  height: 5px;
+  background: linear-gradient(90deg, #6d4aff, #3fa9f5);
+}
+
+/* TripWise: a boarding pass, perforated edge, ticket-stub chips, barcode */
+.skin--tripwise {
+  --c-bg: #ffe0db;
+  --c-muted: #5c3a35;
+  --c-accent: #ff6f61;
+  --c-chip-bg: #fff6f4;
+  --c-chip-radius: 4px;
+  --c-pop: #ff6f61;
+}
+
+.skin--tripwise .pcard__body {
+  border-top: 3px dashed rgba(20, 20, 20, 0.35);
+  margin-top: -3px;
+}
+
+.skin--tripwise .chip {
+  border-style: dashed;
+}
+
+.skin--tripwise .pcard__body::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  right: 1.4rem;
+  bottom: 1.4rem;
+  width: 86px;
+  height: 34px;
+  opacity: 0.55;
+  background: repeating-linear-gradient(90deg, var(--ink) 0 2px, transparent 2px 4px, var(--ink) 4px 7px, transparent 7px 9px, var(--ink) 9px 10px, transparent 10px 13px);
+}
+
+/* SafarNama: a travel journal in saffron, India-green accents, सफ़रनामा watermark */
+.skin--safarnama {
+  --c-bg: #ffb257;
+  --c-muted: #3b2a14;
+  --c-accent: #138808;
+  --c-chip-bg: #fff4e3;
+  --c-pop: #138808;
+  --c-cta-pop: #138808;
+}
+
+.skin--safarnama .pcard__tagline {
+  color: #0e5f07;
+}
+
+.skin--safarnama .pcard__body::before {
+  content: 'सफ़रनामा';
+  position: absolute;
+  z-index: -1;
+  top: 2.6rem;
+  right: -0.6rem;
+  font-family: 'Nirmala UI', 'Noto Sans Devanagari', 'Mangal', serif;
+  font-size: 5.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(20, 20, 20, 0.08);
+  pointer-events: none;
+}
+
+/* WanderLink: a chat app, mint and teal, speech-bubble chips */
+.skin--wanderlink {
+  --c-bg: #dcf3ec;
+  --c-muted: #24423b;
+  --c-accent: #0b8f7a;
+  --c-title: #0a5c4f;
+  --c-title-font: var(--font-body);
+  --c-chip-bg: #0b8f7a;
+  --c-chip-text: #ffffff;
+  --c-chip-radius: 14px 14px 14px 4px;
+  --c-pop: #0b8f7a;
+  --c-cta-pop: #0b8f7a;
+}
+
+.skin--wanderlink .pcard__title {
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+
+.skin--wanderlink .chip:nth-child(even) {
+  border-radius: 14px 14px 4px 14px;
+  background: #ffffff;
+  color: var(--ink);
 }
