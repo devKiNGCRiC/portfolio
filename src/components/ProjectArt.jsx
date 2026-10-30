@@ -2,7 +2,8 @@
   Layered poster art for project cards. Each layer shifts by a different
   amount (--d) as the pointer moves, so the layers separate when the card tilts.
   To use a screenshot instead, set `image` on the project in data/projects.js.
-  A tall (phone) screenshot is shown in a phone frame over the art instead.
+  A screenshot is shown in a device over the art: tall ones in a phone,
+  wide ones on a laptop.
 */
 
 const stroke = { stroke: '#17171a', strokeWidth: 3, strokeLinejoin: 'round', strokeLinecap: 'round' }
@@ -242,13 +243,29 @@ const art = {
   devblog: DevBlogArt,
 }
 
-// `tall` is owned by the card (it resizes around a phone); we report it via onTall
-export default function ProjectArt({ project, tall, onTall }) {
+// The screenshot's size is owned by the card (it resizes around a phone).
+// Until it's known we show the scenery and measure the image off-screen.
+export default function ProjectArt({ project, shot, onShot }) {
   const Art = art[project.id] ?? PortfolioArt
 
   if (!project.image) return <Art />
 
-  if (tall) {
+  if (!shot) {
+    return (
+      <>
+        <img
+          className="art__measure"
+          src={project.image}
+          alt=""
+          loading="lazy"
+          onLoad={(e) => onShot({ w: e.currentTarget.naturalWidth, h: e.currentTarget.naturalHeight })}
+        />
+        <Art />
+      </>
+    )
+  }
+
+  if (shot.h > shot.w) {
     // phone screenshots stand in clay phones on the project's own scenery
     const screens = [project.image, ...(project.moreImages ?? [])].filter(Boolean).slice(0, 3)
     return (
@@ -267,17 +284,21 @@ export default function ProjectArt({ project, tall, onTall }) {
     )
   }
 
+  // web apps open on a clay laptop; the screen keeps roughly the screenshot's shape
+  const ratio = Math.min(2.2, Math.max(1.6, shot.w / shot.h))
   return (
-    <div className="art__layer" style={{ '--d': 0.02 }}>
-      <img
-        src={project.image}
-        alt={`Screenshot of ${project.name}`}
-        loading="lazy"
-        onLoad={(e) => {
-          const img = e.currentTarget
-          if (img.naturalHeight > img.naturalWidth) onTall()
-        }}
-      />
-    </div>
+    <>
+      <div className="art__layer art__laptop" style={{ '--d': 0.08 }}>
+        <span className="laptop" style={{ '--ratio': ratio }}>
+          <span className="laptop__lid">
+            <span className="laptop__screen">
+              <img src={project.image} alt={`Screenshot of ${project.name}`} />
+            </span>
+          </span>
+          <span className="laptop__base" />
+        </span>
+      </div>
+      <Art />
+    </>
   )
 }

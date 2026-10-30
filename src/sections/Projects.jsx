@@ -30,19 +30,20 @@ function ProjectCard({ project, size, onOpen }) {
   const reveal = useReveal({ threshold: 0.1 })
   const tilt = useTilt(6)
   const skin = SKINS.has(project.id) ? `skin--${project.id}` : ''
-  // a phone screenshot: the art shrinks to fit the phone and the text gets the room
-  const [tall, setTall] = useState(false)
+  // the screenshot's size once loaded; a phone one makes the art shrink to fit it
+  const [shot, setShot] = useState(null)
+  const tall = shot && shot.h > shot.w
 
   return (
     <div ref={reveal} className={`bento__cell reveal ${size ? `bento__cell--${size}` : ''}`}>
       <article
         onPointerMove={tilt.onPointerMove}
         onPointerLeave={tilt.onPointerLeave}
-        className={`pcard ${skin} ${tall ? 'pcard--phone' : ''}`}
+        className={`pcard ${skin} ${shot ? (tall ? 'pcard--phone' : 'pcard--laptop') : ''}`}
         aria-labelledby={`p-${project.id}`}
       >
         <div className="pcard__art" aria-hidden="true">
-          <ProjectArt project={project} tall={tall} onTall={() => setTall(true)} />
+          <ProjectArt project={project} shot={shot} onShot={setShot} />
         </div>
 
         <div className="pcard__body">
