@@ -272,7 +272,8 @@
       "tech": "MERN + React Native",
       "group": "Travel & culture",
       "repo": "",
-      "live": ""
+      "live": "",
+      "image": ""
     },
     {
       "name": "EcoVibes-Static-Website",
@@ -280,7 +281,8 @@
       "tech": "HTML & CSS",
       "group": "Travel & culture",
       "repo": "",
-      "live": ""
+      "live": "",
+      "image": "/photos/desktop-hero.jpg"
     },
     {
       "name": "blinktalk",
@@ -288,7 +290,8 @@
       "tech": "React, Socket.IO, MongoDB",
       "group": "Web & apps",
       "repo": "",
-      "live": ""
+      "live": "",
+      "image": ""
     },
     {
       "name": "DevBlog",
@@ -296,7 +299,8 @@
       "tech": "MERN",
       "group": "Web & apps",
       "repo": "",
-      "live": ""
+      "live": "",
+      "image": ""
     },
     {
       "name": "rupeemate",
@@ -304,7 +308,8 @@
       "tech": "TypeScript",
       "group": "Web & apps",
       "repo": "",
-      "live": ""
+      "live": "",
+      "image": ""
     },
     {
       "name": "votewise-election-assistant",
@@ -312,7 +317,8 @@
       "tech": "Next.js, Tailwind",
       "group": "Web & apps",
       "repo": "",
-      "live": ""
+      "live": "",
+      "image": ""
     },
     {
       "name": "expense-tracker",
@@ -320,7 +326,8 @@
       "tech": "HTML, CSS, JavaScript",
       "group": "Web & apps",
       "repo": "",
-      "live": "https://devKiNGCRiC.github.io/expense-tracker"
+      "live": "https://devKiNGCRiC.github.io/expense-tracker",
+      "image": ""
     },
     {
       "name": "portfolio",
@@ -328,7 +335,8 @@
       "tech": "React, three.js",
       "group": "Web & apps",
       "repo": "",
-      "live": ""
+      "live": "",
+      "image": ""
     },
     {
       "name": "UniAthleteIQ",
@@ -336,7 +344,8 @@
       "tech": "Python, XGBoost",
       "group": "AI & data",
       "repo": "",
-      "live": ""
+      "live": "",
+      "image": ""
     },
     {
       "name": "moodmind",
@@ -344,7 +353,8 @@
       "tech": "React, Gemini API",
       "group": "AI & data",
       "repo": "",
-      "live": ""
+      "live": "",
+      "image": ""
     },
     {
       "name": "MindShield",
@@ -352,7 +362,8 @@
       "tech": "Flutter, Firebase",
       "group": "Mobile",
       "repo": "",
-      "live": ""
+      "live": "",
+      "image": ""
     },
     {
       "name": "bmi-calculator",
@@ -360,7 +371,8 @@
       "tech": "React Native, Expo",
       "group": "Mobile",
       "repo": "",
-      "live": ""
+      "live": "",
+      "image": ""
     },
     {
       "name": "DSA-in-CPP-by-KiNG",
@@ -368,7 +380,8 @@
       "tech": "C++",
       "group": "Practice & DSA",
       "repo": "",
-      "live": ""
+      "live": "",
+      "image": ""
     },
     {
       "name": "java-practice-dsa",
@@ -376,7 +389,8 @@
       "tech": "Java",
       "group": "Practice & DSA",
       "repo": "",
-      "live": ""
+      "live": "",
+      "image": ""
     },
     {
       "name": "Python-journey",
@@ -384,7 +398,8 @@
       "tech": "Python",
       "group": "Practice & DSA",
       "repo": "",
-      "live": ""
+      "live": "",
+      "image": ""
     }
   ]
 }
