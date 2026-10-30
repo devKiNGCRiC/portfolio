@@ -110,9 +110,10 @@ function Workbench() {
 
       <ul className="tags">
         {shown.map((w, i) => (
-          <li key={w.name} className={`tag tag--${(i % 4) + 1}`}>
+          <li key={w.name} className={`tag tag--${(i % 4) + 1} ${w.image ? 'tag--shot' : ''}`}>
             <span className="tag__hole" aria-hidden="true" />
             <a href={w.repo} target="_blank" rel="noreferrer" className="tag__link">
+              {w.image && <img className="tag__shot" src={w.image} alt={`Screenshot of ${w.name}`} loading="lazy" />}
               <span className="tag__name">{w.name}</span>
               <span className="tag__note">{w.note}</span>
               <span className="tag__tech">{w.tech}</span>

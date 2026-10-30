@@ -240,6 +240,7 @@ collections:
               - { name: group, label: Group, widget: select, options: [Travel & culture, Web & apps, AI & data, Mobile, Practice & DSA] }
               - { name: repo, label: Repo URL (only if different), widget: string, required: false }
               - { name: live, label: Live demo URL, widget: string, required: false }
+              - { name: image, label: Screenshot (optional), widget: image, required: false, hint: A wide (16:10 or 16:9) shot of the app works best }
 
   # ------------------------------------------------------------------
   - name: skills
