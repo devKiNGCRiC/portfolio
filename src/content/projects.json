@@ -50,7 +50,7 @@
       "status": "Completed",
       "featured": false,
       "year": "2026",
-      "image": "/photos/Screenshot 2026-10-31 014000.png",
+      "image": "/photos/pinchpop-home.jpg",
       "summary": "A gesture-controlled photobooth game. Frame a shot with your fingers, pinch to capture, solve your own photo as a 3×3 puzzle, and keep it as a polaroid. The web version is live; it's growing into a web + mobile platform.",
       "award": null,
       "story": {
@@ -88,7 +88,7 @@
       "status": "Completed",
       "featured": false,
       "year": "2025",
-      "image": "/photos/Screenshot 2026-10-31 014143.png",
+      "image": "/photos/algovisualizer-home.jpg",
       "summary": "An interactive DSA learning tool: step-by-step animations of five sorting algorithms with live comparison, swap and timing stats, plus a side-by-side mode that scores algorithms on real performance.",
       "award": null,
       "story": {
@@ -124,7 +124,7 @@
       "status": "Completed",
       "featured": false,
       "year": "2026",
-      "image": "/photos/devbloghome.jpg",
+      "image": "/photos/devblog-home.jpg",
       "summary": "A full-stack MERN blogging platform inspired by Medium and Dev.to. Write rich posts, then get likes, bookmarks, nested comments and followers. Started during my EDXcellence internship and kept growing.",
       "award": null,
       "story": {
