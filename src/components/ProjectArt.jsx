@@ -2,7 +2,9 @@
   Layered poster art for project cards. Each layer shifts by a different
   amount (--d) as the pointer moves, so the layers separate when the card tilts.
   To use a screenshot instead, set `image` on the project in data/projects.js.
+  A tall (phone) screenshot is shown in a phone frame over the art instead.
 */
+import { useState } from 'react'
 
 const stroke = { stroke: '#17171a', strokeWidth: 3, strokeLinejoin: 'round', strokeLinecap: 'round' }
 
@@ -171,8 +173,6 @@ function PinchPopArt() {
   )
 }
 
-// AlgoVisualizer Pro: sorting bars mid-swap
-function AlgoArt() {
 // DevBlog: an article page with a like and a comment bubble
 function DevBlogArt() {
   return (
@@ -201,6 +201,8 @@ function DevBlogArt() {
   )
 }
 
+// AlgoVisualizer Pro: sorting bars mid-swap
+function AlgoArt() {
   const bars = [140, 60, 200, 100, 240, 80, 170, 120]
   return (
     <>
@@ -238,17 +240,44 @@ const art = {
   tripwise: TripWiseArt,
   pinchpop: PinchPopArt,
   algovisualizer: AlgoArt,
+  devblog: DevBlogArt,
 }
 
-  devblog: DevBlogArt,
 export default function ProjectArt({ project }) {
-  if (project.image) {
+  // 'wide' until the screenshot loads; a tall one means a phone app
+  const [shape, setShape] = useState('wide')
+  const Art = art[project.id] ?? PortfolioArt
+
+  if (!project.image) return <Art />
+
+  if (shape === 'tall') {
+    // phone screenshots stand in clay phones on the project's own scenery
+    const screens = [project.image, ...(project.moreImages ?? [])].filter(Boolean).slice(0, 3)
     return (
-      <div className="art__layer" style={{ '--d': 0.02 }}>
-        <img src={project.image} alt={`Screenshot of ${project.name}`} loading="lazy" />
-      </div>
+      <>
+        <div className={`art__layer art__phones art__phones--${screens.length}`} style={{ '--d': 0.08 }}>
+          {screens.map((src, i) => (
+            <span key={`${i}-${src}`} className="phone">
+              <img src={src} alt={`${project.name} screen ${i + 1}`} loading="lazy" />
+            </span>
+          ))}
+        </div>
+        <Art />
+      </>
     )
   }
-  const Art = art[project.id] ?? PortfolioArt
-  return <Art />
+
+  return (
+    <div className="art__layer" style={{ '--d': 0.02 }}>
+      <img
+        src={project.image}
+        alt={`Screenshot of ${project.name}`}
+        loading="lazy"
+        onLoad={(e) => {
+          const img = e.currentTarget
+          if (img.naturalHeight > img.naturalWidth) setShape('tall')
+        }}
+      />
+    </div>
+  )
 }

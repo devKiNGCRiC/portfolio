@@ -106,6 +106,63 @@
   object-fit: cover;
 }
 
+/* phone screenshots: clay phones standing on the project's scenery */
+.art__phones {
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  padding-block: 7%;
+}
+
+/* only the base scenery stays behind the phones, not the stickers */
+.art__phones ~ .art__layer ~ .art__layer {
+  display: none;
+}
+
+.phone {
+  height: 100%;
+  aspect-ratio: 9 / 19.5;
+  padding: 4px;
+  border: 3px solid var(--ink);
+  border-radius: 18px;
+  background: var(--ink);
+  box-shadow: var(--pop);
+  overflow: hidden;
+}
+
+.art__layer .phone img {
+  border-radius: 12px;
+  object-position: top;
+  background: var(--white);
+}
+
+/* three screens fan out, the middle one in front */
+.art__phones--3 .phone:nth-child(1) {
+  rotate: -7deg;
+  scale: 0.88;
+  margin-right: -4%;
+}
+
+.art__phones--3 .phone:nth-child(2) {
+  z-index: 1;
+}
+
+.art__phones--3 .phone:nth-child(3) {
+  rotate: 7deg;
+  scale: 0.88;
+  margin-left: -4%;
+}
+
+.art__phones--2 .phone:nth-child(1) {
+  rotate: -4deg;
+}
+
+.art__phones--2 .phone:nth-child(2) {
+  rotate: 4deg;
+}
+
 .art__stamp {
   display: grid;
   place-items: start start;

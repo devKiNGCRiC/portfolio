@@ -187,7 +187,15 @@ collections:
               - { name: status, label: Status, widget: select, options: [Completed, In progress, Experimental, Concept] }
               - { name: featured, label: Big featured card?, widget: boolean, default: false }
               - { name: year, label: Year, widget: string }
-              - { name: image, label: Screenshot (replaces the illustration), widget: image, required: false }
+              - { name: image, label: Screenshot, widget: image, required: false, hint: 'A wide (desktop) shot replaces the illustration. A tall (phone) shot is shown in a phone frame on top of it.' }
+              - name: moreImages
+                label: More phone screenshots
+                label_singular: Phone screenshot
+                widget: list
+                required: false
+                max: 2
+                hint: Only for phone apps. Up to 2 extra tall screenshots, shown as three phones side by side.
+                field: { name: src, label: Phone screenshot, widget: image }
               - { name: summary, label: Summary, widget: text }
               - name: award
                 label: Award
