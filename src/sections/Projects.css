@@ -101,11 +101,19 @@
 /* phone screenshots: clay phones standing on the project's scenery */
 .art__phones {
   z-index: 2;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 5%;
   padding-block: 7%;
+  transform: none;
+}
+
+/* screenshots stay on whole pixels and out of a GPU layer, so their small text stays crisp */
+.pcard--phone,
+.pcard--laptop {
+  will-change: auto;
 }
 
 /* behind a phone only the scenery stays, not the stickers;
@@ -125,22 +133,28 @@
 }
 
 /* web screenshots: a chunky clay laptop, the same family as the phone */
-.art__laptop {
-  z-index: 2;
-  display: grid;
-  place-items: center;
-}
-
-/* a slightly taller art area so the whole laptop sits on the scenery */
+/* the laptop sits in the normal flow, so the art area is exactly as tall as it needs */
 .pcard--laptop .pcard__art {
-  aspect-ratio: 16 / 10;
+  display: grid;
+  align-content: center;
+  aspect-ratio: auto;
 }
 
+.art__laptop {
+  position: relative;
+  z-index: 2;
+  inset: auto;
+  display: grid;
+  justify-items: center;
+  padding: clamp(1rem, 5%, 1.6rem) 0 clamp(1.3rem, 6%, 2rem);
+  transform: none;
+}
+
+/* the deck is 116% of the lid, so 84% here makes it span nearly the full card */
 .laptop {
   display: grid;
   justify-items: center;
-  width: 70%;
-  translate: 0 -3%;
+  width: 84%;
 }
 
 .laptop__lid {
@@ -242,10 +256,6 @@
   .bento__cell--big .pcard--phone .art__phones {
     height: 500px;
   }
-  /* upright here, so the corners aren't clipped by the snug art area */
-  .bento__cell--big .pcard--phone .art__phones--1 .phone {
-    rotate: 0deg;
-  }
   .bento__cell--big .pcard--phone .pcard__body {
     padding-inline: clamp(2rem, 4vw, 4rem);
   }
@@ -263,15 +273,6 @@
   box-shadow:
     inset -4px -5px 0 rgba(20, 20, 20, 0.12),
     var(--pop);
-  transition: rotate 0.4s var(--bounce);
-}
-
-.art__phones--1 .phone {
-  rotate: -4deg;
-}
-
-.pcard:hover .art__phones--1 .phone {
-  rotate: 0deg;
 }
 
 .phone::before {

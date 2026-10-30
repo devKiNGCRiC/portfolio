@@ -33,12 +33,14 @@ function ProjectCard({ project, size, onOpen }) {
   // the screenshot's size once loaded; a phone one makes the art shrink to fit it
   const [shot, setShot] = useState(null)
   const tall = shot && shot.h > shot.w
+  // cards showing a screenshot don't tilt: a 3D-transformed card is redrawn as a
+  // texture, which blurs the small text in the screenshot
+  const pointer = shot ? {} : { onPointerMove: tilt.onPointerMove, onPointerLeave: tilt.onPointerLeave }
 
   return (
     <div ref={reveal} className={`bento__cell reveal ${size ? `bento__cell--${size}` : ''}`}>
       <article
-        onPointerMove={tilt.onPointerMove}
-        onPointerLeave={tilt.onPointerLeave}
+        {...pointer}
         className={`pcard ${skin} ${shot ? (tall ? 'pcard--phone' : 'pcard--laptop') : ''}`}
         aria-labelledby={`p-${project.id}`}
       >
