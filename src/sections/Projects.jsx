@@ -20,13 +20,25 @@ const THEMES = {
   wanderlink: 'sky',
 }
 
-function ProjectCard({ project, onOpen }) {
+// On desktop the regular cards sit three to a row. When the last row would
+// be short, its cards grow (two left) or centre (one left) so there's no gap.
+const regular = projects.filter((p) => !p.featured)
+function cardSize(project) {
+  if (project.featured) return 'big'
+  const i = regular.indexOf(project)
+  const left = regular.length % 3
+  if (left === 2 && i >= regular.length - 2) return 'wide'
+  if (left === 1 && i === regular.length - 1) return 'centre'
+  return ''
+}
+
+function ProjectCard({ project, size, onOpen }) {
   const reveal = useReveal({ threshold: 0.1 })
   const tilt = useTilt(6)
   const theme = THEMES[project.id] ?? 'white'
 
   return (
-    <div ref={reveal} className={`bento__cell reveal ${project.featured ? 'bento__cell--big' : ''}`}>
+    <div ref={reveal} className={`bento__cell reveal ${size ? `bento__cell--${size}` : ''}`}>
       <article
         onPointerMove={tilt.onPointerMove}
         onPointerLeave={tilt.onPointerLeave}
@@ -132,7 +144,7 @@ export default function Projects() {
 
         <div className="bento">
           {projects.map((p) => (
-            <ProjectCard key={p.id} project={p} onOpen={setOpen} />
+            <ProjectCard key={p.id} project={p} size={cardSize(p)} onOpen={setOpen} />
           ))}
         </div>
 

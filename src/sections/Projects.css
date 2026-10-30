@@ -17,14 +17,19 @@
   }
 }
 
-/* desktop: featured card 8 cols x 2 rows, the rest 4 cols, so rows fill evenly */
+/* desktop: featured card is a full-width banner, the rest three to a row */
 @media (min-width: 1100px) {
   .bento__cell {
     grid-column: span 4;
   }
   .bento__cell--big {
-    grid-column: span 8;
-    grid-row: span 2;
+    grid-column: 1 / -1;
+  }
+  .bento__cell--wide {
+    grid-column: span 6;
+  }
+  .bento__cell--centre {
+    grid-column: 5 / span 4;
   }
 }
 
@@ -625,14 +630,24 @@
   font-size: var(--step-4);
 }
 
-/* the featured card is two rows tall: let its illustration fill the extra height */
+/* the featured banner: art on the left, story on the right */
 @media (min-width: 1100px) {
+  .bento__cell--big .pcard {
+    flex-direction: row;
+  }
   .bento__cell--big .pcard__art {
-    flex: 1;
+    flex: 1.25;
     aspect-ratio: auto;
-    min-height: 320px;
+    min-height: 420px;
+    border-bottom: 0;
+    border-right: 3px solid var(--ink);
   }
   .bento__cell--big .pcard__body {
-    flex: none;
+    flex: 1;
+    align-self: center;
+  }
+  /* half-width body: keep a one-word name on one line */
+  .bento__cell--big .pcard__title {
+    font-size: clamp(2.2rem, 0.6rem + 2.4vw, 3rem);
   }
 }
