@@ -1,81 +1,11 @@
 {
   "projects": [
     {
-      "id": "safarnama",
-      "name": "SafarNama",
-      "tagline": "Eco-tourism platform + traveller community",
-      "status": "In progress",
-      "featured": true,
-      "year": "2025",
-      "image": "",
-      "summary": "SafarNama (\"travelogue\" in Hindi) is a full-stack platform for exploring India responsibly: find eco-friendly destinations, plan a trip day by day, and share it with SafarGram, a built-in traveller community. A team project; I worked on both the frontend and the backend.",
-      "award": {
-        "title": "Special Jury Award, Most Innovative Project",
-        "detail": "₹10,000 scholarship from the AEC Class 88′ Foundation",
-        "date": "8 Feb 2025"
-      },
-      "story": {
-        "problem": "Travel information is scattered across blogs, reels and random forums, and very little of it nudges people to travel responsibly or to look beyond the usual tourist spots.",
-        "idea": "One traveller-first place that mixes discovery, eco-tourism and community, so planning a trip and caring about the place happen together. It grew out of my own solo trips.",
-        "solution": "A MERN app with a real-time layer: eco-friendly destinations on an interactive map with weather, permits and best-time-to-visit; a rule-based itinerary planner that builds a day-by-day route; SafarGram with posts, 24-hour stories, chat and live notifications over Socket.IO; a community forum, events and eco-guides; and an admin area for moderation.",
-        "learned": "Building a large full-stack app with a team, real-time features with Socket.IO, security basics (hashed passwords, rate limiting, account lockout), testing an API against an in-memory database, and product thinking around a real problem."
-      },
-      "features": [
-        "Eco-friendly destinations",
-        "Interactive map (Leaflet)",
-        "Weather & best time to visit",
-        "Day-by-day itinerary planner",
-        "SafarGram posts & hashtags",
-        "24-hour stories",
-        "One-to-one & group chat",
-        "Live notifications",
-        "Community forum",
-        "Eco-tourism events",
-        "Eco-guides",
-        "Travel blogs",
-        "Photo gallery",
-        "Carbon calculator",
-        "Bucket list",
-        "Reporting & moderation",
-        "Admin dashboard",
-        "Password reset by email",
-        "Rate-limited, locked-down auth",
-        "API tests (Supertest)"
-      ],
-      "tech": [
-        "React",
-        "Redux Toolkit",
-        "SCSS",
-        "Leaflet",
-        "Node.js",
-        "Express",
-        "MongoDB",
-        "Socket.IO",
-        "JWT",
-        "Cloudinary",
-        "Nodemailer"
-      ],
-      "evolution": [
-        {
-          "name": "SafarGram",
-          "note": "the Instagram-style traveller community, now built into SafarNama",
-          "status": "Completed"
-        },
-        {
-          "name": "TripWise",
-          "note": "AI itinerary planning, now growing as its own project",
-          "status": "In progress"
-        }
-      ],
-      "repo": "https://github.com/devKiNGCRiC/SafarNama",
-      "live": ""
-    },
-    {
       "id": "wanderlens",
       "name": "Wanderlens",
       "tagline": "MCA capstone: photo spots by travellers, for travellers",
       "status": "In progress",
-      "featured": false,
+      "featured": true,
       "year": "2026",
       "image": "",
       "summary": "A social discovery app for travellers and photographers. Real people post geo-tagged photo spots with tips, and you can meet others heading to the same place. Community comes first; AI only helps.",
@@ -111,49 +41,6 @@
       ],
       "evolution": [],
       "repo": "https://github.com/devKiNGCRiC/wanderlens",
-      "live": ""
-    },
-    {
-      "id": "tripwise",
-      "name": "TripWise",
-      "tagline": "Plan less. Wander more.",
-      "status": "In progress",
-      "featured": false,
-      "year": "2026",
-      "image": "",
-      "summary": "An AI-powered travel planner. Tell it where, when, your budget and your vibe, and it builds a day-by-day itinerary with costs, local tips and a packing list, all running on free tiers.",
-      "award": null,
-      "story": {
-        "problem": "Planning a trip in India means a dozen tabs, and generic AI plans ignore budget, season and how you actually like to travel.",
-        "idea": "Grow SafarNama's itinerary idea into its own product: real AI plans shaped by budget, crew and vibe, wrapped in a design that feels like India's many landscapes.",
-        "solution": "A React + TypeScript site over an Express API: a planner wizard, AI itineraries that appear day by day (Gemini with Groq as fallback, every answer validated), PDF and share links, a travel passport with trip stamps, and friends.",
-        "learned": "Working with LLM APIs reliably (fallbacks, validation, caching, daily limits), designing around free-tier limits, and building a big visual system: seven living Indian landscapes drawn in the browser."
-      },
-      "features": [
-        "AI day-by-day itineraries",
-        "Costs, tips & packing list",
-        "Regenerate a single day",
-        "PDF download & share link",
-        "Plan cache for similar trips",
-        "\"Seven Worlds\" living landscapes",
-        "Day & night themes",
-        "Travel passport & trip stamps",
-        "Friends & privacy controls",
-        "Secure sessions"
-      ],
-      "tech": [
-        "React 19",
-        "TypeScript",
-        "Tailwind CSS",
-        "TanStack Query",
-        "Node.js",
-        "Express",
-        "MongoDB",
-        "Gemini",
-        "Groq"
-      ],
-      "evolution": [],
-      "repo": "https://github.com/devKiNGCRiC/tripwise",
       "live": ""
     },
     {
@@ -229,6 +116,119 @@
       "evolution": [],
       "repo": "https://github.com/devKiNGCRiC/dsa-interactive-visualizer",
       "live": "https://algovisualizer-pro.vercel.app"
+    },
+    {
+      "id": "tripwise",
+      "name": "TripWise",
+      "tagline": "Plan less. Wander more.",
+      "status": "In progress",
+      "featured": false,
+      "year": "2026",
+      "image": "",
+      "summary": "An AI-powered travel planner. Tell it where, when, your budget and your vibe, and it builds a day-by-day itinerary with costs, local tips and a packing list, all running on free tiers.",
+      "award": null,
+      "story": {
+        "problem": "Planning a trip in India means a dozen tabs, and generic AI plans ignore budget, season and how you actually like to travel.",
+        "idea": "Grow SafarNama's itinerary idea into its own product: real AI plans shaped by budget, crew and vibe, wrapped in a design that feels like India's many landscapes.",
+        "solution": "A React + TypeScript site over an Express API: a planner wizard, AI itineraries that appear day by day (Gemini with Groq as fallback, every answer validated), PDF and share links, a travel passport with trip stamps, and friends.",
+        "learned": "Working with LLM APIs reliably (fallbacks, validation, caching, daily limits), designing around free-tier limits, and building a big visual system: seven living Indian landscapes drawn in the browser."
+      },
+      "features": [
+        "AI day-by-day itineraries",
+        "Costs, tips & packing list",
+        "Regenerate a single day",
+        "PDF download & share link",
+        "Plan cache for similar trips",
+        "\"Seven Worlds\" living landscapes",
+        "Day & night themes",
+        "Travel passport & trip stamps",
+        "Friends & privacy controls",
+        "Secure sessions"
+      ],
+      "tech": [
+        "React 19",
+        "TypeScript",
+        "Tailwind CSS",
+        "TanStack Query",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Gemini",
+        "Groq"
+      ],
+      "evolution": [],
+      "repo": "https://github.com/devKiNGCRiC/tripwise",
+      "live": ""
+    },
+    {
+      "id": "safarnama",
+      "name": "SafarNama",
+      "tagline": "Eco-tourism platform + traveller community",
+      "status": "In progress",
+      "featured": false,
+      "year": "2025",
+      "image": "",
+      "summary": "SafarNama (\"travelogue\" in Hindi) is a full-stack platform for exploring India responsibly: find eco-friendly destinations, plan a trip day by day, and share it with SafarGram, a built-in traveller community. A team project; I worked on both the frontend and the backend.",
+      "award": {
+        "title": "Special Jury Award, Most Innovative Project",
+        "detail": "₹10,000 scholarship from the AEC Class 88′ Foundation",
+        "date": "8 Feb 2025"
+      },
+      "story": {
+        "problem": "Travel information is scattered across blogs, reels and random forums, and very little of it nudges people to travel responsibly or to look beyond the usual tourist spots.",
+        "idea": "One traveller-first place that mixes discovery, eco-tourism and community, so planning a trip and caring about the place happen together. It grew out of my own solo trips.",
+        "solution": "A MERN app with a real-time layer: eco-friendly destinations on an interactive map with weather, permits and best-time-to-visit; a rule-based itinerary planner that builds a day-by-day route; SafarGram with posts, 24-hour stories, chat and live notifications over Socket.IO; a community forum, events and eco-guides; and an admin area for moderation.",
+        "learned": "Building a large full-stack app with a team, real-time features with Socket.IO, security basics (hashed passwords, rate limiting, account lockout), testing an API against an in-memory database, and product thinking around a real problem."
+      },
+      "features": [
+        "Eco-friendly destinations",
+        "Interactive map (Leaflet)",
+        "Weather & best time to visit",
+        "Day-by-day itinerary planner",
+        "SafarGram posts & hashtags",
+        "24-hour stories",
+        "One-to-one & group chat",
+        "Live notifications",
+        "Community forum",
+        "Eco-tourism events",
+        "Eco-guides",
+        "Travel blogs",
+        "Photo gallery",
+        "Carbon calculator",
+        "Bucket list",
+        "Reporting & moderation",
+        "Admin dashboard",
+        "Password reset by email",
+        "Rate-limited, locked-down auth",
+        "API tests (Supertest)"
+      ],
+      "tech": [
+        "React",
+        "Redux Toolkit",
+        "SCSS",
+        "Leaflet",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Socket.IO",
+        "JWT",
+        "Cloudinary",
+        "Nodemailer"
+      ],
+      "evolution": [
+        {
+          "name": "SafarGram",
+          "note": "the Instagram-style traveller community, now built into SafarNama",
+          "status": "Completed"
+        },
+        {
+          "name": "TripWise",
+          "note": "AI itinerary planning, now growing as its own project",
+          "status": "In progress"
+        }
+      ],
+      "repo": "https://github.com/devKiNGCRiC/SafarNama",
+      "live": ""
     },
     {
       "id": "wanderlink",
