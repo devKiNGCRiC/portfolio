@@ -40,6 +40,7 @@
   --font-body: 'Figtree Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-hand: 'Caveat Variable', 'Comic Sans MS', cursive;
   --font-mono: 'Geist Mono Variable', ui-monospace, 'Cascadia Code', monospace;
+  --font-serif: 'Fraunces Variable', Georgia, 'Times New Roman', serif;
 
   --step--1: clamp(0.82rem, 0.8rem + 0.1vw, 0.9rem);
   --step-0: clamp(1rem, 0.97rem + 0.18vw, 1.12rem);
