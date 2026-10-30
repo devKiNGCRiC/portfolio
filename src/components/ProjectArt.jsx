@@ -4,7 +4,6 @@
   To use a screenshot instead, set `image` on the project in data/projects.js.
   A tall (phone) screenshot is shown in a phone frame over the art instead.
 */
-import { useState } from 'react'
 
 const stroke = { stroke: '#17171a', strokeWidth: 3, strokeLinejoin: 'round', strokeLinecap: 'round' }
 
@@ -243,14 +242,13 @@ const art = {
   devblog: DevBlogArt,
 }
 
-export default function ProjectArt({ project }) {
-  // 'wide' until the screenshot loads; a tall one means a phone app
-  const [shape, setShape] = useState('wide')
+// `tall` is owned by the card (it resizes around a phone); we report it via onTall
+export default function ProjectArt({ project, tall, onTall }) {
   const Art = art[project.id] ?? PortfolioArt
 
   if (!project.image) return <Art />
 
-  if (shape === 'tall') {
+  if (tall) {
     // phone screenshots stand in clay phones on the project's own scenery
     const screens = [project.image, ...(project.moreImages ?? [])].filter(Boolean).slice(0, 3)
     return (
@@ -258,7 +256,9 @@ export default function ProjectArt({ project }) {
         <div className={`art__layer art__phones art__phones--${screens.length}`} style={{ '--d': 0.08 }}>
           {screens.map((src, i) => (
             <span key={`${i}-${src}`} className="phone">
-              <img src={src} alt={`${project.name} screen ${i + 1}`} loading="lazy" />
+              <span className="phone__screen">
+                <img src={src} alt={`${project.name} screen ${i + 1}`} loading="lazy" />
+              </span>
             </span>
           ))}
         </div>
@@ -275,7 +275,7 @@ export default function ProjectArt({ project }) {
         loading="lazy"
         onLoad={(e) => {
           const img = e.currentTarget
-          if (img.naturalHeight > img.naturalWidth) setShape('tall')
+          if (img.naturalHeight > img.naturalWidth) onTall()
         }}
       />
     </div>

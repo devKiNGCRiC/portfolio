@@ -37,17 +37,19 @@ function ProjectCard({ project, size, onOpen }) {
   const reveal = useReveal({ threshold: 0.1 })
   const tilt = useTilt(6)
   const theme = THEMES[project.id] ?? 'white'
+  // a phone screenshot: the art shrinks to fit the phone and the text gets the room
+  const [tall, setTall] = useState(false)
 
   return (
     <div ref={reveal} className={`bento__cell reveal ${size ? `bento__cell--${size}` : ''}`}>
       <article
         onPointerMove={tilt.onPointerMove}
         onPointerLeave={tilt.onPointerLeave}
-        className={`pcard pcard--${theme}`}
+        className={`pcard pcard--${theme} ${tall ? 'pcard--phone' : ''}`}
         aria-labelledby={`p-${project.id}`}
       >
         <div className="pcard__art" aria-hidden="true">
-          <ProjectArt project={project} />
+          <ProjectArt project={project} tall={tall} onTall={() => setTall(true)} />
         </div>
 
         <div className="pcard__body">
@@ -60,6 +62,13 @@ function ProjectCard({ project, size, onOpen }) {
           </h3>
           <p className="pcard__tagline">{project.tagline}</p>
           <p className="pcard__summary">{project.summary}</p>
+          {project.featured && project.features.length > 0 && (
+            <ul className="pcard__features" aria-label="Highlights">
+              {project.features.slice(0, 6).map((f) => (
+                <li key={f}>{f}</li>
+              ))}
+            </ul>
+          )}
           <ul className="chips" aria-label="Tech stack">
             {project.tech.map((t) => (
               <li key={t} className="chip">

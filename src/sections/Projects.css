@@ -116,26 +116,122 @@
   padding-block: 7%;
 }
 
-/* only the base scenery stays behind the phones, not the stickers */
+/* behind the phones only the scenery stays, not the stickers */
 .art__phones ~ .art__layer ~ .art__layer {
   display: none;
 }
 
-.phone {
-  height: 100%;
-  aspect-ratio: 9 / 19.5;
-  padding: 4px;
-  border: 3px solid var(--ink);
-  border-radius: 18px;
-  background: var(--ink);
-  box-shadow: var(--pop);
-  overflow: hidden;
+/* stacked cards: a squarer art area so the phone is big enough to read */
+.pcard--phone .pcard__art {
+  aspect-ratio: 5 / 4;
 }
 
-.art__layer .phone img {
-  border-radius: 12px;
-  object-position: top;
+/* the banner (tablet and up): the art hugs the phone(s), the text takes the rest */
+@media (min-width: 760px) {
+  .bento__cell--big .pcard--phone {
+    flex-direction: row;
+  }
+  .bento__cell--big .pcard--phone .pcard__art {
+    display: flex;
+    flex: none;
+    aspect-ratio: auto;
+    min-height: 0;
+    padding: 2rem 2.6rem;
+    border-bottom: 0;
+    border-right: 3px solid var(--ink);
+  }
+  .bento__cell--big .pcard--phone .art__phones {
+    position: relative;
+    inset: auto;
+    height: 380px;
+    padding: 0;
+    transform: none;
+  }
+  .bento__cell--big .pcard--phone .pcard__body {
+    align-self: center;
+  }
+}
+
+@media (min-width: 1100px) {
+  .bento__cell--big .pcard--phone .art__phones {
+    height: 440px;
+  }
+  /* upright here, so the corners aren't clipped by the snug art area */
+  .bento__cell--big .pcard--phone .art__phones--1 .phone {
+    rotate: 0deg;
+  }
+  .bento__cell--big .pcard--phone .pcard__body {
+    padding-inline: clamp(2rem, 4vw, 4rem);
+  }
+}
+
+/* a chunky clay phone: white body, ink outline, punch-hole camera, side button */
+.phone {
+  position: relative;
+  height: 100%;
+  aspect-ratio: 9 / 19.5;
+  padding: 6px;
+  border: 3px solid var(--ink);
+  border-radius: 26px;
   background: var(--white);
+  box-shadow:
+    inset -4px -5px 0 rgba(20, 20, 20, 0.12),
+    var(--pop);
+  transition: rotate 0.4s var(--bounce);
+}
+
+.art__phones--1 .phone {
+  rotate: -4deg;
+}
+
+.pcard:hover .art__phones--1 .phone {
+  rotate: 0deg;
+}
+
+.phone::before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: 13px;
+  left: 50%;
+  width: 9px;
+  height: 9px;
+  translate: -50% 0;
+  border-radius: 50%;
+  background: var(--ink);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+.phone::after {
+  content: '';
+  position: absolute;
+  top: 22%;
+  right: -7px;
+  width: 4px;
+  height: 14%;
+  border: 2px solid var(--ink);
+  border-left: 0;
+  border-radius: 0 4px 4px 0;
+  background: var(--saffron);
+}
+
+.phone__screen {
+  position: relative;
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  border: 2px solid var(--ink);
+  border-radius: 19px;
+  background: var(--ink);
+}
+
+/* trim the phone's own status and navigation bars off the screenshot */
+.art__layer .phone img {
+  position: absolute;
+  top: -3%;
+  left: 0;
+  height: 108%;
+  object-position: top;
 }
 
 /* three screens fan out, the middle one in front */
@@ -272,6 +368,37 @@
   color: var(--ink);
   opacity: 0.8;
   max-width: 56ch;
+}
+
+/* the featured banner lists a few highlights (desktop only, where there's room) */
+.pcard__features {
+  display: none;
+}
+
+@media (min-width: 1100px) {
+  .pcard__features {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.45rem 1.4rem;
+    max-width: 62ch;
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+  .pcard__features li {
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+  }
+  .pcard__features li::before {
+    content: '';
+    flex: none;
+    width: 0.7rem;
+    height: 0.7rem;
+    border: 2px solid var(--ink);
+    border-radius: 50%;
+    background: var(--saffron);
+    translate: 0 0.1rem;
+  }
 }
 
 .pcard__actions {
