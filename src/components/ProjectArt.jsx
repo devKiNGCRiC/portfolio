@@ -173,6 +173,34 @@ function PinchPopArt() {
 
 // AlgoVisualizer Pro: sorting bars mid-swap
 function AlgoArt() {
+// DevBlog: an article page with a like and a comment bubble
+function DevBlogArt() {
+  return (
+    <>
+      <div className="art__layer" style={{ '--d': 0.02 }}>
+        <svg viewBox="0 0 600 360" preserveAspectRatio="xMidYMid slice">
+          <rect width="600" height="360" fill="#e3f1ff" />
+          <rect x="170" y="40" width="260" height="300" rx="14" fill="#fff" {...stroke} />
+          <rect x="190" y="60" width="220" height="70" rx="8" fill="#ffc400" {...stroke} />
+          <rect x="190" y="148" width="180" height="14" rx="7" fill="#17171a" />
+          {[178, 198, 218, 238, 258].map((y, i) => (
+            <rect key={y} x="190" y={y} width={i % 2 ? 190 : 220} height="8" rx="4" fill="#c9ced8" />
+          ))}
+        </svg>
+      </div>
+      <div className="art__layer" style={{ '--d': 0.1 }}>
+        <svg viewBox="0 0 600 360" preserveAspectRatio="xMidYMid slice">
+          <path d="M480 150 C 480 128, 452 122, 444 142 C 436 122, 408 128, 408 150 C 408 172, 444 192, 444 192 C 444 192, 480 172, 480 150 Z" fill="#ff2e88" {...stroke} />
+          <path d="M80 210 H190 A14 14 0 0 1 204 224 V262 A14 14 0 0 1 190 276 H112 L92 296 V276 H80 A14 14 0 0 1 66 262 V224 A14 14 0 0 1 80 210 Z" fill="#00e5ff" {...stroke} />
+          <circle cx="110" cy="243" r="6" fill="#17171a" />
+          <circle cx="135" cy="243" r="6" fill="#17171a" />
+          <circle cx="160" cy="243" r="6" fill="#17171a" />
+        </svg>
+      </div>
+    </>
+  )
+}
+
   const bars = [140, 60, 200, 100, 240, 80, 170, 120]
   return (
     <>
@@ -212,6 +240,7 @@ const art = {
   algovisualizer: AlgoArt,
 }
 
+  devblog: DevBlogArt,
 export default function ProjectArt({ project }) {
   if (project.image) {
     return (

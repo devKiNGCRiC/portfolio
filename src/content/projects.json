@@ -118,6 +118,46 @@
       "live": "https://algovisualizer-pro.vercel.app"
     },
     {
+      "id": "devblog",
+      "name": "DevBlog",
+      "tagline": "A Medium-style home for developer writing",
+      "status": "Completed",
+      "featured": false,
+      "year": "2026",
+      "image": "/photos/devbloghome.jpg",
+      "summary": "A full-stack MERN blogging platform inspired by Medium and Dev.to. Write rich posts, then get likes, bookmarks, nested comments and followers. Started during my EDXcellence internship and kept growing.",
+      "award": null,
+      "story": {
+        "problem": "Todo lists and notes apps teach CRUD in isolation. I wanted to build something real and complete, where every piece has to connect.",
+        "idea": "A blogging platform has it all: many users with roles, a content editor, a social layer and real security concerns.",
+        "solution": "JWT auth with email verification and password reset, a Quill editor with cover images, drafts, scheduled posts and series, plus likes, bookmarks, nested comments, follows, notifications, author analytics, admin moderation, RSS and a sitemap. It installs as a PWA.",
+        "learned": "How a whole web app fits together and why each choice is made: sanitising HTML on both sides, rate limiting, blocking NoSQL injection, and testing the API with Jest and Supertest against an in-memory MongoDB."
+      },
+      "features": [
+        "Rich-text posts, drafts, scheduling & series",
+        "Likes, bookmarks & nested comments",
+        "Follows, notifications & a Following feed",
+        "Search, filters & author analytics",
+        "Admin moderation & reports",
+        "PWA with light, dark & sepia themes"
+      ],
+      "tech": [
+        "React",
+        "Vite",
+        "Zustand",
+        "Quill",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "JWT",
+        "Cloudinary",
+        "Jest"
+      ],
+      "evolution": [],
+      "repo": "https://github.com/devKiNGCRiC/DevBlog",
+      "live": ""
+    },
+    {
       "id": "tripwise",
       "name": "TripWise",
       "tagline": "Plan less. Wander more.",
@@ -288,15 +328,6 @@
       "name": "blinktalk",
       "note": "Real-time chat: read receipts, group rooms, anonymous stranger chat, 5 themes",
       "tech": "React, Socket.IO, MongoDB",
-      "group": "Web & apps",
-      "repo": "",
-      "live": "",
-      "image": ""
-    },
-    {
-      "name": "DevBlog",
-      "note": "Medium-style blogging platform with JWT auth, built during the EDXcellence virtual internship",
-      "tech": "MERN",
       "group": "Web & apps",
       "repo": "",
       "live": "",

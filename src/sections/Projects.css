@@ -73,6 +73,10 @@
   background: var(--yellow-soft);
 }
 
+.pcard--white {
+  background: var(--white);
+}
+
 .pcard__art {
   position: relative;
   aspect-ratio: 16 / 9;

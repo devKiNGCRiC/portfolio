@@ -18,6 +18,7 @@ const THEMES = {
   pinchpop: 'green',
   algovisualizer: 'yellow',
   wanderlink: 'sky',
+  devblog: 'white',
 }
 
 // On desktop the regular cards sit three to a row. When the last row would

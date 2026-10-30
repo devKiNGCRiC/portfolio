@@ -181,7 +181,7 @@ collections:
             widget: list
             summary: '{{name}} ({{status}})'
             fields:
-              - { name: id, label: ID, widget: string, hint: 'Short and unique, e.g. safarnama. safarnama, wanderlink and portfolio have custom art.' }
+              - { name: id, label: ID, widget: string, hint: 'Short and unique, e.g. safarnama. Projects with custom art: safarnama, wanderlens, tripwise, pinchpop, algovisualizer, devblog, wanderlink.' }
               - { name: name, label: Name, widget: string }
               - { name: tagline, label: Tagline, widget: string }
               - { name: status, label: Status, widget: select, options: [Completed, In progress, Experimental, Concept] }
