@@ -8,6 +8,7 @@
       "featured": true,
       "year": "2026",
       "image": "/photos/wanderlens-feed.jpg",
+      "moreImages": [],
       "summary": "A social discovery app for travellers and photographers. Real people post geo-tagged photo spots with tips, and you can meet others heading to the same place. Community comes first; AI only helps.",
       "award": null,
       "story": {
@@ -51,6 +52,7 @@
       "featured": false,
       "year": "2026",
       "image": "/photos/pinchpop-home.jpg",
+      "moreImages": [],
       "summary": "A gesture-controlled photobooth game. Frame a shot with your fingers, pinch to capture, solve your own photo as a 3×3 puzzle, and keep it as a polaroid. The web version is live; it's growing into a web + mobile platform.",
       "award": null,
       "story": {
@@ -89,6 +91,7 @@
       "featured": false,
       "year": "2025",
       "image": "/photos/algovisualizer-home.jpg",
+      "moreImages": [],
       "summary": "An interactive DSA learning tool: step-by-step animations of five sorting algorithms with live comparison, swap and timing stats, plus a side-by-side mode that scores algorithms on real performance.",
       "award": null,
       "story": {
@@ -125,6 +128,7 @@
       "featured": false,
       "year": "2026",
       "image": "/photos/devblog-home.jpg",
+      "moreImages": [],
       "summary": "A full-stack MERN blogging platform inspired by Medium and Dev.to. Write rich posts, then get likes, bookmarks, nested comments and followers. Started during my EDXcellence internship and kept growing.",
       "award": null,
       "story": {
@@ -165,6 +169,7 @@
       "featured": false,
       "year": "2026",
       "image": "",
+      "moreImages": [],
       "summary": "An AI-powered travel planner. Tell it where, when, your budget and your vibe, and it builds a day-by-day itinerary with costs, local tips and a packing list, all running on free tiers.",
       "award": null,
       "story": {
@@ -208,6 +213,7 @@
       "featured": false,
       "year": "2025",
       "image": "",
+      "moreImages": [],
       "summary": "SafarNama (\"travelogue\" in Hindi) is a full-stack platform for exploring India responsibly: find eco-friendly destinations, plan a trip day by day, and share it with SafarGram, a built-in traveller community. A team project; I worked on both the frontend and the backend.",
       "award": {
         "title": "Special Jury Award, Most Innovative Project",
@@ -278,6 +284,7 @@
       "featured": false,
       "year": "2025",
       "image": "",
+      "moreImages": [],
       "summary": "A traveller-focused Android app that combines messaging, trip planning and social networking. The best travel tips come from people who were just there. (Private repo for now.)",
       "award": null,
       "story": {
@@ -349,7 +356,7 @@
       "group": "Web & apps",
       "repo": "",
       "live": "",
-      "image": ""
+      "image": "/photos/home.webp"
     },
     {
       "name": "expense-tracker",
@@ -358,7 +365,7 @@
       "group": "Web & apps",
       "repo": "",
       "live": "https://devKiNGCRiC.github.io/expense-tracker",
-      "image": ""
+      "image": "/photos/desktop.jpg"
     },
     {
       "name": "portfolio",
