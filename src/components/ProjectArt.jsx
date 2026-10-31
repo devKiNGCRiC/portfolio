@@ -118,10 +118,10 @@ function TripWiseArt() {
     <>
       <div className="art__layer" style={{ '--d': 0.02 }}>
         <svg viewBox="0 0 600 360" preserveAspectRatio="xMidYMid slice">
-          <rect width="600" height="360" fill="#ffe0db" />
-          <path d="M0 290 L110 170 L190 240 L300 120 L410 230 L500 160 L600 250 V360 H0Z" fill="#8a97ad" {...stroke} />
+          <rect width="600" height="360" fill="#d7e7f4" />
+          <path d="M0 290 L110 170 L190 240 L300 120 L410 230 L500 160 L600 250 V360 H0Z" fill="#93abc0" {...stroke} />
           <path d="M270 154 L300 120 L330 154 Z" fill="#fff" {...stroke} />
-          <circle cx="500" cy="80" r="34" fill="#ffc400" {...stroke} />
+          <circle cx="500" cy="80" r="34" fill="#fff7d6" {...stroke} />
         </svg>
       </div>
       <div className="art__layer art__days" style={{ '--d': 0.12 }}>
