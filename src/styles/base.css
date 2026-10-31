@@ -10,6 +10,44 @@ html {
   scroll-padding-top: 5.5rem;
 }
 
+/* clay scrollbar: a chunky saffron handle with an ink outline on a paper track */
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--paper);
+  border-left: 2px solid var(--ink);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--saffron);
+  border: 2.5px solid var(--ink);
+  border-radius: 999px;
+  box-shadow: inset -2px -2px 0 rgb(0 0 0 / 0.18);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--yellow);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: var(--coral);
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--paper);
+}
+
+/* Firefox only takes colours; set them there alone, since Chrome drops the
+   shaped scrollbar above as soon as scrollbar-color is set */
+@supports (-moz-appearance: none) {
+  html {
+    scrollbar-color: var(--saffron) var(--paper);
+  }
+}
+
 body {
   margin: 0;
   background-color: var(--paper); /* fallback; the real background is <Backdrop /> */
