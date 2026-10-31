@@ -370,15 +370,6 @@
       "image": ""
     },
     {
-      "name": "UniAthleteIQ",
-      "note": "Cross-sport injury-risk prediction on 87,865 records, with SHAP explanations",
-      "tech": "Python, XGBoost",
-      "group": "AI & data",
-      "repo": "",
-      "live": "",
-      "image": ""
-    },
-    {
       "name": "moodmind",
       "note": "MoodMind: an AI journal that reads your mood and suggests what might help",
       "tech": "React, Gemini API",
@@ -401,33 +392,6 @@
       "note": "A polished BMI app with custom SVG gauges and history",
       "tech": "React Native, Expo",
       "group": "Mobile",
-      "repo": "",
-      "live": "",
-      "image": ""
-    },
-    {
-      "name": "DSA-in-CPP-by-KiNG",
-      "note": "C++ and DSA, from basics to advanced",
-      "tech": "C++",
-      "group": "Practice & DSA",
-      "repo": "",
-      "live": "",
-      "image": ""
-    },
-    {
-      "name": "java-practice-dsa",
-      "note": "Java practice programs and DSA exercises",
-      "tech": "Java",
-      "group": "Practice & DSA",
-      "repo": "",
-      "live": "",
-      "image": ""
-    },
-    {
-      "name": "Python-journey",
-      "note": "My Python learning log: exercises, mini-projects and notes",
-      "tech": "Python",
-      "group": "Practice & DSA",
       "repo": "",
       "live": "",
       "image": ""
