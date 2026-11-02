@@ -241,7 +241,7 @@ export default function Backdrop() {
         </div>
         <span className="backdrop__sun" />
         <span className="backdrop__moon" />
-        <span className="glow glow--saffron" />
+        <span className="glow glow--marigold" />
         <span className="glow glow--green" />
         <span className="glow glow--cyan" />
         <span className="glow glow--coral" />

@@ -122,21 +122,23 @@
   width: 70vmax;
   aspect-ratio: 1;
   border-radius: 50%;
-  opacity: calc(0.45 - var(--bd-night) * 0.2);
+  opacity: calc(0.9 - var(--bd-night) * 0.5);
   will-change: transform;
 }
 
-/* only the warm glows: saffron top-left, a red warmth top-right */
+/* the three India colours each get a corner: the saffron sky across the top,
+   a red sun glowing top-right and marigold rising bottom-left */
 .glow--green,
 .glow--cyan {
   display: none;
 }
 
-.glow--saffron {
-  top: -30vmax;
-  left: -25vmax;
-  background: radial-gradient(circle, rgba(255, 153, 51, 0.38), rgba(255, 153, 51, 0) 62%);
-  animation: drift-a 34s ease-in-out infinite alternate;
+.glow--marigold {
+  bottom: -30vmax;
+  left: -26vmax;
+  width: 90vmax;
+  background: radial-gradient(circle, rgba(255, 200, 0, 0.75), rgba(255, 214, 40, 0.35) 38%, rgba(255, 196, 0, 0) 66%);
+  animation: drift-a 34s ease-in-out infinite alternate-reverse;
 }
 
 .glow--green {
@@ -154,9 +156,10 @@
 }
 
 .glow--coral {
-  top: -32vmax;
-  right: -26vmax;
-  background: radial-gradient(circle, rgba(255, 111, 97, 0.26), rgba(255, 111, 97, 0) 60%);
+  top: -36vmax;
+  right: -30vmax;
+  width: 85vmax;
+  background: radial-gradient(circle, rgba(232, 62, 52, 0.46), rgba(232, 62, 52, 0) 64%);
   animation: drift-b 38s ease-in-out infinite alternate-reverse;
 }
 
