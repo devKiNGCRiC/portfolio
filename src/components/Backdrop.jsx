@@ -131,6 +131,17 @@ const CONTOURS = [
   contourRings(1320, 1300, 7, 24, 30, 5.7),
 ].join(' ')
 
+/* ---------- the Himalaya: three ranges that rise as you climb the page ---------- */
+const RANGES = [
+  // far: high snowy peaks
+  { d: 'M0 250 L90 170 L150 205 L260 90 L330 150 L420 120 L520 40 L610 130 L700 95 L820 20 L930 140 L1010 100 L1120 55 L1220 150 L1310 110 L1420 30 L1520 120 L1600 90 V400 H0 Z', k: 0.55 },
+  // middle: ridges
+  { d: 'M0 290 L120 220 L210 260 L330 180 L460 250 L560 200 L690 270 L800 190 L930 255 L1060 210 L1180 270 L1300 200 L1440 260 L1600 215 V400 H0 Z', k: 0.8 },
+  // near: forested foothills
+  { d: 'M0 340 Q120 290 240 330 T480 320 T740 335 T1000 315 T1260 335 T1600 320 V400 H0 Z', k: 1 },
+]
+const SNOW = 'M233 115 L260 90 L285 118 L270 112 L258 122 Z M495 63 L520 40 L548 72 L530 66 L518 76 L506 68 Z M795 44 L820 20 L850 52 L834 46 L822 56 L808 48 Z M1095 76 L1120 55 L1146 82 L1130 78 L1118 86 Z M1395 54 L1420 30 L1450 62 L1432 56 L1420 66 L1406 58 Z'
+
 const STARS = Array.from({ length: 70 }, (_, i) => {
   const r = (n) => {
     const x = Math.sin(i * 127.1 + n * 311.7) * 43758.5453
@@ -200,6 +211,12 @@ export default function Backdrop() {
         <span className="glow glow--green" />
         <span className="glow glow--cyan" />
         <span className="glow glow--coral" />
+        <svg className="backdrop__range" viewBox="0 0 1600 400" preserveAspectRatio="xMidYMax slice">
+          {RANGES.map((r, i) => (
+            <path key={i} className={`range range--${i + 1}`} d={r.d} style={{ '--k': r.k }} />
+          ))}
+          <path className="range__snow" d={SNOW} style={{ '--k': RANGES[0].k }} />
+        </svg>
         <svg className="backdrop__topo" viewBox="0 0 1600 1500" preserveAspectRatio="xMidYMid slice">
           <path d={CONTOURS} />
         </svg>

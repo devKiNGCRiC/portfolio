@@ -27,6 +27,39 @@
   background: linear-gradient(180deg, var(--bd-top) 0%, var(--bd-bottom) 100%);
 }
 
+/* the Himalaya along the bottom of the screen: the ranges rise as you scroll
+   down the page (the trek climbs), nearer ranges rise faster */
+.backdrop__range {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: clamp(180px, 34vh, 380px);
+  overflow: visible;
+}
+
+.range,
+.range__snow {
+  transform: translateY(calc((1 - var(--bd-p, 0)) * var(--k) * 70%));
+  transform-box: view-box;
+}
+
+.range--1 {
+  fill: rgba(70, 90, 140, calc(0.1 + var(--bd-night, 0) * 0.12));
+}
+
+.range--2 {
+  fill: rgba(60, 85, 120, calc(0.12 + var(--bd-night, 0) * 0.14));
+}
+
+.range--3 {
+  fill: rgba(40, 110, 70, calc(0.1 + var(--bd-night, 0) * 0.1));
+}
+
+.range__snow {
+  fill: rgba(255, 255, 255, 0.55);
+}
+
 /* the sun: a soft glowing disc that arcs across the screen */
 .backdrop__sun {
   position: absolute;
