@@ -35,6 +35,30 @@
   .hero__grid {
     grid-template-columns: 1.1fr 1fr;
   }
+
+  /* fit the whole hero above the road dock, even on short or zoomed-in
+     screens: spacing, headline, intro and map all give way to the height */
+  .hero {
+    padding-top: clamp(4.6rem, 11vh, 8rem);
+    padding-bottom: 7rem; /* the dock's height */
+  }
+
+  /* (prefixed with .hero so they win over the base rules further down) */
+  .hero .hero__copy {
+    gap: clamp(0.6rem, 1.9vh, 1.5rem);
+  }
+
+  .hero .hero__title {
+    font-size: min(clamp(1.9rem, 8.2cqi, 4.2rem), 7.2vh);
+  }
+
+  .hero .hero__intro {
+    font-size: min(var(--step-1), 2.8vh);
+  }
+
+  .hero .stage {
+    max-height: min(660px, calc(100svh - 12rem));
+  }
 }
 
 .hero__copy {
