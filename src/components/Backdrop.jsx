@@ -14,12 +14,13 @@ import './Backdrop.css'
 // [progress, sky top, sky bottom] for each theme
 const SKIES = {
   // a whole day: sunrise → day → golden hour → sunset → dusk → night
+  // kept light so the content reads clearly; the sky only tints the top of the screen
   sunrise: [
-    [0, '#ffd2ad', '#fff3e3'],
-    [0.16, '#c9e9ff', '#fff8ee'],
-    [0.42, '#b7e1ff', '#f1faff'],
-    [0.62, '#ffe1a8', '#fff5e2'],
-    [0.8, '#ffad94', '#ffdca3'],
+    [0, '#e2f0ff', '#fff8ef'],
+    [0.16, '#dcefff', '#fffcf8'],
+    [0.42, '#d3ebff', '#fafdff'],
+    [0.62, '#fff0d4', '#fffbf2'],
+    [0.8, '#ffd4c2', '#fff0dc'],
     [0.92, '#6c48a8', '#ff9a7a'],
     [1, '#0b1a6e', '#3b2a7c'],
   ],
@@ -194,7 +195,7 @@ export default function Backdrop() {
       root.style.setProperty('--bd-p', p.toFixed(4))
       root.style.setProperty('--bd-scroll', `${scrollY.toFixed(0)}px`)
       root.style.setProperty('--bd-night', night.toFixed(3))
-      const a = (0.16 + night * 0.12).toFixed(3)
+      const a = (0.11 + night * 0.12).toFixed(3)
       const c = Math.round(20 + night * 235)
       root.style.setProperty('--bd-ink', `rgba(${c}, ${c}, ${c}, ${a})`)
       // sunrise: the sun rises from the bottom edge, peaks at midday, sets before night.

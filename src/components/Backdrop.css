@@ -122,8 +122,14 @@
   width: 70vmax;
   aspect-ratio: 1;
   border-radius: 50%;
-  opacity: calc(0.75 - var(--bd-night) * 0.45);
+  opacity: calc(0.45 - var(--bd-night) * 0.2);
   will-change: transform;
+}
+
+/* only the warm sun glow and the cool sky glow; more just muddies the paper */
+.glow--green,
+.glow--coral {
+  display: none;
 }
 
 .glow--saffron {
@@ -185,15 +191,15 @@
 .backdrop__topo path {
   fill: none;
   stroke: var(--bd-ink);
-  stroke-width: 1.4;
-  opacity: 0.75;
+  stroke-width: 1.2;
+  opacity: 0.55;
 }
 
 /* fine film grain, so the gradients feel printed rather than flat */
 .backdrop__grain {
   position: absolute;
   inset: -50%;
-  opacity: 0.09;
+  opacity: 0.05;
   mix-blend-mode: soft-light;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
@@ -222,6 +228,11 @@
   50% {
     transform: translateY(-14px) rotate(4deg);
   }
+}
+
+/* a few doodles go a long way */
+.doodle:nth-child(2n) {
+  display: none;
 }
 
 @media (max-width: 720px) {

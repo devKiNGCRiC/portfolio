@@ -31,7 +31,7 @@
 
   /* ink */
   --ink: #141414;
-  --ink-soft: #4a4a52;
+  --ink-soft: #383842; /* body copy on light paper: keep it dark enough to read */
   --red: #e53935;
   --red-deep: #c62828; /* passes AA with white text */
 
