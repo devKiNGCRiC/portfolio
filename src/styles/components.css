@@ -225,6 +225,7 @@
 /* ---------- highway milestone (section stop marker) ---------- */
 .milestone {
   display: grid;
+  color: var(--ink);
   justify-items: center;
   width: fit-content;
   min-width: 64px;
