@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import SectionHead from '../components/SectionHead'
 import PostcardArt from '../components/PostcardArt'
 import PrayerFlags from '../components/PrayerFlags'
-import { TrekGuide, GuideReader } from '../components/TrekGuide'
+import { Guides, GuideReader } from '../components/Guidebook'
 import Icon from '../components/Icon'
 import { useReveal } from '../hooks/useReveal'
 import { useReducedMotion } from '../hooks/useReducedMotion'
@@ -109,9 +109,9 @@ function PostcardTrail({ onOpenGuide }) {
                   <p className="postcard__coords mono">
                     {s.lat.toFixed(2)}°N {s.lon.toFixed(2)}°E
                   </p>
-                  {guidePageFor(s.name) >= 0 && (
+                  {guidePageFor(s.name) && (
                     <button className="postcard__guide" onClick={() => onOpenGuide(guidePageFor(s.name))}>
-                      Guide p.{String(guidePageFor(s.name) + 1).padStart(2, '0')}
+                      Guide p.{String(guidePageFor(s.name).page + 1).padStart(2, '0')}
                       <span className="sr-only">: {s.name}</span>
                     </button>
                   )}
@@ -207,8 +207,8 @@ function Polaroids() {
 
 export default function Trips() {
   const chainRef = useReveal()
-  // the guide page open in the reader, if any
-  const [page, setPage] = useState(null)
+  // the guide page open in the full-size reader, as { book, page }
+  const [reading, setReading] = useState(null)
 
   return (
     <section id="trips" className="section trips" aria-labelledby="trips-title">
@@ -229,10 +229,10 @@ export default function Trips() {
         </ul>
       </div>
 
-      <PostcardTrail onOpenGuide={setPage} />
+      <PostcardTrail onOpenGuide={setReading} />
 
       <div className="wrap">
-        <TrekGuide onOpen={setPage} />
+        <Guides onZoom={setReading} />
 
         <div ref={chainRef} className="stubs reveal">
           <h3 className="stubs__title display">How a trip became a product</h3>
@@ -252,7 +252,7 @@ export default function Trips() {
         <Polaroids />
       </div>
 
-      <GuideReader index={page} onGo={setPage} onClose={() => setPage(null)} />
+      <GuideReader at={reading} onGo={setReading} onClose={() => setReading(null)} />
     </section>
   )
 }

@@ -29,7 +29,10 @@
     .trail__head,
     .trail__alt-label,
     .wall__head,
-    .tbook__head,
+    .guides__head,
+    .guides__meta,
+    .flipbook__where,
+    .flipbook__zoom,
     .stubs__title
   ) {
   --ink-soft: var(--moon-soft);
@@ -37,13 +40,18 @@
 }
 
 /* handwritten asides: red ink is lost on navy, so a warm coral */
-[data-theme='night'] :is(.shead__note, .bench__head .hand, .trail__kicker, .trail__hint, .wall__head .hand, .tbook__head .hand, .story__sign) {
+[data-theme='night'] :is(.shead__note, .bench__head .hand, .trail__kicker, .trail__hint, .wall__head .hand, .guides__head .hand, .story__sign) {
   color: var(--moon-note);
 }
 
 /* the story sets its lead and bold words in ink on purpose; at night they're moonlight */
 [data-theme='night'] .story :is(.story__lead, b) {
   color: var(--moon);
+}
+
+/* buttons are clay objects too, so they keep their own ink */
+[data-theme='night'] .guides__meta .btn {
+  color: var(--ink);
 }
 
 /* the highlighter in the pull-quote is still a paper sticker */
