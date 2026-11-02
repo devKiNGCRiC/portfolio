@@ -96,6 +96,22 @@
   transform: rotate(-10deg) scale(1.06);
 }
 
+/* the theme switch wears the colour of the light it's showing */
+.topbar__theme--sunrise {
+  background: var(--yellow);
+  color: var(--ink);
+}
+
+.topbar__theme--sunset {
+  background: var(--coral);
+  color: var(--ink);
+}
+
+.topbar__theme--night {
+  background: #1d2470;
+  color: #fff6d6;
+}
+
 /* the trek altimeter: altitude always, the place name when there's room */
 .altimeter {
   display: none;

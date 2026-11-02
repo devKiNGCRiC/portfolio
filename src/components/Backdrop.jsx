@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useReducedMotion } from '../hooks/useReducedMotion'
+import { useTheme } from '../theme'
 import './Backdrop.css'
 
 /*
@@ -10,16 +11,41 @@ import './Backdrop.css'
   Everything is gradients + transforms, so it stays cheap to render.
 */
 
-// [progress, sky top, sky bottom]
-const SKY = [
-  [0, '#ffd2ad', '#fff3e3'], // sunrise
-  [0.16, '#c9e9ff', '#fff8ee'], // morning
-  [0.42, '#b7e1ff', '#f1faff'], // midday
-  [0.62, '#ffe1a8', '#fff5e2'], // golden hour
-  [0.8, '#ffad94', '#ffdca3'], // sunset
-  [0.92, '#6c48a8', '#ff9a7a'], // dusk
-  [1, '#0b1a6e', '#3b2a7c'], // night
-]
+// [progress, sky top, sky bottom] for each theme
+const SKIES = {
+  // a whole day: sunrise → day → golden hour → sunset → dusk → night
+  sunrise: [
+    [0, '#ffd2ad', '#fff3e3'],
+    [0.16, '#c9e9ff', '#fff8ee'],
+    [0.42, '#b7e1ff', '#f1faff'],
+    [0.62, '#ffe1a8', '#fff5e2'],
+    [0.8, '#ffad94', '#ffdca3'],
+    [0.92, '#6c48a8', '#ff9a7a'],
+    [1, '#0b1a6e', '#3b2a7c'],
+  ],
+  // the evening only: golden hour deepening into pink, dusk and night
+  sunset: [
+    [0, '#ffa877', '#ffe2c0'],
+    [0.3, '#ff9f86', '#ffd9b8'],
+    [0.55, '#ff9f8f', '#ffd6ae'],
+    [0.76, '#d98bb0', '#ffc2a0'],
+    [0.9, '#6c48a8', '#ff9a7a'],
+    [1, '#0b1a6e', '#3b2a7c'],
+  ],
+  // a starlit night all the way down
+  night: [
+    [0, '#0a1240', '#1d2470'],
+    [0.5, '#0d1a5c', '#2b2470'],
+    [1, '#0b1a6e', '#3b2a7c'],
+  ],
+}
+
+// how dark it has got, 0 (day) to 1 (night), at a scroll progress
+const NIGHT = {
+  sunrise: (p) => smooth(0.84, 0.98, p),
+  sunset: (p) => smooth(0.8, 0.96, p),
+  night: () => 1,
+}
 
 const hex = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16))
 const mix = (a, b, t) => {
@@ -28,7 +54,7 @@ const mix = (a, b, t) => {
   return `rgb(${A.map((v, i) => Math.round(v + (B[i] - v) * t)).join(',')})`
 }
 
-function skyAt(p) {
+function skyAt(SKY, p) {
   for (let i = 0; i < SKY.length - 1; i++) {
     const [p0, t0, b0] = SKY[i]
     const [p1, t1, b1] = SKY[i + 1]
@@ -152,6 +178,7 @@ const STARS = Array.from({ length: 70 }, (_, i) => {
 
 export default function Backdrop() {
   const reduced = useReducedMotion()
+  const theme = useTheme()
 
   useEffect(() => {
     const root = document.documentElement
@@ -160,8 +187,8 @@ export default function Backdrop() {
       ticking = false
       const max = Math.max(1, root.scrollHeight - innerHeight)
       const p = Math.min(1, Math.max(0, scrollY / max))
-      const [top, bottom] = skyAt(p)
-      const night = smooth(0.84, 0.98, p)
+      const [top, bottom] = skyAt(SKIES[theme] ?? SKIES.sunrise, p)
+      const night = (NIGHT[theme] ?? NIGHT.sunrise)(p)
       root.style.setProperty('--bd-top', top)
       root.style.setProperty('--bd-bottom', bottom)
       root.style.setProperty('--bd-p', p.toFixed(4))
@@ -170,9 +197,14 @@ export default function Backdrop() {
       const a = (0.16 + night * 0.12).toFixed(3)
       const c = Math.round(20 + night * 235)
       root.style.setProperty('--bd-ink', `rgba(${c}, ${c}, ${c}, ${a})`)
-      // the sun rises from the bottom edge, peaks at midday, sets before night
+      // sunrise: the sun rises from the bottom edge, peaks at midday, sets before night.
+      // sunset: it starts low and sinks to the horizon.
+      const sunY =
+        theme === 'sunset'
+          ? 42 + Math.min(1, p / 0.85) * 62
+          : 100 - Math.sin(Math.min(1, p / 0.88) * Math.PI) * 84
       root.style.setProperty('--bd-sun-x', `${(30 + p * 56).toFixed(2)}vw`)
-      root.style.setProperty('--bd-sun-y', `${(100 - Math.sin(Math.min(1, p / 0.88) * Math.PI) * 84).toFixed(2)}vh`)
+      root.style.setProperty('--bd-sun-y', `${sunY.toFixed(2)}vh`)
     }
     const onScroll = () => {
       if (!ticking) {
@@ -191,7 +223,7 @@ export default function Backdrop() {
       window.removeEventListener('resize', onScroll)
       ro.disconnect()
     }
-  }, [])
+  }, [theme])
 
   return (
     <div className={`backdrop ${reduced ? 'is-still' : ''}`} aria-hidden="true">

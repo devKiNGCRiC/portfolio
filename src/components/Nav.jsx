@@ -4,6 +4,7 @@ import { profile, links } from '../data/profile'
 import { stops, placeFor } from '../data/stops'
 import { useLocalTime } from '../hooks/useLocalTime'
 import { useReducedMotion } from '../hooks/useReducedMotion'
+import { THEMES, THEME_LABELS, setTheme, useTheme } from '../theme'
 import './Nav.css'
 
 const dockStops = stops.filter((s) => s.dock !== false)
@@ -76,6 +77,47 @@ function Altimeter({ active }) {
   )
 }
 
+const sw = { fill: 'none', stroke: 'currentColor', strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round' }
+const THEME_ICONS = {
+  // half a sun on the horizon, with an arrow up or down
+  sunrise: (
+    <>
+      <path d="M3 18 H21 M7 18 a5 5 0 0 1 10 0" {...sw} />
+      <path d="M12 3 V8 M9.5 5.5 L12 3 L14.5 5.5" {...sw} />
+    </>
+  ),
+  sunset: (
+    <>
+      <path d="M3 18 H21 M7 18 a5 5 0 0 1 10 0" {...sw} />
+      <path d="M12 3 V8 M9.5 5.5 L12 8 L14.5 5.5" {...sw} />
+    </>
+  ),
+  night: (
+    <>
+      <path d="M15 4 a8 8 0 1 0 5 12 a6.5 6.5 0 0 1 -5 -12 Z" {...sw} />
+      <path d="M19 3 v3 M17.5 4.5 h3" {...sw} />
+    </>
+  ),
+}
+
+/** Sunrise → sunset → night, and round again. */
+function ThemeSwitch() {
+  const theme = useTheme()
+  const next = THEMES[(THEMES.indexOf(theme) + 1) % THEMES.length]
+  return (
+    <button
+      className={`topbar__icon topbar__theme topbar__theme--${theme}`}
+      onClick={() => setTheme(next)}
+      aria-label={`Theme: ${THEME_LABELS[theme]}. Switch to ${THEME_LABELS[next]}`}
+      title={`${THEME_LABELS[theme]} (switch to ${THEME_LABELS[next].toLowerCase()})`}
+    >
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+        {THEME_ICONS[theme]}
+      </svg>
+    </button>
+  )
+}
+
 export default function Nav({ active, onOpenTerminal }) {
   const time = useLocalTime(profile.timezone)
   const current = dockIdFor(active)
@@ -111,6 +153,7 @@ export default function Nav({ active, onOpenTerminal }) {
             <span className="sr-only">Local time in Chennai:</span>
             Chennai {time}
           </span>
+          <ThemeSwitch />
           <button className="topbar__icon" onClick={onOpenTerminal} aria-label="Open terminal" title="Terminal (press /)">
             <Icon name="terminal" size={18} />
           </button>

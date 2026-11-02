@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="theme-color" content="#ffcb2b" />
+    <script>
+      // pick the theme before first paint: a saved choice, else the visitor's time of day
+      (function () {
+        var t
+        try {
+          t = localStorage.getItem('theme')
+        } catch (e) {}
+        if (!/^(sunrise|sunset|night)$/.test(t || '')) {
+          var h = new Date().getHours()
+          t = h >= 5 && h < 16 ? 'sunrise' : h >= 16 && h < 19 ? 'sunset' : 'night'
+        }
+        document.documentElement.dataset.theme = t
+      })()
+    </script>
 
     <title>Raj Roy (KiNG) | MCA student building web, mobile & AI projects and exploring the mountains</title>
     <meta
