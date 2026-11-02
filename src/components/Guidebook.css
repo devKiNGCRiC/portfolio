@@ -104,8 +104,8 @@
 .flipbook {
   display: grid;
   grid-template-areas: 'tabs' 'book' 'nav' 'zoom';
-  max-width: 1060px;
-  margin-inline: auto;
+  /* lines up with the heading and intro above it */
+  max-width: 1180px;
 }
 
 .flipbook__book {
@@ -374,6 +374,7 @@
   .flipbook {
     grid-template-columns: minmax(0, 1fr) auto;
     grid-template-areas: 'book tabs' 'nav .' 'zoom .';
+    align-items: start;
   }
 
   .flipbook__tabs {
@@ -383,11 +384,13 @@
     overflow: visible;
   }
 
+  /* each tab tucks 10px under the cover, so its label starts past that */
   .flipbook__tabs button {
+    margin-left: -10px;
     border: 2.5px solid var(--ink);
     border-left: 0;
     border-radius: 0 10px 10px 0;
-    padding: 0.55rem 0.9rem 0.55rem 0.7rem;
+    padding: 0.55rem 1rem 0.55rem calc(10px + 1.2rem);
     text-align: left;
     translate: -6px 0;
   }
