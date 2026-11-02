@@ -126,9 +126,9 @@
   will-change: transform;
 }
 
-/* only the warm sun glow and the cool sky glow; more just muddies the paper */
+/* only the warm glows: saffron top-left, a red warmth top-right */
 .glow--green,
-.glow--coral {
+.glow--cyan {
   display: none;
 }
 
@@ -154,8 +154,8 @@
 }
 
 .glow--coral {
-  bottom: -30vmax;
-  left: -20vmax;
+  top: -32vmax;
+  right: -26vmax;
   background: radial-gradient(circle, rgba(255, 111, 97, 0.26), rgba(255, 111, 97, 0) 60%);
   animation: drift-b 38s ease-in-out infinite alternate-reverse;
 }

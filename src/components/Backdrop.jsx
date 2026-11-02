@@ -14,13 +14,14 @@ import './Backdrop.css'
 // [progress, sky top, sky bottom] for each theme
 const SKIES = {
   // a whole day: sunrise → day → golden hour → sunset → dusk → night
-  // kept light so the content reads clearly; the sky only tints the top of the screen
+  // saffron, marigold and red, the India colours, as one sky down the whole page;
+  // the lower half of the screen stays pale so text reads on it
   sunrise: [
-    [0, '#e2f0ff', '#fff8ef'],
-    [0.16, '#dcefff', '#fffcf8'],
-    [0.42, '#d3ebff', '#fafdff'],
-    [0.62, '#fff0d4', '#fffbf2'],
-    [0.8, '#ffd4c2', '#fff0dc'],
+    [0, '#ffa94d', '#ffeccc'],
+    [0.2, '#ffbf5f', '#fff2d8'],
+    [0.45, '#ffcb6b', '#fff4de'],
+    [0.66, '#ffaf57', '#ffe9cc'],
+    [0.82, '#ff8a5c', '#ffd8b4'],
     [0.92, '#6c48a8', '#ff9a7a'],
     [1, '#0b1a6e', '#3b2a7c'],
   ],
