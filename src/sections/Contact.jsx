@@ -39,7 +39,7 @@ export default function Contact() {
               <p className="card-post__text">
                 <RichText text={site.contact.text} />
               </p>
-              <p className="card-post__sign hand">{profile.nickname}</p>
+              <p className="card-post__sign">{profile.name}</p>
               <div className="card-post__cta">
                 <Magnetic>
                   <a

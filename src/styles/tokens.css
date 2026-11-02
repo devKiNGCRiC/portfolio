@@ -41,6 +41,12 @@
   --font-hand: 'Kalam', 'Comic Sans MS', cursive;
   --font-mono: 'Geist Mono Variable', ui-monospace, 'Cascadia Code', monospace;
   --font-serif: 'Fraunces Variable', Georgia, 'Times New Roman', serif;
+  /* moods, each with one job: typed travel documents, your signature,
+     the airport/arcade LED bits, and the odd meme sticker */
+  --font-type: 'Special Elite', 'Courier New', monospace;
+  --font-sign: 'Mrs Saint Delafield', 'Brush Script MT', cursive;
+  --font-pixel: 'Pixelify Sans Variable', var(--font-mono);
+  --font-meme: 'Anton', Impact, 'Arial Narrow', sans-serif;
 
   --step--1: clamp(0.82rem, 0.8rem + 0.1vw, 0.9rem);
   --step-0: clamp(1rem, 0.97rem + 0.18vw, 1.12rem);

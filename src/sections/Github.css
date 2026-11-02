@@ -67,6 +67,7 @@
 }
 
 .board__row {
+  font-family: var(--font-pixel);
   min-height: 56px;
   padding: 0.55rem 0.8rem;
   border-radius: 10px;
@@ -239,6 +240,7 @@ a.board__row:hover {
 }
 
 .ghcard__count {
+  font-family: var(--font-pixel);
   font-size: 0.85rem;
   color: var(--ink-soft);
   font-weight: 700;

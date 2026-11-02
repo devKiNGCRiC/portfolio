@@ -86,6 +86,7 @@ function PostcardTrail() {
               <polyline points={profile} className="trail__alt-line" />
             </svg>
             <span className="trail__alt-label">altitude, Delhi to Hemkund</span>
+            <p className="trail__worth">WORTH IT</p>
           </div>
         </div>
 

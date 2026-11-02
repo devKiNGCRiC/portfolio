@@ -162,6 +162,11 @@
   color: var(--white);
 }
 
+.hero__facts li.hero__fact--repo b {
+  font-family: var(--font-pixel);
+  font-size: 1.15rem;
+}
+
 .hero__facts li.hero__fact--repo span {
   color: var(--cyan);
 }

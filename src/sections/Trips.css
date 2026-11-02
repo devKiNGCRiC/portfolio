@@ -89,9 +89,25 @@
   background: var(--saffron);
 }
 
+.trail__worth {
+  position: absolute;
+  right: -0.8rem;
+  top: -2.2rem;
+  margin: 0;
+  padding: 0.1rem 0.5rem;
+  border: 2.5px solid var(--ink);
+  background: var(--yellow);
+  box-shadow: 3px 3px 0 var(--ink);
+  font-family: var(--font-meme);
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  rotate: 8deg;
+}
+
 .trail__alt-label {
   position: absolute;
-  right: 0;
+  left: 0;
   top: -1.4rem;
   font-size: 0.75rem;
   font-weight: 800;
@@ -206,7 +222,8 @@
 }
 
 .postcard__coords {
-  font-size: 0.72rem;
+  font-family: var(--font-type);
+  font-size: 0.75rem;
   color: var(--ink-soft);
 }
 

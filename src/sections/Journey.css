@@ -49,8 +49,8 @@
 }
 
 .entry__year {
-  font-weight: 800;
-  font-size: 0.8rem;
+  font-family: var(--font-type);
+  font-size: 0.85rem;
   color: var(--ink-soft);
 }
 
@@ -231,7 +231,7 @@
 }
 
 .visa__fields dd {
-  font-weight: 600;
+  font-family: var(--font-type);
 }
 
 .visa__mrz {
