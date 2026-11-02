@@ -1,12 +1,13 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import SectionHead from '../components/SectionHead'
 import PostcardArt from '../components/PostcardArt'
 import PrayerFlags from '../components/PrayerFlags'
 import { Guides, GuideReader } from '../components/Guidebook'
+import Lightbox from '../components/Lightbox'
 import Icon from '../components/Icon'
 import { useReveal } from '../hooks/useReveal'
 import { useReducedMotion } from '../hooks/useReducedMotion'
-import { valleyRoute, tripToProduct, places, interests, guidePageFor } from '../data/travel'
+import { valleyRoute, tripToProduct, places, albums, interests, guidePageFor } from '../data/travel'
 import { links, site } from '../data/profile'
 import './Trips.css'
 
@@ -136,25 +137,54 @@ function PostcardTrail({ onOpenGuide }) {
   )
 }
 
-function Polaroids() {
+/*
+  The photo wall: one roll of film per trip, printed as polaroids you can drag
+  around (mouse) and open full size (click or tap). The last roll holds the
+  places that don't have photos yet, as illustrations.
+*/
+function PhotoWall() {
   const ref = useReveal({ threshold: 0.05 })
   const z = useRef(10)
+  const rolls = [
+    ...albums.filter((a) => a.photos.length),
+    ...(places.length ? [{ id: 'developing', title: 'Still developing', when: 'photos soon', places }] : []),
+  ]
+  const [rollId, setRollId] = useState(rolls[0]?.id)
+  const [viewing, setViewing] = useState(null)
+  const roll = rolls.find((r) => r.id === rollId) ?? rolls[0]
 
-  // drag to rearrange (mouse only, so touch users can still scroll the page)
+  const items = useMemo(
+    () =>
+      (roll?.photos ?? []).map((p) => ({
+        src: p.src,
+        alt: p.alt,
+        title: p.caption,
+        sub: `${roll.title}, ${roll.region}`,
+        label: roll.title,
+        stamp: p.date,
+        ratio: p.width && p.height ? p.width / p.height : undefined,
+      })),
+    [roll],
+  )
+
+  // drag to rearrange (mouse only, so touch users can still scroll the page);
+  // a press that barely moves is a click and opens the photo instead
   const onPointerDown = (e) => {
     if (e.pointerType !== 'mouse' || e.button !== 0) return
     const el = e.currentTarget
     const startX = e.clientX
     const startY = e.clientY
     const [ox, oy] = (el.dataset.pos || '0,0').split(',').map(Number)
+    el.dataset.moved = ''
     el.style.zIndex = ++z.current
     el.classList.add('is-dragging')
     el.setPointerCapture(e.pointerId)
     const move = (ev) => {
-      const x = ox + ev.clientX - startX
-      const y = oy + ev.clientY - startY
-      el.style.translate = `${x}px ${y}px`
-      el.dataset.pos = `${x},${y}`
+      const dx = ev.clientX - startX
+      const dy = ev.clientY - startY
+      if (Math.hypot(dx, dy) > 5) el.dataset.moved = '1'
+      el.style.translate = `${ox + dx}px ${oy + dy}px`
+      el.dataset.pos = `${ox + dx},${oy + dy}`
     }
     const up = () => {
       el.classList.remove('is-dragging')
@@ -164,15 +194,60 @@ function Polaroids() {
     el.addEventListener('pointermove', move)
     el.addEventListener('pointerup', up)
   }
+  const onOpen = (i) => (e) => {
+    if (e.currentTarget.dataset.moved) return
+    setViewing(i)
+  }
 
   return (
     <div ref={ref} className="wall reveal">
       <div className="wall__head">
         <h3 className="display">The photo wall</h3>
-        <p className="hand">(go on, drag them around)</p>
+        <p className="hand">(drag them around, tap one to open it)</p>
       </div>
-      <ul className="wall__grid">
-        {places.map((p, i) => (
+
+      {rolls.length > 1 && (
+        <div className="rolls" role="group" aria-label="Choose a trip">
+          {rolls.map((r, i) => (
+            <button key={r.id} className="roll" aria-pressed={r.id === roll.id} onClick={() => setRollId(r.id)}>
+              <span className="roll__no">Roll {String(i + 1).padStart(2, '0')}</span>
+              <b>{r.title}</b>
+              <small>{r.when}</small>
+            </button>
+          ))}
+        </div>
+      )}
+
+      <ul className="wall__grid" key={roll?.id}>
+        {roll?.photos?.map((p, i) => (
+          <li
+            key={p.src}
+            className="polaroid polaroid--photo"
+            style={{ '--r': `${[-4, 3, -2, 5, -5, 2, 4, -3][i % 8]}deg` }}
+            onPointerDown={onPointerDown}
+            onClick={onOpen(i)}
+          >
+            <span className="polaroid__tape" aria-hidden="true" />
+            <button className="polaroid__img" aria-label={`Open photo: ${p.caption}`}>
+              <img
+                src={p.thumb}
+                alt={p.alt}
+                width={p.width}
+                height={p.height}
+                loading="lazy"
+                decoding="async"
+                draggable="false"
+              />
+              {p.date && (
+                <span className="polaroid__stamp" aria-hidden="true">
+                  {p.date}
+                </span>
+              )}
+            </button>
+            <p className="polaroid__cap hand">{p.caption}</p>
+          </li>
+        ))}
+        {roll?.places?.map((p, i) => (
           <li
             key={p.name}
             className="polaroid"
@@ -194,6 +269,7 @@ function Polaroids() {
           </li>
         ))}
       </ul>
+
       <a className="insta" href={links.travelInstagram || links.instagram} target="_blank" rel="noreferrer">
         <Icon name="instagram" size={26} />
         <span>
@@ -201,6 +277,8 @@ function Polaroids() {
           <small>the real photos &amp; travel stories live here</small>
         </span>
       </a>
+
+      <Lightbox items={items} index={viewing} onGo={setViewing} onClose={() => setViewing(null)} />
     </div>
   )
 }
@@ -249,7 +327,7 @@ export default function Trips() {
           </ol>
         </div>
 
-        <Polaroids />
+        <PhotoWall />
       </div>
 
       <GuideReader at={reading} onGo={setReading} onClose={() => setReading(null)} />

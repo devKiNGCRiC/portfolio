@@ -360,6 +360,58 @@
   color: var(--red-deep);
 }
 
+/* one roll of film per trip */
+.rolls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-bottom: 2rem;
+}
+
+.roll {
+  display: grid;
+  justify-items: start;
+  gap: 0.05rem;
+  padding: 0.55rem 1rem 0.6rem 2.6rem;
+  border: 2.5px solid var(--ink);
+  border-radius: 10px;
+  /* the film canister: a dark cap on the left */
+  background:
+    linear-gradient(90deg, var(--ink) 0 1.5rem, transparent 1.5rem),
+    var(--white);
+  box-shadow: 3px 3px 0 var(--ink);
+  color: var(--ink);
+  text-align: left;
+  transition: transform 0.2s var(--bounce);
+}
+
+.roll:hover {
+  transform: translateY(-2px);
+}
+
+.roll[aria-pressed='true'] {
+  background:
+    linear-gradient(90deg, var(--ink) 0 1.5rem, transparent 1.5rem),
+    var(--yellow);
+}
+
+.roll__no {
+  font-family: var(--font-type);
+  font-size: 0.72rem;
+  color: var(--red-deep);
+}
+
+.roll b {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+}
+
+.roll small {
+  font-family: var(--font-type);
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+}
+
 .wall__grid {
   display: grid;
   gap: 1.8rem 1.4rem;
@@ -421,6 +473,27 @@
   height: 100%;
   object-fit: cover;
   pointer-events: none;
+}
+
+/* a real photo: the print is a button that opens it full size */
+button.polaroid__img {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  background: var(--ink);
+  cursor: zoom-in;
+}
+
+/* the orange date a film camera burns into the corner */
+.polaroid__stamp {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.35rem;
+  font-family: var(--font-pixel);
+  font-size: 0.85rem;
+  color: #ff8a2a;
+  text-shadow: 0 0 5px rgba(255, 120, 30, 0.8);
 }
 
 .polaroid__img > svg {

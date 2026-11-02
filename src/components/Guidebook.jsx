@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
+import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react'
 import Icon from './Icon'
+import Lightbox from './Lightbox'
 import { useReveal } from '../hooks/useReveal'
 import { useReducedMotion } from '../hooks/useReducedMotion'
 import { guides } from '../data/travel'
@@ -227,88 +228,12 @@ export function Guides({ onZoom }) {
   )
 }
 
-/** Full-size reader for one page: next/back, arrow keys, swipe and pinch-zoom. */
+/** A guide page at full size, for reading the small print. */
 export function GuideReader({ at, onGo, onClose }) {
-  const dialogRef = useRef(null)
-  const swipe = useRef(null)
   const pages = (at && guides.books[at.book]?.pages) || NO_PAGES
-  const page = at ? pages[at.page] : null
-
-  useEffect(() => {
-    const d = dialogRef.current
-    if (page && !d.open) d.showModal()
-    else if (!page && d.open) d.close()
-  }, [page])
-
-  useEffect(() => {
-    if (!at) return
-    for (const j of [at.page - 1, at.page + 1]) if (pages[j]) new Image().src = pages[j].image
-  }, [at, pages])
-
-  const go = (step) => {
-    const j = at.page + step
-    if (j >= 0 && j < pages.length) onGo({ ...at, page: j })
-  }
-  const onKeyDown = (e) => {
-    if (e.key === 'ArrowRight') go(1)
-    if (e.key === 'ArrowLeft') go(-1)
-  }
-  const onPointerDown = (e) => {
-    if (e.pointerType !== 'mouse') swipe.current = e.clientX
-  }
-  const onPointerUp = (e) => {
-    if (swipe.current === null) return
-    const dx = e.clientX - swipe.current
-    swipe.current = null
-    if (Math.abs(dx) > 50) go(dx < 0 ? 1 : -1)
-  }
-
-  return (
-    <dialog
-      ref={dialogRef}
-      className="reader"
-      aria-label={page ? `Guide page ${at.page + 1} of ${pages.length}: ${page.title}` : 'Guide'}
-      // the close event arrives a moment late; ignore it if a new page has opened since
-      onClose={() => !dialogRef.current.open && onClose()}
-      onKeyDown={onKeyDown}
-      onClick={(e) => e.target === dialogRef.current && onClose()}
-    >
-      {page && (
-        <div className="reader__sheet">
-          <div className="reader__bar">
-            <p className="reader__where">
-              <span>{page.chapter}</span>
-              <b>
-                {num(at.page)} / {pages.length}
-              </b>
-            </p>
-            <button className="reader__close" onClick={onClose} aria-label="Close the guide">
-              esc
-            </button>
-          </div>
-          <img
-            key={page.image}
-            className="reader__img"
-            src={page.image}
-            alt={`${page.title}: ${page.about}`}
-            onPointerDown={onPointerDown}
-            onPointerUp={onPointerUp}
-            draggable="false"
-          />
-          <div className="reader__foot">
-            <button className="btn btn--sm" onClick={() => go(-1)} disabled={at.page === 0}>
-              <span aria-hidden="true">←</span> Back
-            </button>
-            <p className="reader__title">
-              <b>{page.title}</b>
-              <span>{page.about}</span>
-            </p>
-            <button className="btn btn--sm btn--saffron" onClick={() => go(1)} disabled={at.page === pages.length - 1}>
-              Next <span aria-hidden="true">→</span>
-            </button>
-          </div>
-        </div>
-      )}
-    </dialog>
+  const items = useMemo(
+    () => pages.map((p) => ({ src: p.image, alt: `${p.title}: ${p.about}`, title: p.title, sub: p.about, label: p.chapter })),
+    [pages],
   )
+  return <Lightbox items={items} index={at ? at.page : null} onGo={(page) => onGo({ ...at, page })} onClose={onClose} square />
 }
