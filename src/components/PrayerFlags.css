@@ -1,0 +1,53 @@
+.flags {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.flags__string {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 2.5;
+}
+
+.flags__knot {
+  fill: var(--saffron);
+  stroke: var(--ink);
+  stroke-width: 2.5;
+}
+
+.flags__flag path:first-child {
+  stroke: var(--ink);
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+}
+
+/* the printed prayers, just suggested */
+.flags__script {
+  fill: none;
+  stroke: rgba(20, 20, 20, 0.35);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.flags__flag {
+  transform-origin: 0 0;
+  animation: flutter 3.2s ease-in-out infinite;
+}
+
+@keyframes flutter {
+  0%,
+  100% {
+    transform: rotate(-4deg) skewY(-3deg);
+  }
+  50% {
+    transform: rotate(5deg) skewY(4deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flags__flag {
+    animation: none;
+  }
+}

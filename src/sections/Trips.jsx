@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import SectionHead from '../components/SectionHead'
 import PostcardArt from '../components/PostcardArt'
+import PrayerFlags from '../components/PrayerFlags'
 import Icon from '../components/Icon'
 import { useReveal } from '../hooks/useReveal'
 import { useReducedMotion } from '../hooks/useReducedMotion'
@@ -201,6 +202,7 @@ export default function Trips() {
 
   return (
     <section id="trips" className="section trips" aria-labelledby="trips-title">
+      <PrayerFlags />
       <div className="wrap">
         <SectionHead
           id="trips-title"
