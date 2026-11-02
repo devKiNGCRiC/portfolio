@@ -12,49 +12,56 @@
       "about": "Where the Ganga leaves the mountains. The gateway north.",
       "alt": 372,
       "lat": 30.09,
-      "lon": 78.27
+      "lon": 78.27,
+      "photo": "/photos/trips/vof/postcards/rishikesh.jpg"
     },
     {
       "name": "Badrinath",
       "about": "Temple town high in the Garhwal Himalaya.",
       "alt": 3300,
       "lat": 30.74,
-      "lon": 79.49
+      "lon": 79.49,
+      "photo": "/photos/trips/vof/postcards/badrinath.jpg"
     },
     {
       "name": "Mana Village",
       "about": "Known as the first village of India, near the Tibet border.",
       "alt": 3200,
       "lat": 30.77,
-      "lon": 79.5
+      "lon": 79.5,
+      "photo": "/photos/trips/vof/postcards/mana.jpg"
     },
     {
       "name": "Govindghat",
       "about": "Trailhead. From here, it’s on foot.",
       "alt": 1828,
       "lat": 30.62,
-      "lon": 79.56
+      "lon": 79.56,
+      "photo": "/photos/trips/vof/postcards/govindghat.jpg"
     },
     {
       "name": "Ghanghariya",
       "about": "Last stop before both the Valley and Hemkund.",
       "alt": 3049,
       "lat": 30.7,
-      "lon": 79.6
+      "lon": 79.6,
+      "photo": "/photos/trips/vof/postcards/ghanghariya.jpg"
     },
     {
       "name": "Valley of Flowers",
       "about": "A national park and UNESCO World Heritage Site.",
       "alt": 3658,
       "lat": 30.72,
-      "lon": 79.61
+      "lon": 79.61,
+      "photo": "/photos/trips/vof/postcards/valley.jpg"
     },
     {
       "name": "Hemkund Sahib",
       "about": "Highest point of the trip, beside a glacial lake.",
       "alt": 4632,
       "lat": 30.7,
-      "lon": 79.62
+      "lon": 79.62,
+      "photo": "/photos/trips/vof/postcards/hemkund.jpg"
     }
   ],
   "guides": {

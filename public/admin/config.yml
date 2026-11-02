@@ -356,6 +356,7 @@ collections:
               - { name: alt, label: Altitude (m), widget: number, value_type: int }
               - { name: lat, label: Latitude, widget: number, value_type: float }
               - { name: lon, label: Longitude, widget: number, value_type: float }
+              - { name: photo, label: Photo, widget: image, required: false, hint: Shown instead of the illustration; landscape works best }
               - name: scene
                 label: Illustration
                 widget: select

@@ -97,7 +97,11 @@ function PostcardTrail({ onOpenGuide }) {
             {valleyRoute.map((s, i) => (
               <li key={s.name} className="postcard" style={{ '--r': `${i % 2 ? 1.5 : -1.5}deg` }}>
                 <div className="postcard__art">
-                  <PostcardArt name={s.name} scene={s.scene} />
+                  {s.photo ? (
+                    <img src={s.photo} alt={`${s.name}, on the trek`} loading="lazy" decoding="async" draggable="false" />
+                  ) : (
+                    <PostcardArt name={s.name} scene={s.scene} />
+                  )}
                   <span className="postcard__stamp">
                     {fmt.format(s.alt)}
                     <small>m</small>
