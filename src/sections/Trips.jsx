@@ -1,11 +1,12 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import SectionHead from '../components/SectionHead'
 import PostcardArt from '../components/PostcardArt'
 import PrayerFlags from '../components/PrayerFlags'
+import { TrekGuide, GuideReader } from '../components/TrekGuide'
 import Icon from '../components/Icon'
 import { useReveal } from '../hooks/useReveal'
 import { useReducedMotion } from '../hooks/useReducedMotion'
-import { valleyRoute, tripToProduct, places, interests } from '../data/travel'
+import { valleyRoute, tripToProduct, places, interests, guidePageFor } from '../data/travel'
 import { links, site } from '../data/profile'
 import './Trips.css'
 
@@ -16,7 +17,7 @@ const MAX_ALT = Math.max(...valleyRoute.map((s) => s.alt))
   Postcard trail. On wide screens the section pins and vertical scroll moves
   the cards sideways; on phones (or with reduced motion) it's a native swipe row.
 */
-function PostcardTrail() {
+function PostcardTrail({ onOpenGuide }) {
   const outerRef = useRef(null)
   const trackRef = useRef(null)
   const reduced = useReducedMotion()
@@ -108,6 +109,12 @@ function PostcardTrail() {
                   <p className="postcard__coords mono">
                     {s.lat.toFixed(2)}°N {s.lon.toFixed(2)}°E
                   </p>
+                  {guidePageFor(s.name) >= 0 && (
+                    <button className="postcard__guide" onClick={() => onOpenGuide(guidePageFor(s.name))}>
+                      Guide p.{String(guidePageFor(s.name) + 1).padStart(2, '0')}
+                      <span className="sr-only">: {s.name}</span>
+                    </button>
+                  )}
                 </div>
               </li>
             ))}
@@ -200,6 +207,8 @@ function Polaroids() {
 
 export default function Trips() {
   const chainRef = useReveal()
+  // the guide page open in the reader, if any
+  const [page, setPage] = useState(null)
 
   return (
     <section id="trips" className="section trips" aria-labelledby="trips-title">
@@ -220,9 +229,11 @@ export default function Trips() {
         </ul>
       </div>
 
-      <PostcardTrail />
+      <PostcardTrail onOpenGuide={setPage} />
 
       <div className="wrap">
+        <TrekGuide onOpen={setPage} />
+
         <div ref={chainRef} className="stubs reveal">
           <h3 className="stubs__title display">How a trip became a product</h3>
           <ol className="stubs__list">
@@ -240,6 +251,8 @@ export default function Trips() {
 
         <Polaroids />
       </div>
+
+      <GuideReader index={page} onGo={setPage} onClose={() => setPage(null)} />
     </section>
   )
 }

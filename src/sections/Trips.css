@@ -227,6 +227,25 @@
   color: var(--ink-soft);
 }
 
+/* opens this stop's page of the trek guide */
+.postcard__guide {
+  justify-self: start;
+  margin-top: 0.2rem;
+  padding: 0.2rem 0.6rem;
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+  background: var(--yellow);
+  box-shadow: 2px 2px 0 var(--ink);
+  font-family: var(--font-type);
+  font-size: 0.78rem;
+  cursor: zoom-in;
+  transition: transform 0.2s var(--bounce);
+}
+
+.postcard__guide:hover {
+  transform: translateY(-2px) rotate(-2deg);
+}
+
 .postcard--end {
   display: grid;
   align-content: center;

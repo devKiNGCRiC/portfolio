@@ -29,6 +29,7 @@
     .trail__head,
     .trail__alt-label,
     .wall__head,
+    .tbook__head,
     .stubs__title
   ) {
   --ink-soft: var(--moon-soft);
@@ -36,7 +37,7 @@
 }
 
 /* handwritten asides: red ink is lost on navy, so a warm coral */
-[data-theme='night'] :is(.shead__note, .bench__head .hand, .trail__kicker, .trail__hint, .wall__head .hand, .story__sign) {
+[data-theme='night'] :is(.shead__note, .bench__head .hand, .trail__kicker, .trail__hint, .wall__head .hand, .tbook__head .hand, .story__sign) {
   color: var(--moon-note);
 }
 
