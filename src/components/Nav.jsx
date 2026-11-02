@@ -1,8 +1,9 @@
-import { useLayoutEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import Icon from './Icon'
 import { profile, links } from '../data/profile'
-import { stops } from '../data/stops'
+import { stops, placeFor } from '../data/stops'
 import { useLocalTime } from '../hooks/useLocalTime'
+import { useReducedMotion } from '../hooks/useReducedMotion'
 import './Nav.css'
 
 const dockStops = stops.filter((s) => s.dock !== false)
@@ -27,6 +28,51 @@ function RickshawIcon() {
       <circle cx="13" cy="26" r="1.8" fill="#ff9933" />
       <circle cx="38" cy="26" r="1.8" fill="#ff9933" />
     </svg>
+  )
+}
+
+const fmt = new Intl.NumberFormat('en-IN')
+
+/** Where you are on the trek: the altitude counts up (or down) to each new stop. */
+function Altimeter({ active }) {
+  const place = placeFor(active)
+  const target = place?.alt ?? 0
+  const reduced = useReducedMotion()
+  const [alt, setAlt] = useState(target)
+  const from = useRef(target)
+
+  useEffect(() => {
+    const start = from.current
+    if (reduced || start === target) {
+      from.current = target
+      const id = requestAnimationFrame(() => setAlt(target))
+      return () => cancelAnimationFrame(id)
+    }
+    const t0 = performance.now()
+    let id
+    const tick = (now) => {
+      const t = Math.min(1, (now - t0) / 900)
+      const v = Math.round(start + (target - start) * (1 - (1 - t) ** 3))
+      from.current = v
+      setAlt(v)
+      if (t < 1) id = requestAnimationFrame(tick)
+    }
+    id = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(id)
+  }, [target, reduced])
+
+  if (!place) return null
+  const summit = active === stops.at(-1)?.id
+  return (
+    <span className={`altimeter ${summit ? 'altimeter--summit' : ''}`} title={`On the Valley of Flowers trek: ${place.name}`}>
+      <svg viewBox="0 0 24 18" aria-hidden="true">
+        <path d="M1 17 L8 6 L12 11 L16 3 L23 17 Z" fill="#fff" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+        <path d="M14 7 L16 3 L18 7" fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+      </svg>
+      <span className="sr-only">Altitude on the trek: </span>
+      <b>{fmt.format(alt)} m</b>
+      <span className="altimeter__place">{summit ? 'Summit!' : place.name}</span>
+    </span>
   )
 }
 
@@ -59,6 +105,7 @@ export default function Nav({ active, onOpenTerminal }) {
           {profile.nickname}
         </a>
         <div className="topbar__right">
+          <Altimeter active={active} />
           <span className="topbar__time">
             <Icon name="pin" size={15} />
             <span className="sr-only">Local time in Chennai:</span>

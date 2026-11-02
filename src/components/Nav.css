@@ -96,9 +96,62 @@
   transform: rotate(-10deg) scale(1.06);
 }
 
+/* the trek altimeter: altitude always, the place name when there's room */
+.altimeter {
+  display: none;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem 0.4rem 0.6rem;
+  border: 2px solid var(--ink);
+  border-radius: var(--r-pill);
+  background: var(--sky);
+  box-shadow: 2px 2px 0 var(--ink);
+  font-size: 0.85rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.altimeter svg {
+  width: 22px;
+  color: var(--ink);
+}
+
+.altimeter b {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.altimeter__place {
+  display: none;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.altimeter--summit {
+  background: var(--yellow);
+}
+
+.altimeter--summit .altimeter__place {
+  color: var(--ink);
+}
+
+/* phones narrower than this keep the milestones but drop the top-bar altimeter */
+@media (min-width: 440px) {
+  .altimeter {
+    display: inline-flex;
+  }
+}
+
 @media (min-width: 720px) {
   .topbar__time {
     display: inline-flex;
+  }
+}
+
+@media (min-width: 1100px) {
+  .altimeter__place {
+    display: inline;
   }
 }
 

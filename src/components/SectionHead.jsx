@@ -1,17 +1,21 @@
 import { useReveal } from '../hooks/useReveal'
-import { stops } from '../data/stops'
+import { stops, placeFor } from '../data/stops'
+
+const fmt = new Intl.NumberFormat('en-IN')
 
 /** Big chunky title, an optional handwritten aside, and a short intro. */
 export default function SectionHead({ id, title, note, intro }) {
   const ref = useReveal()
-  // sections double as stops on the road trip; show an Indian highway milestone
-  const stopIndex = stops.findIndex((s) => `${s.id}-title` === id)
+  // sections double as stops on the trek; show an Indian highway milestone
+  // with the place on the cap and its altitude below
+  const stop = stops.find((s) => `${s.id}-title` === id)
+  const place = stop && stop !== stops[0] ? placeFor(stop.id) : null
   return (
     <header ref={ref} className="shead reveal">
-      {stopIndex > 0 && (
+      {place && (
         <p className="milestone" aria-hidden="true">
-          <span>Stop</span>
-          <b>{String(stopIndex).padStart(2, '0')}</b>
+          <span>{place.name}</span>
+          <b>{fmt.format(place.alt)} m</b>
         </p>
       )}
       <div className="shead__row">
