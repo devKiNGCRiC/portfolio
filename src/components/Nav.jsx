@@ -157,7 +157,7 @@ export default function Nav({ active, onOpenTerminal }) {
           <button className="topbar__icon" onClick={onOpenTerminal} aria-label="Open terminal" title="Terminal (press /)">
             <Icon name="terminal" size={18} />
           </button>
-          <a className="btn btn--sm btn--saffron topbar__cv" href={links.resume} download>
+          <a className="btn btn--sm btn--ink topbar__cv" href={links.resume} download>
             <Icon name="download" size={16} />
             Resume
           </a>
