@@ -1,0 +1,60 @@
+/*
+  Themes, named after mountain light (see src/theme.js). Sunrise is the
+  default look. Sunset only changes the sky (in Backdrop). Night keeps every
+  clay object (cards, stickers, passports) in its own colours, the way the navy
+  GitHub section does, and turns the text that sits straight on the sky to
+  moonlight.
+*/
+[data-theme='night'] {
+  --moon: #f4f1ff;
+  --moon-soft: #c9cdf2;
+  --moon-note: #ffb4a6;
+
+  color-scheme: dark;
+}
+
+[data-theme='night'] body {
+  background-color: #0b1a6e;
+}
+
+[data-theme='night']
+  :is(
+    .hero__title,
+    .hero__intro,
+    .shead__title,
+    .shead__intro,
+    .story,
+    .bench__head,
+    .visas__title,
+    .trail__head,
+    .trail__alt-label,
+    .wall__head,
+    .stubs__title
+  ) {
+  --ink-soft: var(--moon-soft);
+  color: var(--moon);
+}
+
+/* handwritten asides: red ink is lost on navy, so a warm coral */
+[data-theme='night'] :is(.shead__note, .bench__head .hand, .trail__kicker, .trail__hint, .wall__head .hand, .story__sign) {
+  color: var(--moon-note);
+}
+
+/* the story sets its lead and bold words in ink on purpose; at night they're moonlight */
+[data-theme='night'] .story :is(.story__lead, b) {
+  color: var(--moon);
+}
+
+/* the highlighter in the pull-quote is still a paper sticker */
+[data-theme='night'] .story mark {
+  color: var(--ink);
+}
+
+/* the altitude chart's fill and baseline */
+[data-theme='night'] .trail__alt {
+  border-bottom-color: var(--moon-soft);
+}
+
+[data-theme='night'] .trail__alt-fill {
+  fill: rgba(255, 255, 255, 0.12);
+}

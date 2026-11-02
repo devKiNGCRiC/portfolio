@@ -14,6 +14,7 @@ import '@fontsource-variable/fraunces/wght-italic.css'
 import './styles/tokens.css'
 import './styles/base.css'
 import './styles/components.css'
+import './styles/themes.css'
 import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
