@@ -1,6 +1,28 @@
 .hero {
+  position: relative;
+  isolation: isolate;
   padding-top: clamp(5.5rem, 4rem + 5vw, 8rem);
   padding-bottom: clamp(2.5rem, 2rem + 3vw, 4rem);
+}
+
+/* a Himalayan sunrise behind the hero only: saffron and marigold up top, a red
+   warmth around the sun, fading to the page's paper before the text gets busy */
+.hero::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0 0 auto;
+  height: calc(100% + 6rem);
+  background:
+    radial-gradient(ellipse 45% 50% at 78% 4%, rgba(229, 57, 53, 0.28), transparent 70%),
+    radial-gradient(ellipse 60% 45% at 12% 0%, rgba(255, 196, 0, 0.35), transparent 70%),
+    linear-gradient(180deg, #ffa94d 0%, #ffc768 22%, #ffe3a6 48%, rgba(255, 246, 228, 0.6) 74%, transparent 100%);
+  pointer-events: none;
+}
+
+[data-theme='night'] .hero::before,
+[data-theme='sunset'] .hero::before {
+  display: none; /* those themes have their own sky */
 }
 
 .hero__grid {
@@ -125,8 +147,9 @@
 .hero__intro {
   max-width: 44ch;
   font-size: var(--step-1);
+  font-weight: 500;
   line-height: 1.5;
-  color: var(--ink-soft);
+  color: #22222a; /* the main introduction, so near-black, not caption grey */
   animation: pop-in 0.9s 0.18s var(--bounce) both;
 }
 
