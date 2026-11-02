@@ -377,24 +377,6 @@
       "image": "/photos/portfolio-home.jpg"
     },
     {
-      "name": "moodmind",
-      "note": "MoodMind: an AI journal that reads your mood and suggests what might help",
-      "tech": "React, Gemini API",
-      "group": "AI & data",
-      "repo": "",
-      "live": "",
-      "image": ""
-    },
-    {
-      "name": "MindShield",
-      "note": "Beat phone addiction by putting a little money on staying focused",
-      "tech": "Flutter, Firebase",
-      "group": "Mobile",
-      "repo": "",
-      "live": "",
-      "image": ""
-    },
-    {
       "name": "bmi-calculator",
       "note": "A polished BMI app with custom SVG gauges and history",
       "tech": "React Native, Expo",
