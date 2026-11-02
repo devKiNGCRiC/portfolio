@@ -234,35 +234,214 @@
       "text": "Safarnama, which went on to win the Special Jury Award."
     }
   ],
+  "albums": [
+    {
+      "id": "valley-of-flowers",
+      "title": "Valley of Flowers",
+      "region": "Uttarakhand",
+      "when": "Jul 2024",
+      "photos": [
+        {
+          "src": "/photos/trips/vof/01-rishikesh.jpg",
+          "thumb": "/photos/trips/vof/thumbs/01-rishikesh.jpg",
+          "caption": "Rishikesh",
+          "alt": "The Ganga at Rishikesh, with green hills on the far bank",
+          "date": "20 07 '24",
+          "width": 1448,
+          "height": 1086
+        },
+        {
+          "src": "/photos/trips/vof/02-mana-village.jpg",
+          "thumb": "/photos/trips/vof/thumbs/02-mana-village.jpg",
+          "caption": "Mana, the first village of India",
+          "alt": "Stone houses of Mana Village under low clouds",
+          "date": "22 07 '24",
+          "width": 1448,
+          "height": 1086
+        },
+        {
+          "src": "/photos/trips/vof/03-stone-trail.jpg",
+          "thumb": "/photos/trips/vof/thumbs/03-stone-trail.jpg",
+          "caption": "The stone trail up",
+          "alt": "A wet stone path climbing through the forest",
+          "date": "",
+          "width": 900,
+          "height": 1600
+        },
+        {
+          "src": "/photos/trips/vof/04-breather.jpg",
+          "thumb": "/photos/trips/vof/thumbs/04-breather.jpg",
+          "caption": "Catching my breath",
+          "alt": "Sitting on boulders below misty cliffs",
+          "date": "",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/photos/trips/vof/05-valley-of-flowers.jpg",
+          "thumb": "/photos/trips/vof/thumbs/05-valley-of-flowers.jpg",
+          "caption": "Valley of Flowers",
+          "alt": "Clouds pouring over the green walls of the valley",
+          "date": "23 07 '24",
+          "width": 1086,
+          "height": 1448
+        },
+        {
+          "src": "/photos/trips/vof/06-valley-path.jpg",
+          "thumb": "/photos/trips/vof/thumbs/06-valley-path.jpg",
+          "caption": "The path through the flowers",
+          "alt": "A narrow stone path through knee-high flowers",
+          "date": "23 07 '24",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "/photos/trips/vof/07-valley-wide.jpg",
+          "thumb": "/photos/trips/vof/thumbs/07-valley-wide.jpg",
+          "caption": "Clouds rolling in",
+          "alt": "The valley floor under cliffs lost in cloud",
+          "date": "23 07 '24",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "/photos/trips/vof/08-clear-skies.jpg",
+          "thumb": "/photos/trips/vof/thumbs/08-clear-skies.jpg",
+          "caption": "A rare clear sky",
+          "alt": "Rocky peaks under a deep blue sky",
+          "date": "24 07 '24",
+          "width": 1600,
+          "height": 1200
+        },
+        {
+          "src": "/photos/trips/vof/09-blue-poppy.jpg",
+          "thumb": "/photos/trips/vof/thumbs/09-blue-poppy.jpg",
+          "caption": "Himalayan blue poppy",
+          "alt": "Close-up of a pale blue Himalayan poppy",
+          "date": "24 07 '24",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "/photos/trips/vof/10-hemkund-sahib.jpg",
+          "thumb": "/photos/trips/vof/thumbs/10-hemkund-sahib.jpg",
+          "caption": "Hemkund Sahib lake",
+          "alt": "The glacial lake at Hemkund Sahib reflecting the peaks",
+          "date": "24 07 '24",
+          "width": 900,
+          "height": 1600
+        },
+        {
+          "src": "/photos/trips/vof/11-ghangharia-morning.jpg",
+          "thumb": "/photos/trips/vof/thumbs/11-ghangharia-morning.jpg",
+          "caption": "Last morning in Ghangharia",
+          "alt": "Camps and guesthouses at Ghangharia below cloudy cliffs",
+          "date": "25 07 '24",
+          "width": 1600,
+          "height": 1200
+        },
+        {
+          "src": "/photos/trips/vof/12-waterfalls.jpg",
+          "thumb": "/photos/trips/vof/thumbs/12-waterfalls.jpg",
+          "caption": "Waterfalls on the way down",
+          "alt": "A tall waterfall dropping into the forested gorge",
+          "date": "25 07 '24",
+          "width": 1600,
+          "height": 1200
+        }
+      ]
+    },
+    {
+      "id": "mechuka",
+      "title": "Mechuka",
+      "region": "Arunachal Pradesh",
+      "when": "Dec 2024",
+      "photos": [
+        {
+          "src": "/photos/trips/mechuka/01-first-look.jpg",
+          "thumb": "/photos/trips/mechuka/thumbs/01-first-look.jpg",
+          "caption": "First look at Mechuka",
+          "alt": "The Mechuka valley under a soft evening sky",
+          "date": "25 12 '24",
+          "width": 1600,
+          "height": 1200
+        },
+        {
+          "src": "/photos/trips/mechuka/02-valley.jpg",
+          "thumb": "/photos/trips/mechuka/thumbs/02-valley.jpg",
+          "caption": "The valley from the hills",
+          "alt": "Golden grass hills above a river winding through the valley",
+          "date": "",
+          "width": 900,
+          "height": 1600
+        },
+        {
+          "src": "/photos/trips/mechuka/03-road-in.jpg",
+          "thumb": "/photos/trips/mechuka/thumbs/03-road-in.jpg",
+          "caption": "The road through the hills",
+          "alt": "A dirt road between golden hills under a blue sky",
+          "date": "",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/photos/trips/mechuka/04-cairns.jpg",
+          "thumb": "/photos/trips/mechuka/thumbs/04-cairns.jpg",
+          "caption": "Stone cairns and snow peaks",
+          "alt": "Stacked stone cairns on a grassy ridge with snowy peaks behind",
+          "date": "",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/photos/trips/mechuka/05-grasslands.jpg",
+          "thumb": "/photos/trips/mechuka/thumbs/05-grasslands.jpg",
+          "caption": "Out on the grasslands",
+          "alt": "A lone walker on wide dry grasslands",
+          "date": "28 12 '24",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "/photos/trips/mechuka/06-river.jpg",
+          "thumb": "/photos/trips/mechuka/thumbs/06-river.jpg",
+          "caption": "By the Siyom river",
+          "alt": "The river running through the flat valley floor",
+          "date": "28 12 '24",
+          "width": 1600,
+          "height": 1200
+        },
+        {
+          "src": "/photos/trips/mechuka/07-river-afternoon.jpg",
+          "thumb": "/photos/trips/mechuka/thumbs/07-river-afternoon.jpg",
+          "caption": "Slow afternoon by the river",
+          "alt": "Cattle grazing by the river in hazy afternoon light",
+          "date": "28 12 '24",
+          "width": 1600,
+          "height": 1200
+        },
+        {
+          "src": "/photos/trips/mechuka/08-sunset.jpg",
+          "thumb": "/photos/trips/mechuka/thumbs/08-sunset.jpg",
+          "caption": "Sunset over the ridge",
+          "alt": "A pink sunset behind a dark ridge and power lines",
+          "date": "",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/photos/trips/mechuka/09-night.jpg",
+          "thumb": "/photos/trips/mechuka/thumbs/09-night.jpg",
+          "caption": "Mechuka after dark",
+          "alt": "The main road of Mechuka lit up at night",
+          "date": "",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    }
+  ],
   "places": [
-    {
-      "name": "Valley of Flowers",
-      "region": "Uttarakhand",
-      "lat": "30.72°N",
-      "lon": "79.61°E",
-      "src": ""
-    },
-    {
-      "name": "Hemkund Sahib",
-      "region": "Uttarakhand",
-      "lat": "30.70°N",
-      "lon": "79.62°E",
-      "src": ""
-    },
-    {
-      "name": "Mana Village",
-      "region": "Uttarakhand",
-      "lat": "30.77°N",
-      "lon": "79.50°E",
-      "src": ""
-    },
-    {
-      "name": "Rishikesh",
-      "region": "Uttarakhand",
-      "lat": "30.09°N",
-      "lon": "78.27°E",
-      "src": ""
-    },
     {
       "name": "Arunachal Pradesh",
       "region": "Home, sort of",

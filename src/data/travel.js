@@ -3,6 +3,11 @@ import content from '../content/travel.json'
 export const valleyRoute = content.valleyRoute ?? []
 export const tripToProduct = content.tripToProduct ?? []
 export const places = content.places ?? []
+// one album (a roll of film) per trip; places without photos yet stay as illustrations
+export const albums = (content.albums ?? []).map((a) => ({
+  ...a,
+  photos: (a.photos ?? []).map((p) => ({ ...p, thumb: p.thumb || p.src })),
+}))
 export const interests = content.interests ?? []
 
 // itineraries made from my trips (Instagram carousels), each shown as a guidebook

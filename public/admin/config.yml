@@ -406,8 +406,31 @@ collections:
                         required: false
                         hint: Valley of Flowers postcards with these names link to this page
                         field: { name: stop, label: Stop, widget: string }
+          - name: albums
+            label: Photo wall rolls (one per trip)
+            label_singular: Roll
+            widget: list
+            summary: '{{title}}'
+            fields:
+              - { name: id, label: Short id, widget: string, hint: 'lowercase, e.g. mechuka' }
+              - { name: title, label: Trip, widget: string }
+              - { name: region, label: Region, widget: string }
+              - { name: when, label: When, widget: string, hint: 'e.g. Dec 2024' }
+              - name: photos
+                label: Photos
+                label_singular: Photo
+                widget: list
+                summary: '{{caption}}'
+                fields:
+                  - { name: src, label: Photo, widget: image }
+                  - { name: thumb, label: Small version, widget: image, required: false, hint: Optional; the photo is used if empty }
+                  - { name: caption, label: Caption, widget: string }
+                  - { name: alt, label: Description for screen readers, widget: string }
+                  - { name: date, label: Date stamp, widget: string, required: false, hint: "e.g. 23 07 '24" }
+                  - { name: width, label: Width (px), widget: number, required: false }
+                  - { name: height, label: Height (px), widget: number, required: false }
           - name: places
-            label: Photo wall (polaroids)
+            label: Places without photos yet (illustrated polaroids)
             label_singular: Photo
             widget: list
             summary: '{{name}}'
