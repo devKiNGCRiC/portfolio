@@ -81,8 +81,9 @@ export default function Hero() {
           </p>
 
           <h1 id="hero-title" className="hero__title display">
-            Building{' '}
-            <span className="hero__pill hero__pill--code">
+            <span className="hero__line">
+              Building{' '}
+              <span className="hero__pill hero__pill--code">
               <span aria-hidden="true" className="hero__lt">
                 &lt;
               </span>
@@ -90,12 +91,14 @@ export default function Hero() {
               <span aria-hidden="true" className="hero__lt">
                 /&gt;
               </span>
-            </span>
-            <br />
-            between{' '}
-            <span className="hero__pill hero__pill--trip">
-              trips
-              <Icon name="plane" size={28} className="hero__plane" />
+              </span>
+            </span>{' '}
+            <span className="hero__line">
+              between{' '}
+              <span className="hero__pill hero__pill--trip">
+                trips
+                <Icon name="plane" size={28} className="hero__plane" />
+              </span>
             </span>
           </h1>
 

@@ -11,11 +11,12 @@
 
 @media (min-width: 1000px) {
   .hero__grid {
-    grid-template-columns: 1fr 1.1fr;
+    grid-template-columns: 1.1fr 1fr;
   }
 }
 
 .hero__copy {
+  container-type: inline-size; /* the headline sizes itself to this column */
   display: grid;
   justify-items: start;
   gap: 1.5rem;
@@ -30,7 +31,7 @@
   border-radius: var(--r-pill);
   background: var(--white);
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: clamp(0.76rem, 0.68rem + 0.4vw, 0.9rem); /* one line, even on small phones */
   animation: pop-in 0.7s var(--bounce) both;
 }
 
@@ -57,9 +58,16 @@
 }
 
 .hero__title {
-  font-size: clamp(2.4rem, 1rem + 4vw, 4.4rem);
-  line-height: 1.1;
+  /* two lines, "Building <apps/>" and "between trips", each scaled to fit the
+     column; Unbounded is wide, so a viewport-based size broke it into four */
+  font-size: clamp(1.9rem, 8.2cqi, 4.2rem);
+  line-height: 1.12;
   animation: pop-in 0.9s 0.08s var(--bounce) both;
+}
+
+.hero__line {
+  display: block;
+  white-space: nowrap;
 }
 
 .hero__pill {
@@ -96,8 +104,8 @@
 
 .hero__plane {
   position: absolute;
-  top: -0.55em;
-  right: -0.5em;
+  top: 0.2em; /* beside "trips", clear of the pill on the line above */
+  right: -0.72em;
   width: 0.55em;
   height: 0.55em;
   padding: 0.08em;
