@@ -439,6 +439,86 @@
           "height": 1254
         }
       ]
+    },
+    {
+      "id": "kanyakumari",
+      "title": "Kanyakumari",
+      "region": "Tamil Nadu",
+      "when": "Nov 2025",
+      "photos": [
+        {
+          "src": "/photos/trips/kanyakumari/01-sunrise-memorials.jpg",
+          "thumb": "/photos/trips/kanyakumari/thumbs/01-sunrise-memorials.jpg",
+          "caption": "Sunrise over the two rocks",
+          "alt": "The Vivekananda Rock Memorial and Thiruvalluvar statue in silhouette under a fiery sunrise",
+          "date": "",
+          "width": 1448,
+          "height": 1086
+        },
+        {
+          "src": "/photos/trips/kanyakumari/02-thiruvalluvar.jpg",
+          "thumb": "/photos/trips/kanyakumari/thumbs/02-thiruvalluvar.jpg",
+          "caption": "Thiruvalluvar, 133 feet of stone",
+          "alt": "The Thiruvalluvar statue rising from its rock under a grey sky",
+          "date": "",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/photos/trips/kanyakumari/03-vivekananda-rock.jpg",
+          "thumb": "/photos/trips/kanyakumari/thumbs/03-vivekananda-rock.jpg",
+          "caption": "Vivekananda Rock Memorial",
+          "alt": "The red stone Vivekananda Rock Memorial above the sea",
+          "date": "25 11 '25",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "/photos/trips/kanyakumari/04-three-seas.jpg",
+          "thumb": "/photos/trips/kanyakumari/thumbs/04-three-seas.jpg",
+          "caption": "Where three seas meet",
+          "alt": "Waves breaking over dark rocks under heavy clouds",
+          "date": "",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/photos/trips/kanyakumari/05-breakwater.jpg",
+          "thumb": "/photos/trips/kanyakumari/thumbs/05-breakwater.jpg",
+          "caption": "Out on the breakwater",
+          "alt": "A stone breakwater running into a calm sea under a cloudy sky",
+          "date": "",
+          "width": 740,
+          "height": 1600
+        },
+        {
+          "src": "/photos/trips/kanyakumari/06-seafront.jpg",
+          "thumb": "/photos/trips/kanyakumari/thumbs/06-seafront.jpg",
+          "caption": "The seafront road",
+          "alt": "A wet seafront road lined with stalls and palm trees",
+          "date": "",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/photos/trips/kanyakumari/07-railway.jpg",
+          "thumb": "/photos/trips/kanyakumari/thumbs/07-railway.jpg",
+          "caption": "Tracks to the end of India",
+          "alt": "Railway lines curving through green land under a wide sky",
+          "date": "",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/photos/trips/kanyakumari/08-sunset.jpg",
+          "thumb": "/photos/trips/kanyakumari/thumbs/08-sunset.jpg",
+          "caption": "Sunset at land’s end",
+          "alt": "The sun setting into the sea, leaving a gold path on the water",
+          "date": "",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
     }
   ],
   "places": [
@@ -461,13 +541,6 @@
       "region": "Tamil Nadu",
       "lat": "10.23°N",
       "lon": "77.49°E",
-      "src": ""
-    },
-    {
-      "name": "Kanyakumari",
-      "region": "Tamil Nadu",
-      "lat": "8.08°N",
-      "lon": "77.54°E",
       "src": ""
     }
   ],
