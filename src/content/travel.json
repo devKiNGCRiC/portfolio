@@ -581,6 +581,24 @@
           "height": 1200
         },
         {
+          "src": "/photos/trips/kodaikanal/09-waterfall.jpg",
+          "thumb": "/photos/trips/kodaikanal/thumbs/09-waterfall.jpg",
+          "caption": "Falls hidden in the ferns",
+          "alt": "A wide waterfall stepping down through tree ferns and jungle",
+          "date": "",
+          "width": 1448,
+          "height": 1084
+        },
+        {
+          "src": "/photos/trips/kodaikanal/10-lake-day.jpg",
+          "thumb": "/photos/trips/kodaikanal/thumbs/10-lake-day.jpg",
+          "caption": "Kodai lake in the afternoon",
+          "alt": "The blue lake with pine-covered hills and a single tall tree on the bank",
+          "date": "",
+          "width": 1448,
+          "height": 1084
+        },
+        {
           "src": "/photos/trips/kodaikanal/07-evening-ranges.jpg",
           "thumb": "/photos/trips/kodaikanal/thumbs/07-evening-ranges.jpg",
           "caption": "Evening over the Palani Hills",
@@ -597,6 +615,24 @@
           "date": "15 01 '26",
           "width": 1600,
           "height": 1200
+        },
+        {
+          "src": "/photos/trips/kodaikanal/11-town-lights.jpg",
+          "thumb": "/photos/trips/kodaikanal/thumbs/11-town-lights.jpg",
+          "caption": "The town lights up",
+          "alt": "The lights of Kodaikanal scattered across the dark hillside",
+          "date": "",
+          "width": 1448,
+          "height": 1086
+        },
+        {
+          "src": "/photos/trips/kodaikanal/12-stars.jpg",
+          "thumb": "/photos/trips/kodaikanal/thumbs/12-stars.jpg",
+          "caption": "Stars over Kodaikanal",
+          "alt": "A sky full of stars above the glowing town",
+          "date": "",
+          "width": 1084,
+          "height": 1448
         }
       ]
     }
