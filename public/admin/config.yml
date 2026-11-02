@@ -368,32 +368,44 @@ collections:
             fields:
               - { name: step, label: Step, widget: string }
               - { name: text, label: Text, widget: text }
-          - name: trekGuide
-            label: Trek guide (Instagram carousel)
+          - name: guides
+            label: Trail guides (itineraries)
             widget: object
             collapsed: true
             fields:
               - { name: title, label: Title, widget: string }
               - { name: note, label: Handwritten note, widget: string, required: false }
-              - { name: intro, label: Intro, widget: text }
-              - { name: post, label: Instagram post link, widget: string, required: false, hint: 'Shown as "See the post" when set' }
-              - name: pages
-                label: Pages
-                label_singular: Page
+              - name: books
+                label: Guides
+                label_singular: Guide
                 widget: list
                 summary: '{{title}}'
+                hint: Each guide is shown as a book you can flip through; with two or more, a shelf appears to switch between them
                 fields:
-                  - { name: image, label: Page image, widget: image }
-                  - { name: thumb, label: Small preview, widget: image, required: false, hint: Optional; the page image is used if empty }
+                  - { name: id, label: Short id, widget: string, hint: 'lowercase, e.g. mechuka' }
                   - { name: title, label: Title, widget: string }
-                  - { name: chapter, label: Chapter, widget: string, hint: 'e.g. Plan, On the trail' }
-                  - { name: about, label: One line about this page, widget: string }
-                  - name: stops
-                    label: Route stops on this page
+                  - { name: region, label: Region, widget: string }
+                  - { name: days, label: Length, widget: string, hint: 'e.g. 6 days' }
+                  - { name: color, label: Book cover colour, widget: color, required: false }
+                  - { name: intro, label: Intro, widget: text }
+                  - { name: post, label: Instagram post link, widget: string, required: false }
+                  - name: pages
+                    label: Pages (in order, the first is the cover)
+                    label_singular: Page
                     widget: list
-                    required: false
-                    hint: Postcards with these names get a link to this page
-                    field: { name: stop, label: Stop, widget: string }
+                    summary: '{{title}}'
+                    fields:
+                      - { name: image, label: Page image, widget: image }
+                      - { name: thumb, label: Small preview, widget: image, required: false, hint: Optional; the page image is used if empty }
+                      - { name: title, label: Title, widget: string }
+                      - { name: chapter, label: Chapter, widget: string, hint: 'e.g. Plan, On the trail; becomes an index tab' }
+                      - { name: about, label: One line about this page, widget: string }
+                      - name: stops
+                        label: Route stops on this page
+                        widget: list
+                        required: false
+                        hint: Valley of Flowers postcards with these names link to this page
+                        field: { name: stop, label: Stop, widget: string }
           - name: places
             label: Photo wall (polaroids)
             label_singular: Photo

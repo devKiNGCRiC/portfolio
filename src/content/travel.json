@@ -57,153 +57,162 @@
       "lon": 79.62
     }
   ],
-  "trekGuide": {
-    "title": "The trek, page by page",
-    "note": "(my Instagram guide, all 16 pages)",
-    "intro": "After the trek I turned my notes into a guide for the next person: the route, the costs, what to pack and what nobody tells you.",
-    "post": "",
-    "pages": [
+  "guides": {
+    "title": "Trail guides",
+    "note": "(made from my own trips, more as I travel)",
+    "books": [
       {
-        "image": "/photos/vof-guide/01-cover.jpg",
-        "thumb": "/photos/vof-guide/thumbs/01-cover.jpg",
-        "title": "Cover",
-        "chapter": "Plan",
-        "about": "Altitude, best time, distance and weather at a glance",
-        "stops": []
-      },
-      {
-        "image": "/photos/vof-guide/02-overview.jpg",
-        "thumb": "/photos/vof-guide/thumbs/02-overview.jpg",
-        "title": "Overview",
-        "chapter": "Plan",
-        "about": "Trip type, budget, difficulty and the best months",
-        "stops": []
-      },
-      {
-        "image": "/photos/vof-guide/03-route.jpg",
-        "thumb": "/photos/vof-guide/thumbs/03-route.jpg",
-        "title": "The route",
-        "chapter": "Plan",
-        "about": "The 6-day itinerary with distances and travel times",
-        "stops": []
-      },
-      {
-        "image": "/photos/vof-guide/04-when-to-go.jpg",
-        "thumb": "/photos/vof-guide/thumbs/04-when-to-go.jpg",
-        "title": "When to go",
-        "chapter": "Plan",
-        "about": "June to September, month by month",
-        "stops": []
-      },
-      {
-        "image": "/photos/vof-guide/05-delhi-rishikesh.jpg",
-        "thumb": "/photos/vof-guide/thumbs/05-delhi-rishikesh.jpg",
-        "title": "Delhi → Rishikesh",
-        "chapter": "On the trail",
-        "about": "Day 1: the ride north, Ganga Aarti, where to stay and eat",
-        "stops": [
-          "Delhi"
+        "id": "valley-of-flowers",
+        "title": "Valley of Flowers & Hemkund Sahib",
+        "region": "Uttarakhand",
+        "days": "6 days",
+        "color": "#1f5c45",
+        "intro": "After the trek I turned my notes into a guide for the next person: the route, the costs, what to pack and what nobody tells you.",
+        "post": "https://www.instagram.com/p/DY4vNEtlBaQ/",
+        "pages": [
+          {
+            "image": "/photos/vof-guide/01-cover.jpg",
+            "thumb": "/photos/vof-guide/thumbs/01-cover.jpg",
+            "title": "Cover",
+            "chapter": "Plan",
+            "about": "Altitude, best time, distance and weather at a glance",
+            "stops": []
+          },
+          {
+            "image": "/photos/vof-guide/02-overview.jpg",
+            "thumb": "/photos/vof-guide/thumbs/02-overview.jpg",
+            "title": "Overview",
+            "chapter": "Plan",
+            "about": "Trip type, budget, difficulty and the best months",
+            "stops": []
+          },
+          {
+            "image": "/photos/vof-guide/03-route.jpg",
+            "thumb": "/photos/vof-guide/thumbs/03-route.jpg",
+            "title": "The route",
+            "chapter": "Plan",
+            "about": "The 6-day itinerary with distances and travel times",
+            "stops": []
+          },
+          {
+            "image": "/photos/vof-guide/04-when-to-go.jpg",
+            "thumb": "/photos/vof-guide/thumbs/04-when-to-go.jpg",
+            "title": "When to go",
+            "chapter": "Plan",
+            "about": "June to September, month by month",
+            "stops": []
+          },
+          {
+            "image": "/photos/vof-guide/05-delhi-rishikesh.jpg",
+            "thumb": "/photos/vof-guide/thumbs/05-delhi-rishikesh.jpg",
+            "title": "Delhi → Rishikesh",
+            "chapter": "On the trail",
+            "about": "Day 1: the ride north, Ganga Aarti, where to stay and eat",
+            "stops": [
+              "Delhi"
+            ]
+          },
+          {
+            "image": "/photos/vof-guide/06-rishikesh-badrinath.jpg",
+            "thumb": "/photos/vof-guide/thumbs/06-rishikesh-badrinath.jpg",
+            "title": "Rishikesh → Badrinath",
+            "chapter": "On the trail",
+            "about": "Day 2: the prayag drive up to Badrinath temple",
+            "stops": [
+              "Rishikesh"
+            ]
+          },
+          {
+            "image": "/photos/vof-guide/07-badrinath-mana.jpg",
+            "thumb": "/photos/vof-guide/thumbs/07-badrinath-mana.jpg",
+            "title": "Badrinath → Mana",
+            "chapter": "On the trail",
+            "about": "Day 3: Mana, the first village of India",
+            "stops": [
+              "Badrinath",
+              "Mana Village"
+            ]
+          },
+          {
+            "image": "/photos/vof-guide/08-govindghat-ghangharia.jpg",
+            "thumb": "/photos/vof-guide/thumbs/08-govindghat-ghangharia.jpg",
+            "title": "Govindghat → Ghangharia",
+            "chapter": "On the trail",
+            "about": "Day 3: registration at Pulna and where the real trek begins",
+            "stops": [
+              "Govindghat",
+              "Ghanghariya"
+            ]
+          },
+          {
+            "image": "/photos/vof-guide/09-valley-of-flowers.jpg",
+            "thumb": "/photos/vof-guide/thumbs/09-valley-of-flowers.jpg",
+            "title": "Valley of Flowers",
+            "chapter": "On the trail",
+            "about": "Day 4: trek details, flowers to look for and the rules",
+            "stops": [
+              "Valley of Flowers"
+            ]
+          },
+          {
+            "image": "/photos/vof-guide/10-hemkund-sahib.jpg",
+            "thumb": "/photos/vof-guide/thumbs/10-hemkund-sahib.jpg",
+            "title": "Hemkund Sahib",
+            "chapter": "On the trail",
+            "about": "Day 5: the steep climb to the lake",
+            "stops": [
+              "Hemkund Sahib"
+            ]
+          },
+          {
+            "image": "/photos/vof-guide/11-downhill.jpg",
+            "thumb": "/photos/vof-guide/thumbs/11-downhill.jpg",
+            "title": "The way down",
+            "chapter": "On the trail",
+            "about": "Day 6: Ghangharia back to Rishikesh",
+            "stops": []
+          },
+          {
+            "image": "/photos/vof-guide/12-pack-smart.jpg",
+            "thumb": "/photos/vof-guide/thumbs/12-pack-smart.jpg",
+            "title": "Pack smart",
+            "chapter": "Pack & budget",
+            "about": "Clothing, trek essentials, health and food",
+            "stops": []
+          },
+          {
+            "image": "/photos/vof-guide/13-cost.jpg",
+            "thumb": "/photos/vof-guide/thumbs/13-cost.jpg",
+            "title": "What it costs",
+            "chapter": "Pack & budget",
+            "about": "From ₹5,000 on a backpacker budget, with the full breakdown",
+            "stops": []
+          },
+          {
+            "image": "/photos/vof-guide/14-nobody-tells-you.jpg",
+            "thumb": "/photos/vof-guide/thumbs/14-nobody-tells-you.jpg",
+            "title": "Things nobody tells you",
+            "chapter": "Afterwards",
+            "about": "Weather, no network, leeches, mules and the descent",
+            "stops": []
+          },
+          {
+            "image": "/photos/vof-guide/15-more-than-a-trek.jpg",
+            "thumb": "/photos/vof-guide/thumbs/15-more-than-a-trek.jpg",
+            "title": "More than a trek",
+            "chapter": "Afterwards",
+            "about": "What the trail leaves you with",
+            "stops": []
+          },
+          {
+            "image": "/photos/vof-guide/16-thank-you.jpg",
+            "thumb": "/photos/vof-guide/thumbs/16-thank-you.jpg",
+            "title": "Thank you",
+            "chapter": "Afterwards",
+            "about": "Save it, share it, and say hi",
+            "stops": []
+          }
         ]
-      },
-      {
-        "image": "/photos/vof-guide/06-rishikesh-badrinath.jpg",
-        "thumb": "/photos/vof-guide/thumbs/06-rishikesh-badrinath.jpg",
-        "title": "Rishikesh → Badrinath",
-        "chapter": "On the trail",
-        "about": "Day 2: the prayag drive up to Badrinath temple",
-        "stops": [
-          "Rishikesh"
-        ]
-      },
-      {
-        "image": "/photos/vof-guide/07-badrinath-mana.jpg",
-        "thumb": "/photos/vof-guide/thumbs/07-badrinath-mana.jpg",
-        "title": "Badrinath → Mana",
-        "chapter": "On the trail",
-        "about": "Day 3: Mana, the first village of India",
-        "stops": [
-          "Badrinath",
-          "Mana Village"
-        ]
-      },
-      {
-        "image": "/photos/vof-guide/08-govindghat-ghangharia.jpg",
-        "thumb": "/photos/vof-guide/thumbs/08-govindghat-ghangharia.jpg",
-        "title": "Govindghat → Ghangharia",
-        "chapter": "On the trail",
-        "about": "Day 3: registration at Pulna and where the real trek begins",
-        "stops": [
-          "Govindghat",
-          "Ghanghariya"
-        ]
-      },
-      {
-        "image": "/photos/vof-guide/09-valley-of-flowers.jpg",
-        "thumb": "/photos/vof-guide/thumbs/09-valley-of-flowers.jpg",
-        "title": "Valley of Flowers",
-        "chapter": "On the trail",
-        "about": "Day 4: trek details, flowers to look for and the rules",
-        "stops": [
-          "Valley of Flowers"
-        ]
-      },
-      {
-        "image": "/photos/vof-guide/10-hemkund-sahib.jpg",
-        "thumb": "/photos/vof-guide/thumbs/10-hemkund-sahib.jpg",
-        "title": "Hemkund Sahib",
-        "chapter": "On the trail",
-        "about": "Day 5: the steep climb to the lake",
-        "stops": [
-          "Hemkund Sahib"
-        ]
-      },
-      {
-        "image": "/photos/vof-guide/11-downhill.jpg",
-        "thumb": "/photos/vof-guide/thumbs/11-downhill.jpg",
-        "title": "The way down",
-        "chapter": "On the trail",
-        "about": "Day 6: Ghangharia back to Rishikesh",
-        "stops": []
-      },
-      {
-        "image": "/photos/vof-guide/12-pack-smart.jpg",
-        "thumb": "/photos/vof-guide/thumbs/12-pack-smart.jpg",
-        "title": "Pack smart",
-        "chapter": "Pack & budget",
-        "about": "Clothing, trek essentials, health and food",
-        "stops": []
-      },
-      {
-        "image": "/photos/vof-guide/13-cost.jpg",
-        "thumb": "/photos/vof-guide/thumbs/13-cost.jpg",
-        "title": "What it costs",
-        "chapter": "Pack & budget",
-        "about": "From ₹5,000 on a backpacker budget, with the full breakdown",
-        "stops": []
-      },
-      {
-        "image": "/photos/vof-guide/14-nobody-tells-you.jpg",
-        "thumb": "/photos/vof-guide/thumbs/14-nobody-tells-you.jpg",
-        "title": "Things nobody tells you",
-        "chapter": "Afterwards",
-        "about": "Weather, no network, leeches, mules and the descent",
-        "stops": []
-      },
-      {
-        "image": "/photos/vof-guide/15-more-than-a-trek.jpg",
-        "thumb": "/photos/vof-guide/thumbs/15-more-than-a-trek.jpg",
-        "title": "More than a trek",
-        "chapter": "Afterwards",
-        "about": "What the trail leaves you with",
-        "stops": []
-      },
-      {
-        "image": "/photos/vof-guide/16-thank-you.jpg",
-        "thumb": "/photos/vof-guide/thumbs/16-thank-you.jpg",
-        "title": "Thank you",
-        "chapter": "Afterwards",
-        "about": "Save it, share it, and say hi",
-        "stops": []
       }
     ]
   },
