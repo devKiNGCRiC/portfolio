@@ -17,10 +17,10 @@ const SKIES = {
   // saffron, marigold and red, the India colours, as one sky down the whole page;
   // the lower half of the screen stays pale so text reads on it
   sunrise: [
-    [0, '#ffa94d', '#ffeccc'],
-    [0.2, '#ffbf5f', '#fff2d8'],
-    [0.45, '#ffcb6b', '#fff4de'],
-    [0.66, '#ffaf57', '#ffe9cc'],
+    [0, '#ff9a45', '#ffe6cc'],
+    [0.2, '#ffa24e', '#ffecd6'],
+    [0.45, '#ffaa55', '#ffefdc'],
+    [0.66, '#ff9a50', '#ffe4cc'],
     [0.82, '#ff8a5c', '#ffd8b4'],
     [0.92, '#6c48a8', '#ff9a7a'],
     [1, '#0b1a6e', '#3b2a7c'],
