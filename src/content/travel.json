@@ -519,6 +519,86 @@
           "height": 1254
         }
       ]
+    },
+    {
+      "id": "kodaikanal",
+      "title": "Kodaikanal",
+      "region": "Tamil Nadu",
+      "when": "Jan 2026",
+      "photos": [
+        {
+          "src": "/photos/trips/kodaikanal/01-first-light.jpg",
+          "thumb": "/photos/trips/kodaikanal/thumbs/01-first-light.jpg",
+          "caption": "First light over the town",
+          "alt": "Dawn glowing gold over the hills and the houses of Kodaikanal",
+          "date": "",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "/photos/trips/kodaikanal/02-sunrise.jpg",
+          "thumb": "/photos/trips/kodaikanal/thumbs/02-sunrise.jpg",
+          "caption": "Sunrise above the clouds",
+          "alt": "An orange sunrise over layers of distant ridges",
+          "date": "",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "/photos/trips/kodaikanal/03-forest-road.jpg",
+          "thumb": "/photos/trips/kodaikanal/thumbs/03-forest-road.jpg",
+          "caption": "Morning walk under the eucalyptus",
+          "alt": "A quiet road through tall eucalyptus trees",
+          "date": "15 01 '26",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "/photos/trips/kodaikanal/04-green-window.jpg",
+          "thumb": "/photos/trips/kodaikanal/thumbs/04-green-window.jpg",
+          "caption": "A gap in the shola",
+          "alt": "The valley glimpsed between green forest trees",
+          "date": "15 01 '26",
+          "width": 1600,
+          "height": 1200
+        },
+        {
+          "src": "/photos/trips/kodaikanal/05-misty-ranges.jpg",
+          "thumb": "/photos/trips/kodaikanal/thumbs/05-misty-ranges.jpg",
+          "caption": "Hills fading into mist",
+          "alt": "Blue hills fading into mist, framed by bare branches",
+          "date": "",
+          "width": 1600,
+          "height": 1200
+        },
+        {
+          "src": "/photos/trips/kodaikanal/06-terraced-village.jpg",
+          "thumb": "/photos/trips/kodaikanal/thumbs/06-terraced-village.jpg",
+          "caption": "Terraced fields and a hill village",
+          "alt": "Green terraced fields below a colourful hillside village",
+          "date": "",
+          "width": 1600,
+          "height": 1200
+        },
+        {
+          "src": "/photos/trips/kodaikanal/07-evening-ranges.jpg",
+          "thumb": "/photos/trips/kodaikanal/thumbs/07-evening-ranges.jpg",
+          "caption": "Evening over the Palani Hills",
+          "alt": "Hazy ranges stretching away under a clear evening sky",
+          "date": "15 01 '26",
+          "width": 1600,
+          "height": 1200
+        },
+        {
+          "src": "/photos/trips/kodaikanal/08-lake-dusk.jpg",
+          "thumb": "/photos/trips/kodaikanal/thumbs/08-lake-dusk.jpg",
+          "caption": "Dusk at Kodai lake",
+          "alt": "The lake at dusk, still water reflecting the tree line",
+          "date": "15 01 '26",
+          "width": 1600,
+          "height": 1200
+        }
+      ]
     }
   ],
   "places": [
@@ -534,13 +614,6 @@
       "region": "Where it started",
       "lat": "26.14°N",
       "lon": "91.74°E",
-      "src": ""
-    },
-    {
-      "name": "Kodaikanal",
-      "region": "Tamil Nadu",
-      "lat": "10.23°N",
-      "lon": "77.49°E",
       "src": ""
     }
   ],
