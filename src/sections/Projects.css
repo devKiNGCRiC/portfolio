@@ -152,9 +152,26 @@
 
 /* the deck is 116% of the lid, so 84% here makes it span nearly the full card */
 .laptop {
+  --lap-body: var(--white);
+  --lap-deck: #d9dbe3;
+  --lap-cam: var(--ink);
+  --lap-notch: #d9dbe3;
+  --lap-shade: rgba(20, 20, 20, 0.1);
+
   display: grid;
   justify-items: center;
   width: 84%;
+}
+
+/* light cards get a black laptop with red details so it doesn't fade into the card */
+.skin--algovisualizer .laptop,
+.skin--devblog .laptop,
+.skin--tripwise .laptop {
+  --lap-body: #1c1c22;
+  --lap-deck: #0e0e12;
+  --lap-cam: var(--red);
+  --lap-notch: var(--red);
+  --lap-shade: rgba(255, 255, 255, 0.08);
 }
 
 .laptop__lid {
@@ -165,8 +182,8 @@
   border: 3px solid var(--ink);
   border-bottom-width: 2px;
   border-radius: 16px 16px 4px 4px;
-  background: var(--white);
-  box-shadow: inset -4px -4px 0 rgba(20, 20, 20, 0.1);
+  background: var(--lap-body);
+  box-shadow: inset -4px -4px 0 var(--lap-shade);
 }
 
 /* webcam */
@@ -179,7 +196,7 @@
   height: 4px;
   translate: -50% 0;
   border-radius: 50%;
-  background: var(--ink);
+  background: var(--lap-cam);
 }
 
 .laptop__screen {
@@ -203,7 +220,7 @@
   height: clamp(12px, 3.2vw, 18px);
   border: 3px solid var(--ink);
   border-radius: 3px 3px 16px 16px;
-  background: linear-gradient(var(--white) 55%, #d9dbe3);
+  background: linear-gradient(var(--lap-body) 55%, var(--lap-deck));
   box-shadow: 0 5px 0 var(--ink);
 }
 
@@ -218,7 +235,7 @@
   border: 3px solid var(--ink);
   border-top: 0;
   border-radius: 0 0 8px 8px;
-  background: #d9dbe3;
+  background: var(--lap-notch);
 }
 
 /* stacked cards: a squarer art area so the phone is big enough to read */
