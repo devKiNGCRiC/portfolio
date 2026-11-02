@@ -171,6 +171,73 @@
   box-shadow: inset 0 -14px 0 var(--green-bright);
 }
 
+/* the summit sits on the footer's top edge, its peak rising into the page */
+.summit {
+  position: relative;
+  height: clamp(150px, 22vw, 280px);
+  margin-top: clamp(1rem, 4vw, 3rem);
+  margin-bottom: -3px; /* the mountain's base line becomes the footer's top edge */
+  pointer-events: none;
+}
+
+.summit svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.summit path {
+  stroke: var(--ink);
+  stroke-width: 3;
+  stroke-linejoin: round;
+}
+
+.summit__far {
+  fill: #9fb3c8;
+}
+
+.summit__peak {
+  fill: #6f86a3;
+}
+
+.summit__snow {
+  fill: var(--white);
+}
+
+.summit__pole {
+  fill: none;
+}
+
+.summit__flag {
+  fill: var(--saffron);
+  transform-origin: 600px -34px;
+  animation: summit-flag 2.4s ease-in-out infinite;
+}
+
+@keyframes summit-flag {
+  50% {
+    transform: scaleX(0.82) skewY(4deg);
+  }
+}
+
+.summit__note {
+  position: absolute;
+  right: calc(50% + clamp(50px, 8vw, 110px));
+  top: 0;
+  max-width: 16rem;
+  margin: 0;
+  font-size: clamp(1rem, 0.8rem + 0.8vw, 1.45rem);
+  text-align: right;
+  color: var(--yellow); /* the page has reached night by now */
+  rotate: -4deg;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .summit__flag {
+    animation: none;
+  }
+}
+
 .footer__inner {
   display: grid;
   gap: 1rem;
