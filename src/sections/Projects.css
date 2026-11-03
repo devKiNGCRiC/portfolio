@@ -1252,18 +1252,50 @@
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 160' preserveAspectRatio='none'%3E%3Cpath d='M0 90 L90 40 L170 80 L260 20 L360 75 L450 35 L540 70 L600 50 V160 H0Z' fill='%23b9cbdb'/%3E%3Cpath d='M0 120 L110 75 L200 110 L310 60 L420 105 L520 80 L600 100 V160 H0Z' fill='%2393abc0'/%3E%3Cpath d='M0 145 L60 128 L130 140 L220 118 L330 138 L430 122 L520 136 L600 126 V160 H0Z' fill='%236f8a7f'/%3E%3C/svg%3E") bottom / 100% 100% no-repeat;
 }
 
-/* SafarNama: a travel journal in saffron, India-green accents, सफ़रनामा watermark */
+/* SafarNama: the app's night by a mountain lake, a glowing red-to-yellow italic
+   wordmark, a saffron Hindi tagline, eco-green accents and frosted-glass chips */
 .skin--safarnama {
-  --c-bg: #ffb257;
-  --c-muted: #3b2a14;
-  --c-accent: #138808;
-  --c-chip-bg: #fff4e3;
-  --c-pop: #138808;
-  --c-cta-pop: #138808;
+  --c-bg: linear-gradient(165deg, #3a2b33 0%, #23242e 45%, #172028 100%);
+  --c-text: #f3efe9;
+  --c-muted: #d4d0cb;
+  --c-accent: #2dbe4f;
+  --c-title: #ffd21f;
+  --c-chip-bg: rgba(255, 255, 255, 0.1);
+  --c-chip-text: #f3efe9;
+  --c-chip-line: rgba(255, 255, 255, 0.35);
+  --c-pop: #ff4b2b;
+  --c-cta-pop: #ff4b2b;
+}
+
+.skin--safarnama .pcard__art {
+  background:
+    radial-gradient(ellipse 70% 60% at 70% 25%, rgba(220, 230, 240, 0.18), transparent 70%),
+    linear-gradient(180deg, #2e3542 0%, #1d252f 60%, #14202a 100%);
+}
+
+.skin--safarnama .pcard__title {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  background: linear-gradient(90deg, #ff2d2d 0%, #ff6a1a 42%, #ffd21f 70%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 14px rgba(255, 90, 40, 0.45));
 }
 
 .skin--safarnama .pcard__tagline {
-  color: #0e5f07;
+  color: #ffb84d;
+}
+
+.skin--safarnama .chip {
+  backdrop-filter: blur(6px);
+}
+
+/* the eco-tourism pill, as on the app */
+.skin--safarnama .status {
+  border-color: #2dbe4f;
 }
 
 .skin--safarnama .pcard__body::before {
@@ -1276,7 +1308,7 @@
   font-size: 5.5rem;
   font-weight: 700;
   line-height: 1;
-  color: rgba(20, 20, 20, 0.08);
+  color: rgba(255, 196, 60, 0.05);
   pointer-events: none;
 }
 
