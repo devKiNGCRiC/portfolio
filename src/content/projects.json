@@ -314,6 +314,17 @@
   ],
   "workbench": [
     {
+      "name": "smartconvert",
+      "title": "SmartConvert",
+      "note": "An offline Android unit converter with India's traditional units, lakh and crore numbers, and three craft-inspired themes",
+      "tech": "Java, Android, Room",
+      "group": "Mobile",
+      "repo": "",
+      "live": "",
+      "image": "/photos/smartconvert-home.jpg",
+      "badge": "Offline"
+    },
+    {
       "name": "katha-heritage-platform",
       "title": "KATHA",
       "note": "India's stories in one place: heritage, history, mythology and folk tales",
@@ -321,8 +332,7 @@
       "group": "Travel & culture",
       "repo": "",
       "live": "",
-      "image": "/photos/katha-home.jpg",
-      "size": "big"
+      "image": "/photos/katha-home.jpg"
     },
     {
       "name": "EcoVibes-Static-Website",
@@ -364,8 +374,7 @@
       "repo": "",
       "live": "",
       "image": "/photos/home.webp",
-      "badge": "PromptWars",
-      "size": "big"
+      "badge": "PromptWars"
     },
     {
       "name": "expense-tracker",
