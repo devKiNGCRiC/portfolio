@@ -98,6 +98,13 @@ function Workbench() {
   const groups = ['All', ...new Set(workbench.map((w) => w.group))]
   const [group, setGroup] = useState('All')
   const shown = group === 'All' ? workbench : workbench.filter((w) => w.group === group)
+  // tags whose screenshot is a phone screen (about twice as tall as wide; a tall
+  // full-page web capture stays a photo)
+  const [tall, setTall] = useState(() => new Set())
+  const measure = (name) => (e) => {
+    const { naturalWidth: w, naturalHeight: h } = e.currentTarget
+    if (h > w * 1.7) setTall((s) => new Set(s).add(name))
+  }
 
   return (
     <div ref={ref} className="bench reveal">
@@ -116,10 +123,26 @@ function Workbench() {
 
       <ul className="tags">
         {shown.map((w, i) => (
-          <li key={w.name} className={`tag tag--${(i % 4) + 1} ${w.image ? 'tag--shot' : ''}`}>
+          <li
+            key={w.name}
+            className={`tag tag--${(i % 4) + 1} ${w.image ? (tall.has(w.name) ? 'tag--phone' : 'tag--shot') : ''}`}
+          >
             <span className="tag__hole" aria-hidden="true" />
             <a href={w.repo} target="_blank" rel="noreferrer" className="tag__link">
-              {w.image && <img className="tag__shot" src={w.image} alt={`Screenshot of ${w.name}`} loading="lazy" />}
+              {w.image &&
+                (tall.has(w.name) ? (
+                  <span className="tag__phone">
+                    <img src={w.image} alt={`Screenshot of ${w.name}`} />
+                  </span>
+                ) : (
+                  <img
+                    className="tag__shot"
+                    src={w.image}
+                    alt={`Screenshot of ${w.name}`}
+                    loading="lazy"
+                    onLoad={measure(w.name)}
+                  />
+                ))}
               <span className="tag__name">{w.name}</span>
               <span className="tag__note">{w.note}</span>
               <span className="tag__tech">{w.tech}</span>
