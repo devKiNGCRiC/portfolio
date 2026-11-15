@@ -315,15 +315,18 @@
   "workbench": [
     {
       "name": "katha-heritage-platform",
-      "note": "KATHA: a platform for Indian heritage, history, mythology and folk tales",
+      "title": "KATHA",
+      "note": "India's stories in one place: heritage, history, mythology and folk tales",
       "tech": "MERN + React Native",
       "group": "Travel & culture",
       "repo": "",
       "live": "",
-      "image": "/photos/katha-home.jpg"
+      "image": "/photos/katha-home.jpg",
+      "size": "big"
     },
     {
       "name": "EcoVibes-Static-Website",
+      "title": "EcoVibes",
       "note": "An early responsive site about eco-tourism and sustainable travel",
       "tech": "HTML & CSS",
       "group": "Travel & culture",
@@ -333,6 +336,7 @@
     },
     {
       "name": "blinktalk",
+      "title": "BlinkTalk",
       "note": "Real-time chat: read receipts, group rooms, anonymous stranger chat, 5 themes",
       "tech": "React, Socket.IO, MongoDB",
       "group": "Web & apps",
@@ -342,24 +346,30 @@
     },
     {
       "name": "rupeemate",
-      "note": "Track expenses, split bills, manage money (in progress)",
+      "title": "RupeeMate",
+      "note": "Track expenses, split bills and manage money, built for India",
       "tech": "TypeScript",
       "group": "Web & apps",
       "repo": "",
       "live": "",
-      "image": "/photos/rupeemate-home.jpg"
+      "image": "/photos/rupeemate-home.jpg",
+      "badge": "WIP"
     },
     {
       "name": "votewise-election-assistant",
-      "note": "VoteWise: a PWA to learn how elections work, built for PromptWars Virtual",
+      "title": "VoteWise",
+      "note": "A PWA that explains how elections work, built for PromptWars Virtual",
       "tech": "Next.js, Tailwind",
       "group": "Web & apps",
       "repo": "",
       "live": "",
-      "image": "/photos/home.webp"
+      "image": "/photos/home.webp",
+      "badge": "PromptWars",
+      "size": "big"
     },
     {
       "name": "expense-tracker",
+      "title": "Expense Tracker",
       "note": "Expense tracker with hand-written search and multi-level sorting",
       "tech": "HTML, CSS, JavaScript",
       "group": "Web & apps",
@@ -369,15 +379,18 @@
     },
     {
       "name": "portfolio",
+      "title": "This website",
       "note": "This site: a 3D road trip through India with a clay guide",
       "tech": "React, three.js",
       "group": "Web & apps",
       "repo": "",
       "live": "",
-      "image": "/photos/portfolio-home.jpg"
+      "image": "/photos/portfolio-home.jpg",
+      "badge": "You are here"
     },
     {
       "name": "bmi-calculator",
+      "title": "BMI Calculator",
       "note": "A polished BMI app with custom SVG gauges and history",
       "tech": "React Native, Expo",
       "group": "Mobile",
