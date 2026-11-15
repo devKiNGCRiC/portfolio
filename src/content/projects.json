@@ -322,7 +322,12 @@
       "repo": "",
       "live": "",
       "image": "/photos/smartconvert-home.jpg",
-      "badge": "Offline"
+      "badge": "Offline",
+      "points": [
+        "90 units in 8 categories",
+        "22 Indian units, from tola to bigha",
+        "Three moods: Jantar Mantar, Bazaar, Truck Art"
+      ]
     },
     {
       "name": "katha-heritage-platform",
@@ -401,11 +406,16 @@
       "name": "bmi-calculator",
       "title": "BMI Calculator",
       "note": "A polished BMI app with custom SVG gauges and history",
-      "tech": "React Native, Expo",
+      "tech": "React Native, Expo, TypeScript",
       "group": "Mobile",
       "repo": "",
       "live": "",
-      "image": "/photos/bmi-calculator-home.jpg"
+      "image": "/photos/bmi-calculator-home.jpg",
+      "points": [
+        "Metric and imperial units",
+        "Arc and bar gauges, drawn in SVG",
+        "Saved history and health tips"
+      ]
     }
   ]
 }

@@ -250,6 +250,13 @@ collections:
               - { name: repo, label: Repo URL (only if different), widget: string, required: false }
               - { name: live, label: Live demo URL, widget: string, required: false }
               - { name: image, label: Screenshot (optional), widget: image, required: false, hint: Wide shots show as a photo that scrolls on hover; phone screenshots go in a mini phone }
+              - name: points
+                label: Highlights (phone apps)
+                label_singular: Highlight
+                widget: list
+                required: false
+                hint: 2 or 3 short features, shown beside the phone on mobile-app stickers
+                field: { name: point, label: Highlight, widget: string }
               - { name: badge, label: Stamp, widget: string, required: false, hint: 'A short sticker stamp, e.g. WIP or Hackathon (Live is added automatically when there is a demo)' }
 
   # ------------------------------------------------------------------
