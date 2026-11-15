@@ -95,6 +95,7 @@ function ProjectCard({ project, size, onOpen }) {
 
 // workbench stickers wear their app's own colours (see "workbench stickers" in Projects.css)
 const BENCH_SKINS = {
+  smartconvert: 'smartconvert',
   'katha-heritage-platform': 'katha',
   'EcoVibes-Static-Website': 'ecovibes',
   blinktalk: 'blinktalk',
@@ -142,14 +143,16 @@ function Workbench() {
           return (
             <li
               key={w.name}
-              className={`stk ${skin ? `stk--${skin}` : ''} ${phone ? 'stk--phone' : ''} ${w.size === 'big' ? 'stk--big' : ''}`}
+              className={`stk ${skin ? `stk--${skin}` : ''}`}
               style={{ '--r': `${TILTS[i % TILTS.length]}deg` }}
             >
               <a href={w.repo} target="_blank" rel="noreferrer" className="stk__link">
                 {w.image &&
                   (phone ? (
-                    <span className="stk__phone">
-                      <img src={w.image} alt={`Screenshot of ${title}`} />
+                    <span className="stk__shot stk__shot--phone">
+                      <span className="stk__phone">
+                        <img src={w.image} alt={`Screenshot of ${title}`} />
+                      </span>
                     </span>
                   ) : (
                     <span className="stk__shot">

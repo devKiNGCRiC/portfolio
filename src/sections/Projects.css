@@ -758,10 +758,11 @@
   color: var(--white);
 }
 
-/* the wall: a masonry of stickers, so mixed heights never leave gaps */
+/* the wall: equal stickers, every row the same height */
 .stks {
-  columns: 3 280px;
-  column-gap: 1.8rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr));
+  gap: 2.2rem 1.8rem;
   margin: 0;
   padding: 0.9rem 0 0;
   list-style: none;
@@ -773,18 +774,16 @@
   --k-title: var(--ink);
   --k-muted: var(--ink-soft);
   --k-line: var(--ink);
+  --k-frame: var(--ink); /* the screenshot's border; light on dark stickers */
 
   position: relative;
-  display: inline-block;
-  width: 100%;
-  margin: 0 0 2rem;
+  display: flex;
   border: 3px solid var(--ink);
   border-radius: 22px;
   background: var(--k-bg);
   color: var(--k-text);
   box-shadow: 6px 6px 0 var(--ink);
   rotate: var(--r, 0deg);
-  break-inside: avoid;
   transition:
     rotate 0.3s var(--bounce),
     transform 0.3s var(--bounce),
@@ -800,7 +799,9 @@
 }
 
 .stk__link {
-  display: grid;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
   gap: 0.9rem;
   padding: 0.85rem 0.85rem 1.1rem;
   color: inherit;
@@ -817,15 +818,12 @@
 /* a live preview: hovering scrolls the screenshot from top to bottom */
 .stk__shot {
   display: block;
+  flex: none;
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  border: 2.5px solid var(--ink);
+  border: 3px solid var(--k-frame);
   border-radius: 13px;
   background: var(--ink);
-}
-
-.stk--big .stk__shot {
-  aspect-ratio: 4 / 3;
 }
 
 .stk__shot img,
@@ -845,33 +843,40 @@
   object-position: 50% 100%;
 }
 
-/* a phone screenshot sits in a mini clay phone beside the text */
-.stk--phone .stk__link {
-  grid-template-columns: 96px minmax(0, 1fr);
-  align-items: center;
-  column-gap: 1rem;
+/* a phone app stands in the same slot, as a clay phone on a soft spotlight,
+   so every sticker has the same shape */
+.stk__shot--phone {
+  display: grid;
+  place-items: center;
+  padding: 0.7rem 0 0;
+  background:
+    radial-gradient(ellipse 60% 75% at 50% 100%, rgba(255, 255, 255, 0.22), transparent 70%),
+    var(--k-stage, #1b2238);
 }
 
 .stk__phone {
   position: relative;
+  height: 100%;
   aspect-ratio: 9 / 19;
   padding: 4px;
   overflow: hidden;
   border: 2.5px solid var(--ink);
-  border-radius: 18px;
+  border-bottom: 0;
+  border-radius: 16px 16px 0 0; /* rises out of the bottom edge */
   background: var(--white);
-  box-shadow:
-    inset -2px -3px 0 rgba(20, 20, 20, 0.12),
-    3px 3px 0 var(--ink);
 }
 
 .stk__phone img {
   border: 1.5px solid var(--ink);
-  border-radius: 12px;
+  border-bottom: 0;
+  border-radius: 11px 11px 0 0;
 }
 
 .stk__body {
-  display: grid;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 0.5rem;
   padding: 0 0.3rem;
 }
@@ -905,6 +910,8 @@
 }
 
 .stk__repo {
+  margin-top: auto;
+  padding-top: 0.2rem;
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
@@ -956,6 +963,17 @@
 }
 
 /* ---------- workbench stickers: each in its app's own colours ---------- */
+.stk--smartconvert {
+  --k-bg: #262a6b;
+  --k-text: #f6eee8;
+  --k-title: #f4b9a2; /* Jaipur's pink sandstone */
+  --k-muted: #d5d3ef;
+  --k-line: #f4b9a2;
+  --k-frame: rgba(255, 255, 255, 0.5);
+  --k-stage: #1b1f52;
+  --k-font: var(--font-serif);
+}
+
 .stk--katha {
   --k-bg: #efe6d6;
   --k-text: #2a1a14;
@@ -972,6 +990,8 @@
 }
 
 .stk--ecovibes {
+  --k-frame: rgba(255, 255, 255, 0.5);
+  --k-stage: #173b23;
   --k-bg: #1e4a2c;
   --k-text: #f4ecd6;
   --k-title: #f2b134;
@@ -980,6 +1000,8 @@
 }
 
 .stk--blinktalk {
+  --k-frame: rgba(255, 255, 255, 0.5);
+  --k-stage: #2a1f38;
   --k-bg: #1b1424;
   --k-text: #f3eefa;
   --k-muted: #c9bfd8;
@@ -994,6 +1016,8 @@
 }
 
 .stk--rupeemate {
+  --k-frame: rgba(255, 255, 255, 0.5);
+  --k-stage: #151a26;
   --k-bg: #0b0d14;
   --k-text: #eaf6ff;
   --k-muted: #a9b4c8;
@@ -1010,6 +1034,8 @@
 }
 
 .stk--votewise {
+  --k-frame: rgba(255, 255, 255, 0.5);
+  --k-stage: #2a1258;
   --k-bg: linear-gradient(160deg, #3d1774, #1d0f3d);
   --k-text: #ffffff;
   --k-title: #ffd23f;
@@ -1017,11 +1043,10 @@
   --k-line: #ffd23f;
 }
 
-.stk--votewise .stk__title {
-  font-size: 1.7rem;
-}
 
 .stk--expense {
+  --k-frame: rgba(255, 255, 255, 0.5);
+  --k-stage: #221c4a;
   --k-bg: linear-gradient(160deg, #2c2463, #15122e);
   --k-text: #f1eeff;
   --k-title: #b9acff;
@@ -1035,6 +1060,8 @@
 }
 
 .stk--bmi {
+  --k-frame: rgba(255, 255, 255, 0.5);
+  --k-stage: #16264a;
   --k-bg: #0f1a33;
   --k-text: #eaf1ff;
   --k-title: #6fb1ff;
