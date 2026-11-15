@@ -93,6 +93,19 @@ function ProjectCard({ project, size, onOpen }) {
   )
 }
 
+// workbench stickers wear their app's own colours (see "workbench stickers" in Projects.css)
+const BENCH_SKINS = {
+  'katha-heritage-platform': 'katha',
+  'EcoVibes-Static-Website': 'ecovibes',
+  blinktalk: 'blinktalk',
+  rupeemate: 'rupeemate',
+  'votewise-election-assistant': 'votewise',
+  'expense-tracker': 'expense',
+  portfolio: 'portfolio',
+  'bmi-calculator': 'bmi',
+}
+const TILTS = [-2, 1.5, -1, 2, -1.5, 1]
+
 function Workbench() {
   const ref = useReveal({ threshold: 0.05 })
   const groups = ['All', ...new Set(workbench.map((w) => w.group))]
@@ -121,39 +134,55 @@ function Workbench() {
         ))}
       </div>
 
-      <ul className="tags">
-        {shown.map((w, i) => (
-          <li
-            key={w.name}
-            className={`tag tag--${(i % 4) + 1} ${w.image ? (tall.has(w.name) ? 'tag--phone' : 'tag--shot') : ''}`}
-          >
-            <span className="tag__hole" aria-hidden="true" />
-            <a href={w.repo} target="_blank" rel="noreferrer" className="tag__link">
-              {w.image &&
-                (tall.has(w.name) ? (
-                  <span className="tag__phone">
-                    <img src={w.image} alt={`Screenshot of ${w.name}`} />
+      <ul className="stks">
+        {shown.map((w, i) => {
+          const title = w.title || w.name
+          const phone = tall.has(w.name)
+          const skin = BENCH_SKINS[w.name]
+          return (
+            <li
+              key={w.name}
+              className={`stk ${skin ? `stk--${skin}` : ''} ${phone ? 'stk--phone' : ''} ${w.size === 'big' ? 'stk--big' : ''}`}
+              style={{ '--r': `${TILTS[i % TILTS.length]}deg` }}
+            >
+              <a href={w.repo} target="_blank" rel="noreferrer" className="stk__link">
+                {w.image &&
+                  (phone ? (
+                    <span className="stk__phone">
+                      <img src={w.image} alt={`Screenshot of ${title}`} />
+                    </span>
+                  ) : (
+                    <span className="stk__shot">
+                      <img src={w.image} alt={`Screenshot of ${title}`} loading="lazy" onLoad={measure(w.name)} />
+                    </span>
+                  ))}
+                <span className="stk__body">
+                  <span className="stk__title">{title}</span>
+                  <span className="stk__note">{w.note}</span>
+                  <span className="stk__tech">
+                    {w.tech.split(/\s*(?:,|\+|&)\s*/).map((t) => (
+                      <span key={t}>{t}</span>
+                    ))}
                   </span>
-                ) : (
-                  <img
-                    className="tag__shot"
-                    src={w.image}
-                    alt={`Screenshot of ${w.name}`}
-                    loading="lazy"
-                    onLoad={measure(w.name)}
-                  />
-                ))}
-              <span className="tag__name">{w.name}</span>
-              <span className="tag__note">{w.note}</span>
-              <span className="tag__tech">{w.tech}</span>
-            </a>
-            {w.live && (
-              <a href={w.live} target="_blank" rel="noreferrer" className="tag__live">
-                Live demo<span className="sr-only"> of {w.name}</span>
+                  <span className="stk__repo">
+                    <Icon name="github" size={13} />
+                    {w.repo.split('/').filter(Boolean).pop()}
+                  </span>
+                </span>
               </a>
-            )}
-          </li>
-        ))}
+              {(w.live || w.badge) && (
+                <span className="stk__stamps">
+                  {w.badge && <span className="stk__stamp">{w.badge}</span>}
+                  {w.live && (
+                    <a href={w.live} target="_blank" rel="noreferrer" className="stk__stamp stk__stamp--live">
+                      Live<span className="sr-only"> demo of {title}</span>
+                    </a>
+                  )}
+                </span>
+              )}
+            </li>
+          )
+        })}
       </ul>
     </div>
   )
