@@ -906,6 +906,34 @@
   padding: 0.3rem 0 0;
 }
 
+/* a few real features fill the space beside the phone */
+.stk__points {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0.1rem 0 0.2rem;
+}
+
+.stk__points span {
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+  font-size: 0.84rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.stk__points span::before {
+  content: '';
+  flex: none;
+  width: 0.55rem;
+  height: 0.55rem;
+  border: 2px solid var(--k-line);
+  border-radius: 3px;
+  background: var(--k-title);
+  rotate: 45deg;
+  translate: 0 -0.05rem;
+}
+
 .stk__body {
   display: flex;
   flex: 1;

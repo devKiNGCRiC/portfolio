@@ -162,6 +162,13 @@ function Workbench() {
                 <span className="stk__body">
                   <span className="stk__title">{title}</span>
                   <span className="stk__note">{w.note}</span>
+                  {phone && w.points?.length > 0 && (
+                    <span className="stk__points">
+                      {w.points.map((p) => (
+                        <span key={p}>{p}</span>
+                      ))}
+                    </span>
+                  )}
                   <span className="stk__tech">
                     {w.tech.split(/\s*(?:,|\+|&)\s*/).map((t) => (
                       <span key={t}>{t}</span>
