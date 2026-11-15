@@ -143,7 +143,7 @@ function Workbench() {
           return (
             <li
               key={w.name}
-              className={`stk ${skin ? `stk--${skin}` : ''}`}
+              className={`stk ${skin ? `stk--${skin}` : ''} ${phone ? 'stk--phone' : ''}`}
               style={{ '--r': `${TILTS[i % TILTS.length]}deg` }}
             >
               <a href={w.repo} target="_blank" rel="noreferrer" className="stk__link">

@@ -872,6 +872,40 @@
   border-radius: 11px 11px 0 0;
 }
 
+/* mobile apps split the sticker the other way: a whole phone standing on the
+   left, the text beside it, same outer size as the web-app stickers */
+.stk--phone .stk__link {
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.stk--phone .stk__shot--phone {
+  width: 44%;
+  aspect-ratio: auto;
+  padding: 0.9rem 0.7rem;
+  background:
+    radial-gradient(ellipse 80% 55% at 50% 100%, rgba(255, 255, 255, 0.2), transparent 70%),
+    var(--k-stage, #1b2238);
+}
+
+.stk--phone .stk__phone {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  border-bottom: 2.5px solid var(--ink);
+  border-radius: 18px;
+  box-shadow: 3px 4px 0 rgba(0, 0, 0, 0.35);
+}
+
+.stk--phone .stk__phone img {
+  border-bottom: 1.5px solid var(--ink);
+  border-radius: 12px;
+}
+
+.stk--phone .stk__body {
+  padding: 0.3rem 0 0;
+}
+
 .stk__body {
   display: flex;
   flex: 1;
