@@ -245,6 +245,42 @@ const art = {
 
 // The screenshot's size is owned by the card (it resizes around a phone).
 // Until it's known we show the scenery and measure the image off-screen.
+/*
+  Phone scenes: for some apps the screenshot is staged inside a moment from the
+  app itself instead of a plain clay phone.
+*/
+
+// WanderLink: the phone held up to the app's own night sky, with a chat between
+// two travellers spilling out of it (it loops; reduced motion shows it settled)
+function WanderLinkScene({ src, name }) {
+  return (
+    <div className="art__layer wl-scene">
+      <span className="wl-moon" aria-hidden="true" />
+      <svg className="wl-route" viewBox="0 0 400 320" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M-10 290 C 90 250, 160 300, 250 240 S 380 190, 410 120" />
+      </svg>
+      <span className="phone wl-phone">
+        <span className="phone__screen">
+          <img src={src} alt={`${name} home screen`} loading="lazy" />
+        </span>
+      </span>
+      <span className="wl-chat" aria-hidden="true">
+        <span className="bubble bubble--left wl-msg wl-msg--1">anyone near Mana village?</span>
+        <span className="wl-typing">
+          <i />
+          <i />
+          <i />
+        </span>
+        <span className="bubble bubble--right wl-msg wl-msg--2">yes! meet at the café?</span>
+      </span>
+    </div>
+  )
+}
+
+const PHONE_SCENES = {
+  wanderlink: WanderLinkScene,
+}
+
 export default function ProjectArt({ project, shot, onShot }) {
   const Art = art[project.id] ?? PortfolioArt
 
@@ -264,6 +300,9 @@ export default function ProjectArt({ project, shot, onShot }) {
       </>
     )
   }
+
+  const Scene = PHONE_SCENES[project.id]
+  if (shot.h > shot.w && Scene) return <Scene src={project.image} name={project.name} />
 
   if (shot.h > shot.w) {
     // phone screenshots stand in clay phones on the project's own scenery

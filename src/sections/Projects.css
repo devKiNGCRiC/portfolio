@@ -1546,27 +1546,231 @@
   pointer-events: none;
 }
 
-/* WanderLink: a chat app, mint and teal, speech-bubble chips */
+/* WanderLink: the app's night sky in deep indigo, a lowercase logo-style title,
+   a marigold tagline and chat-bubble chips in ticket cream and marigold */
 .skin--wanderlink {
-  --c-bg: #dcf3ec;
-  --c-muted: #24423b;
-  --c-accent: #0b8f7a;
-  --c-title: #0a5c4f;
+  --c-bg: linear-gradient(170deg, #1a1450 0%, #26227a 55%, #2d3a8c 100%);
+  --c-text: #f1eefc;
+  --c-muted: #d2cef0;
+  --c-accent: #ffc93c;
+  --c-title: #ffffff;
   --c-title-font: var(--font-body);
-  --c-chip-bg: #0b8f7a;
-  --c-chip-text: #ffffff;
+  --c-chip-bg: #f3ece4;
+  --c-chip-text: var(--ink);
   --c-chip-radius: 14px 14px 14px 4px;
-  --c-pop: #0b8f7a;
-  --c-cta-pop: #0b8f7a;
+  --c-pop: #f2711c;
+  --c-cta-pop: #f2711c;
 }
 
 .skin--wanderlink .pcard__title {
   font-weight: 900;
   letter-spacing: -0.03em;
+  text-transform: lowercase;
+}
+
+.skin--wanderlink .pcard__tagline {
+  color: #ffc93c;
 }
 
 .skin--wanderlink .chip:nth-child(even) {
   border-radius: 14px 14px 4px 14px;
-  background: #ffffff;
+  background: #ffc93c;
   color: var(--ink);
+}
+
+/* the scene: the phone held up to WanderLink's night sky, a chat spilling out */
+.skin--wanderlink .pcard__art {
+  background:
+    radial-gradient(1.5px 1.5px at 12% 18%, #fff 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 38% 8%, #fff 50%, transparent 51%),
+    radial-gradient(2px 2px at 62% 30%, #fff 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 88% 52%, #fff 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 52% 62%, rgba(255, 255, 255, 0.8) 50%, transparent 51%),
+    radial-gradient(2px 2px at 28% 44%, rgba(255, 255, 255, 0.7) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 74% 12%, #fff 50%, transparent 51%),
+    linear-gradient(180deg, #120d3d 0%, #211b63 60%, #2b2a7a 100%);
+}
+
+.wl-scene {
+  inset: 0;
+  transform: none;
+}
+
+/* when the row is taller than the card needs, the scene takes the spare height */
+.skin--wanderlink.pcard--phone .pcard__art {
+  flex: 1;
+  aspect-ratio: auto;
+  min-height: clamp(260px, 62vw, 340px);
+}
+
+.wl-moon {
+  position: absolute;
+  top: 9%;
+  right: 11%;
+  width: clamp(38px, 11%, 58px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  box-shadow: inset -12px -4px 0 0 #fff3c9;
+  filter: drop-shadow(0 0 14px rgba(255, 243, 201, 0.55));
+  rotate: -20deg;
+}
+
+.wl-route {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.wl-route path {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.4);
+  stroke-width: 3;
+  stroke-dasharray: 3 10;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.wl-phone {
+  position: absolute;
+  left: 9%;
+  top: 9%;
+  height: 118%;
+  rotate: -7deg;
+}
+
+.wl-phone img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.wl-chat {
+  position: absolute;
+  top: 22%;
+  right: 5%;
+  width: 52%;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.wl-msg {
+  max-width: 100%;
+  color: var(--ink); /* the card's text is light; the bubbles are not */
+  font-size: clamp(0.72rem, 0.66rem + 0.3vw, 0.86rem);
+}
+
+.wl-msg--2 {
+  grid-area: 2 / 1;
+  background: #ffc93c;
+}
+
+/* "typing…" waits in the reply's spot until the reply arrives */
+.wl-typing {
+  grid-area: 2 / 1;
+  justify-self: end;
+  align-self: start;
+  display: inline-flex;
+  gap: 4px;
+  padding: 0.55rem 0.75rem;
+  border: 2.5px solid var(--ink);
+  border-radius: 14px 14px 4px 14px;
+  background: var(--white);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.wl-typing i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ink);
+  animation: wl-dot 0.9s ease-in-out infinite;
+}
+
+.wl-typing i:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.wl-typing i:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes wl-dot {
+  50% {
+    transform: translateY(-4px);
+    opacity: 0.5;
+  }
+}
+
+/* one 8s loop: the question pops in, someone types, the reply lands */
+.wl-msg--1 {
+  animation: wl-ask 8s var(--bounce) infinite;
+}
+
+.wl-typing {
+  animation: wl-type 8s ease infinite;
+}
+
+.wl-msg--2 {
+  animation: wl-reply 8s var(--bounce) infinite;
+}
+
+@keyframes wl-ask {
+  0%,
+  6% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.85);
+  }
+  12%,
+  90% {
+    opacity: 1;
+    transform: none;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes wl-type {
+  0%,
+  20% {
+    opacity: 0;
+  }
+  24%,
+  42% {
+    opacity: 1;
+  }
+  46%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes wl-reply {
+  0%,
+  44% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.85);
+  }
+  50%,
+  90% {
+    opacity: 1;
+    transform: none;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wl-msg--1,
+  .wl-msg--2,
+  .wl-typing i {
+    animation: none;
+  }
+
+  .wl-typing {
+    display: none;
+  }
 }
