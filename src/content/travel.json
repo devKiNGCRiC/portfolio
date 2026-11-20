@@ -645,22 +645,7 @@
       ]
     }
   ],
-  "places": [
-    {
-      "name": "Arunachal Pradesh",
-      "region": "Home, sort of",
-      "lat": "27.10°N",
-      "lon": "93.62°E",
-      "src": ""
-    },
-    {
-      "name": "Northeast India",
-      "region": "Where it started",
-      "lat": "26.14°N",
-      "lon": "91.74°E",
-      "src": ""
-    }
-  ],
+  "places": [],
   "interests": [
     "Solo travel",
     "Photography",
