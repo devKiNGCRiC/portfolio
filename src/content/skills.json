@@ -198,6 +198,10 @@
           "level": "comfortable"
         },
         {
+          "name": "Cloudflare Pages",
+          "level": "learning"
+        },
+        {
           "name": "Thunder Client",
           "level": "learning"
         },
@@ -223,7 +227,7 @@
       "pouch": "Practice",
       "items": [
         {
-          "name": "DSA in C++ & Java (daily)",
+          "name": "DSA in Java (daily)",
           "level": "learning"
         }
       ]
