@@ -77,6 +77,12 @@ export default function Journey() {
                     <dt>Place</dt>
                     <dd>{e.campus}</dd>
                   </div>
+                  {e.years && (
+                    <div>
+                      <dt>Valid</dt>
+                      <dd>{e.years}</dd>
+                    </div>
+                  )}
                   {e.note && (
                     <div>
                       <dt>Score</dt>
@@ -85,7 +91,7 @@ export default function Journey() {
                   )}
                 </dl>
                 <span className="visa__mrz mono" aria-hidden="true">
-                  {`V<IND<<${e.degree}<<${e.school.toUpperCase().replace(/\s+/g, '<')}<<<<<<<<`}
+                  {`V<IND<<${e.degree}<<${e.school.toUpperCase().replace(/\s+/g, '<')}<<${(e.years ?? '').replace(/\D+/g, '<')}<<<<`}
                 </span>
               </li>
             ))}

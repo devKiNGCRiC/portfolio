@@ -336,6 +336,7 @@ collections:
               - { name: full, label: Full name, widget: string }
               - { name: school, label: University, widget: string }
               - { name: campus, label: Campus / place, widget: string }
+              - { name: years, label: Years, widget: string, required: false, hint: 'e.g. 2025 – 2027; shown as "Valid" on the visa' }
               - { name: status, label: Status, widget: select, options: [Current, Completed] }
               - { name: note, label: Note (e.g. CGPA), widget: string, required: false }
 
