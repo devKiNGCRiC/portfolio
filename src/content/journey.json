@@ -31,23 +31,23 @@
       "head": false
     },
     {
-      "year": "2025",
-      "title": "Finished BCA, shipped Safarnama",
-      "stamp": "Shipped",
-      "ink": "purple",
-      "body": "Graduated after building projects I actually cared about, the biggest being Safarnama.",
-      "branch": false,
-      "highlight": false,
-      "head": false
-    },
-    {
       "year": "Feb 2025",
       "title": "Special Jury Award",
       "stamp": "Award",
       "ink": "red",
-      "body": "Safarnama won Most Innovative Project Idea and a ₹10,000 scholarship from the AEC Class 88′ Foundation.",
+      "body": "SafarNama won Most Innovative Project Idea and a ₹10,000 scholarship from the AEC Class 88′ Foundation.",
       "branch": false,
       "highlight": true,
+      "head": false
+    },
+    {
+      "year": "2025",
+      "title": "Finished BCA, shipped SafarNama",
+      "stamp": "Shipped",
+      "ink": "purple",
+      "body": "Graduated after building projects I actually cared about, the biggest being SafarNama.",
+      "branch": false,
+      "highlight": false,
       "head": false
     },
     {
@@ -99,7 +99,7 @@
       "campus": "Kattankulathur (KTR), Chennai",
       "years": "2025 – 2027",
       "status": "Current",
-      "note": "CGPA ~9.16 up to semester 5"
+      "note": "CGPA ~9.16 up to semester 2"
     },
     {
       "degree": "BCA",
