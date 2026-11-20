@@ -5,7 +5,10 @@
       "title": "Finished Class 12",
       "stamp": "Class 12",
       "ink": "blue",
-      "body": "The results came out late in the year, too late for admissions that season."
+      "body": "The results came out late in the year, too late for admissions that season.",
+      "branch": false,
+      "highlight": false,
+      "head": false
     },
     {
       "year": "2021–22",
@@ -13,29 +16,39 @@
       "stamp": "Delayed",
       "ink": "red",
       "body": "The late result meant waiting for the next admission cycle. Not every route is a straight line.",
-      "branch": true
+      "branch": true,
+      "highlight": false,
+      "head": false
     },
     {
       "year": "2022",
       "title": "Started BCA",
       "stamp": "BCA",
       "ink": "green",
-      "body": "Assam Don Bosco University. First real brush with building software, not just studying it."
+      "body": "Assam Don Bosco University. First real brush with building software, not just studying it.",
+      "branch": false,
+      "highlight": false,
+      "head": false
     },
     {
       "year": "2025",
       "title": "Finished BCA, shipped Safarnama",
       "stamp": "Shipped",
       "ink": "purple",
-      "body": "Graduated after building projects I actually cared about, the biggest being Safarnama."
+      "body": "Graduated after building projects I actually cared about, the biggest being Safarnama.",
+      "branch": false,
+      "highlight": false,
+      "head": false
     },
     {
       "year": "Feb 2025",
       "title": "Special Jury Award",
       "stamp": "Award",
       "ink": "red",
-      "body": "Safarnama won Most Innovative Project and a ₹10,000 scholarship from the AEC Class 88′ Foundation.",
-      "highlight": true
+      "body": "Safarnama won Most Innovative Project Idea and a ₹10,000 scholarship from the AEC Class 88′ Foundation.",
+      "branch": false,
+      "highlight": true,
+      "head": false
     },
     {
       "year": "2025",
@@ -85,15 +98,15 @@
       "school": "SRM Institute of Science and Technology",
       "campus": "Kattankulathur (KTR), Chennai",
       "status": "Current",
-      "note": "2025 – 2027"
+      "note": "CGPA ~9.16 up to semester 5"
     },
     {
       "degree": "BCA",
       "full": "Bachelor of Computer Applications",
       "school": "Assam Don Bosco University",
-      "campus": "Assam",
+      "campus": "Azara, Guwahati, Assam",
       "status": "Completed",
-      "note": "CGPA ~9.21 up to semester 5"
+      "note": "CGPA ~9.26"
     }
   ]
 }
