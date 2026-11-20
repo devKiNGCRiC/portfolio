@@ -137,6 +137,7 @@
   border: 2.5px solid var(--ink);
   border-radius: 50%;
   background: var(--white);
+  color: var(--ink); /* stays ink in the night theme, where the headline turns white */
   rotate: -12deg;
   animation: wiggle 3s ease-in-out infinite;
 }
