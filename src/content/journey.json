@@ -35,17 +35,17 @@
       "title": "Special Jury Award",
       "stamp": "Award",
       "ink": "red",
-      "body": "SafarNama won Most Innovative Project Idea and a ₹10,000 scholarship from the AEC Class 88′ Foundation.",
+      "body": "The idea behind SafarNama won Most Innovative Project Idea and a ₹10,000 scholarship from the AEC Class 88′ Foundation.",
       "branch": false,
       "highlight": true,
       "head": false
     },
     {
       "year": "2025",
-      "title": "Finished BCA, shipped SafarNama",
-      "stamp": "Shipped",
+      "title": "Finished BCA",
+      "stamp": "Graduated",
       "ink": "purple",
-      "body": "Graduated after building projects I actually cared about, the biggest being SafarNama.",
+      "body": "Graduated after building projects I actually cared about, the biggest being SafarNama, my 5th-semester mini project.",
       "branch": false,
       "highlight": false,
       "head": false
@@ -85,7 +85,7 @@
       "title": "Building, practising, preparing",
       "stamp": "Boarding",
       "ink": "red",
-      "body": "Building Wanderlens (my MCA capstone) and TripWise, practising DSA daily, and preparing for placements.",
+      "body": "Building Wanderlens (my MCA capstone) and TripWise, learning TypeScript, practising DSA in Java daily, and preparing for placements.",
       "branch": false,
       "highlight": false,
       "head": true
